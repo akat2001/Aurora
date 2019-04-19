@@ -1,7 +1,4 @@
-CREATE DATABASE DB_Aurora;
-
-USE DB_Aurora;
-
+﻿
 CREATE TABLE TB_Estado
 (
 cod_estado int PRIMARY KEY,
@@ -14,10 +11,10 @@ CREATE TABLE TB_Cidade
 cod_cidade int PRIMARY KEY,
 nome varchar(100),
 estado int,
-FOREIGN KEY(TB_Estado) REFERENCES cidade (cod_estado)
+FOREIGN KEY(estado) REFERENCES TB_Estado (cod_estado)
 );
 
-CREATE TABLE Pessoa 
+CREATE TABLE TB_Pessoa 
 (
 cod_pessoa int PRIMARY KEY,
 Nome varchar(100),
@@ -27,7 +24,7 @@ usernick varchar(50),
 tipo varchar(32),
 foto varchar(300),
 cidade int,
-FOREIGN KEY(cidade) REFERENCES cidade (cod_cidade)
+FOREIGN KEY(cidade) REFERENCES TB_Cidade (cod_cidade)
 );
 
 CREATE TABLE TB_Usuario
@@ -36,7 +33,7 @@ cod_user int PRIMARY KEY,
 email varchar(100),
 senha varchar(32),
 pessoa int,
-FOREIGN KEY(pessoa) REFERENCES cidade (cod_pessoa)
+FOREIGN KEY(pessoa) REFERENCES TB_Pessoa (cod_pessoa)
 );
 
 CREATE TABLE TB_Desempenho
@@ -45,7 +42,7 @@ cod_desempenho int PRIMARY KEY,
 pontos int,
 data_questionario char(10),
 usuario int,
-FOREIGN KEY(usuario) REFERENCES cidade (cod_user)
+FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user)
 );
 
 CREATE TABLE TB_Materias 
@@ -60,7 +57,7 @@ cod_conteudo int PRIMARY KEY,
 pfd varchar(300),
 tema varchar(50),
 materia int,
-FOREIGN KEY(materia) REFERENCES cidade (cod_materia)
+FOREIGN KEY(materia) REFERENCES TB_Materias (cod_materia)
 );
 
 CREATE TABLE TB_Imagens_Mapa_mental (
@@ -69,8 +66,8 @@ tema varchar(100),
 imagen varchar(300),
 usuario int,
 materia int,
-FOREIGN KEY(materia) REFERENCES cidade (cod_materia),
-FOREIGN KEY(usuario) REFERENCES cidade (cod_user)
+FOREIGN KEY(materia) REFERENCES TB_Materias (cod_materia),
+FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user)
 );
 
 CREATE TABLE TB_Perguntas_forum 
@@ -81,8 +78,8 @@ pergunta varchar(1000),
 imagem varchar(300),
 usuario int,
 materia int,
-FOREIGN KEY(materia) REFERENCES cidade (cod_materia),
-FOREIGN KEY(usuario) REFERENCES cidade (cod_user)
+FOREIGN KEY(materia) REFERENCES TB_Materias (cod_materia),
+FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user)
 );
 
 CREATE TABLE TB_Respostas_forum 
@@ -91,8 +88,8 @@ cod_resposta int PRIMARY KEY,
 resposta varchar(1000),
 usuario int,
 pergunta int,
-FOREIGN KEY(pergunta) REFERENCES cidade (cod_pergunta),
-FOREIGN KEY(usuario) REFERENCES cidade (cod_user)
+FOREIGN KEY(pergunta) REFERENCES TB_Perguntas_forum (cod_pergunta),
+FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user)
 );
 
 CREATE TABLE TB_Questoes  
@@ -107,7 +104,7 @@ alternativa_5 varchar(100),
 resposta varchar(100),
 disciplina varchar(50),
 materia int,
-FOREIGN KEY(materia) REFERENCES materias (cos_materia)
+FOREIGN KEY(materia) REFERENCES TB_Materias (cod_materia)
 );
 
 CREATE TABLE TB_Respostas  
@@ -117,8 +114,8 @@ resposta varchar(100),
 usuario int,
 pergunta int,
 PRIMARY KEY(cod_resposta, usuario,pergunta),
-FOREIGN KEY(usuario) REFERENCES Pessoa (cod_pessoa),
-FOREIGN KEY(pergunta) REFERENCES Questoes  (cod_pergunta)
+FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user),
+FOREIGN KEY(pergunta) REFERENCES TB_Perguntas_forum (cod_pergunta)
 );
 
 CREATE TABLE TB_Simulado 
@@ -126,7 +123,7 @@ CREATE TABLE TB_Simulado
 cod_quest_sim int PRIMARY KEY,
 data char(10),
 questao int,
-FOREIGN KEY(questao) REFERENCES Questoes  (cod_pergunta)
+FOREIGN KEY(questao) REFERENCES TB_Questoes  (cod_pergunta)
 );
 
 CREATE TABLE TB_Exercicio 
@@ -134,5 +131,5 @@ CREATE TABLE TB_Exercicio
 cod_exercicio int PRIMARY KEY,
 tema varchar(50),
 questao int,
-FOREIGN KEY(questao) REFERENCES Questoes  (cod_pergunta)
+FOREIGN KEY(questao) REFERENCES TB_Questoes  (cod_pergunta)
 );
