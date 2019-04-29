@@ -15,14 +15,6 @@
     </head>
     <body>
 
-        <header>
-           
-        <?php
-            session_start();
-            include 'nav.html' /*Include NavBar*/
-        ?>
-
-        </header>
 
         <main>
 
@@ -51,7 +43,7 @@
                 <form method = "POST" action = "DAL/Login/Class_logar_DAL.php">    
                     <div class="row">
                         <div class="col s12 m12">
-                            <div class="input-field col s12 m8 l6 offset-m2 offset-l3">
+                            <div class="input-field col s12 m8 l4 offset-m2 offset-l4">
                                 <input id="user" type="email"class="validate" name="email">
                                 <label for="user"> Email </label>
                                 <span class="helper-text" data-error="Email inválido" data-success=""></span>
@@ -61,7 +53,7 @@
 
                     <div class="row">
                         <div class="col s12 m12">
-                            <div class="input-field col s12 m8 l6 offset-m2 offset-l3">
+                            <div class="input-field col s12 m8 l4 offset-m2 offset-l4">
                                 <input id="passuser" type="password"class="validate" name="senha">
                                 <label for="passuser"> Senha </label>
                             </div>
@@ -86,11 +78,6 @@
 
             </div>
 
-        <footer>
-            <?php
-                include 'footer.html'
-            ?>
-        </footer>
 
         <!--Vinculando JavaScript no final da página para ganho de performance-->
         <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>

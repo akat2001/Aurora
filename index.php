@@ -11,6 +11,8 @@
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <!--"Mostrando" ao navegador que a página é optimizada para dispostivos mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <style> body{ background-color: #121855; } </style>
       
     </head>
 
@@ -24,20 +26,19 @@
         <!--Área do Carrossel-->
 
         <div class="carousel carousel-slider">
-            <a class="carousel-item" href="#one!"><img src="img/carrossel_1.png"></a>
-            <a class="carousel-item" href="#two!"><img src="img/carrossel_2.png"></a>
-            <a class="carousel-item" href="#three!"><img src="img/carrossel_3.png"></a>
+            <a class="carousel-item" href="#one!"><img src="img/carrossel_4.png"></a>
         </div>
             
-       
-
+   
+        <?php
+            include 'footer.html'
+        ?>
         
     
   
               
 
-            <!--Área do Carrossel-->
-
+            
            
             
                         

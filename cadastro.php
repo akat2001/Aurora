@@ -110,7 +110,7 @@
                 
             <div class="row">
                 <div class="col s12 m12 center-align">
-                    <h5>Já é cadastrado? Clique <a href="login.html">aqui</a>!</h5>
+                    <h5>Já é cadastrado? Clique <a href="login.php">aqui</a>!</h5>
                 </div>
             </div>
          
