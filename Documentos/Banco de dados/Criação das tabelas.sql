@@ -1,33 +1,17 @@
+drop database db_aurora;
 CREATE DATABASE DB_Aurora;
 
 USE DB_Aurora;
-
-CREATE TABLE TB_Estado
-(
-cod_estado int PRIMARY KEY auto_increment,
-nome varchar(50),
-sigla char(2)
-);
-
-CREATE TABLE TB_Cidade 
-(
-cod_cidade int PRIMARY KEY auto_increment,
-nome varchar(100),
-estado int,
-FOREIGN KEY(estado) REFERENCES TB_Estado (cod_estado)
-);
 
 CREATE TABLE TB_Pessoa 
 (
 cod_pessoa int PRIMARY KEY auto_increment,
 Nome varchar(100),
 sexo varchar(15),
-Data_de_nascimento char(10),
-usernick varchar(50),
+Data_de_nascimento varchar(20),
 tipo varchar(32),
 foto varchar(300),
-cidade int,
-FOREIGN KEY(cidade) REFERENCES TB_Cidade (cod_cidade)
+cidade int
 );
 
 CREATE TABLE TB_Usuario
@@ -35,6 +19,7 @@ CREATE TABLE TB_Usuario
 cod_user int PRIMARY KEY auto_increment,
 email varchar(100),
 senha varchar(32),
+usernick varchar(50) unique,
 pessoa int,
 FOREIGN KEY(pessoa) REFERENCES TB_Pessoa (cod_pessoa)
 );

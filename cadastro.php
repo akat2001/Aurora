@@ -28,12 +28,20 @@
                     <h4> Insira seus dados abaixo:</h4>
                 </div>
             </div>
+
+            <?php
+                if (isset($_SESSION['auxiliar']))
+                {
+                    echo $_SESSION['auxiliar'];
+                    unset ($_SESSION['auxiliar']);							
+                }
+            ?>
                 
-            <form name="" method=""action="">
+            <form name="" method="post" action="DAL/Cadastro/Class_cadastrar_DAL.php">
                 <div class="row">
                     <div class="col s12 m12">
                         <div class="input-field col s12 m8 l6 offset-m2 offset-l3">
-                            <input id="user" type="text"class="validate"> <!--Campo Nome-->
+                            <input id="user" type="text" name="nome" class="validate"> <!--Campo Nome-->
                             <label for="user"> Nome </label>
                             <span class="helper-text" data-error="Insira seu nome" data-success=""></span>
                         </div>
@@ -43,7 +51,7 @@
                 <div class="row">
                     <div class="col s12 m12">
                         <div class="input-field col s12 m8 l6 offset-m2 offset-l3">
-                            <input id="user" type="email"class="validate"> <!--Campo Email-->
+                            <input id="user" type="email" name="email" class="validate"> <!--Campo Email-->
                             <label for="user"> Email </label>
                             <span class="helper-text" data-error="Insira um email válido" data-success=""></span>
                         </div>
@@ -53,7 +61,7 @@
                 <div class="row">
                     <div class="col s12 m12">
                         <div class="input-field col s12 m8 l6 offset-m2 offset-l3">
-                            <input id="user" type="text"class="validate">
+                            <input id="user" type="text" name="usernick" class="validate">
                             <label for="user"> Nome de Usuário </label> <!--Campo Usuário-->
                             <span class="helper-text" data-error="Insira um nome de usuário válido" data-success=""></span>
                         </div>
@@ -63,14 +71,14 @@
                 <div class="row">
                     <div class="col s6 l3 offset-l2">
                         <div class="input-field col s14 m9 l15 offset-m4 offset-l4">
-                            <input type="text" id="nasc" class="datepicker"> <!--Campo Data de Nascimento-->
+                            <input type="text" id="nasc" name="data_nascimento" class="datepicker"> <!--Campo Data de Nascimento-->
                             <label for="nasc"> Nascimento </label>
                         </div>
                     </div>
 
                     <div class="col s6 l3 offset-l2">
                         <div class="input-field col s10 m8 offset-s2">
-                            <select>
+                            <select name="sexo">
                                 <optgroup label="Selecione:">
                                     <option value="homem">Masculino</option>
                                     <option value="mulher">Feminino</option>
@@ -84,7 +92,7 @@
                 <div class="row">
                     <div class="col s12 m12">
                         <div class="input-field col s12 m8 l6 offset-m2 offset-l3">
-                            <input id="passuser" type="password"class="validate">
+                            <input id="passuser" type="password" name="senha" class="validate">
                             <label for="passuser"> Senha </label> <!--Campo Senha-->
                         </div>
                     </div>
@@ -93,7 +101,7 @@
                 <div class="row">
                     <div class="col s12 m12">
                         <div class="input-field col s12 m8 l6 offset-m2 offset-l3">
-                            <input id="passuserconf" type="password"class="validate">
+                            <input id="passuserconf" type="password" name="confsenha" class="validate">
                             <label for="passuserconf"> Confirmar Senha </label> <!--Campo Confirmar Senha-->
                         </div>
                     </div>
