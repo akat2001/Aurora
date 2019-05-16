@@ -19,6 +19,12 @@
         //erro na execução, campo vazio ou dados invalidos       
         $_SESSION['auxiliar'] = "Usúario ou senha inválidos!";       
         header("Location: ../../login.php");
+    }
+    elseif($result['auxiliar'] == "campo vazio")
+    {
+        //erro na execução, campo vazio ou dados invalidos       
+        $_SESSION['auxiliar'] = "Campos Vazios";       
+        header("Location: ../../login.php");
     } 
     elseif($result['auxiliar'] == "logar")
     {    

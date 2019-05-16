@@ -10,8 +10,7 @@ Nome varchar(100),
 sexo varchar(15),
 Data_de_nascimento varchar(20),
 tipo varchar(32),
-foto varchar(300),
-cidade int
+foto varchar(300)
 );
 
 CREATE TABLE TB_Usuario

@@ -60,9 +60,13 @@
                             $resultado ="Usuário cadastrado com sucesso!";
                         }//8
                     }//6
-                }//4
-                return $resultado;
-        }//2       
+                }//4                
+        }//2      
+        else
+        {
+            $resultado = "campo vazio";
+        } 
+        return $resultado;
     }//1
 ?>
 

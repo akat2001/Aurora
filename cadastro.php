@@ -16,6 +16,7 @@
     <body>
 
         <?php
+            session_start();
             include 'nav.html' /*Include NavBar*/
         ?>
 
