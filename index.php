@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <!--Importando Ícone da Google Font-->
-         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+         <link href="css/icon.css" rel="stylesheet">
         <!--Importando materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <!--Importando CSS Personalizado-->
@@ -12,7 +12,7 @@
         <!--"Mostrando" ao navegador que a página é optimizada para dispostivos mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <style> body{ background-color: #121855; } </style>
+        <style> body{ background-color: #6d4e7a; } </style>
       
     </head>
 
@@ -26,7 +26,7 @@
         <!--Área do Carrossel-->
 
         <div class="carousel carousel-slider">
-            <a class="carousel-item" href="#one!"><img src="img/carrossel_4.png"></a>
+            <a class="carousel-item" href="#one!"><img src="img/BannerLogo2.png"></a>
         </div>
             
    

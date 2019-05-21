@@ -3,14 +3,14 @@
     <head>
         <meta charset="utf-8">
         <!--Importando Ícone da Google Font-->
-         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+         <link href="css/icon.css" rel="stylesheet">
         <!--Importando materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <!--Importando CSS Personalizado-->
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <!--"Mostrando" ao navegador que a página é optimizada para dispostivos mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title> BuilderMind</title>
+        <title> Cadastro Aurora </title>
 
     </head>
     <body>
@@ -111,7 +111,7 @@
                 <div class="row">
                     <div class="col s12 m12">
                         <div class="input-field col s12 m12 center-align">
-                            <button class="btn waves-effect waves-light btn-large orange darken-4" type="submit" name="action">CADASTRAR</button> <!--Botão Cadastrar--> 
+                            <button class="btn waves-effect waves-light btn-large orange darken-2" type="submit" name="action">CADASTRAR</button> <!--Botão Cadastrar--> 
                         </div>
                     </div>
                 </div>
@@ -119,7 +119,7 @@
                 
             <div class="row">
                 <div class="col s12 m12 center-align">
-                    <h5>Já é cadastrado? Clique <a href="login.php">aqui</a>!</h5>
+                    <h6>Já é cadastrado? Clique <a href="login.php">aqui</a>!</h6>
                 </div>
             </div>
          
