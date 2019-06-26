@@ -78,6 +78,12 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row center-align">
+                        <div class="col s12">
+                            <h6 class="red-text"> $SENHA_INCORRETA OU $EMAIL_NÃO_CADASTRADO </h6> 
+                        </div>
+                    </div>
                  </form>   
 
                     <div class="row">

@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="col s12 m12">
                         <div class="input-field col s12 m8 l6 offset-m2 offset-l3">
-                            <input id="user" type="text" name="nome" class="validate"> <!--Campo Nome-->
+                            <input id="user" type="text" name="nome" class="validate" required> <!--Campo Nome-->
                             <label for="user"> Nome </label>
                             <span class="helper-text" data-error="Insira seu nome" data-success=""></span>
                         </div>
@@ -47,7 +47,7 @@
                 <div class="row">
                     <div class="col s12 m12">
                         <div class="input-field col s12 m8 l6 offset-m2 offset-l3">
-                            <input id="user" type="email" name="email" class="validate"> <!--Campo Email-->
+                            <input id="user" type="email" name="email" class="validate" required> <!--Campo Email-->
                             <label for="user"> Email </label>
                             <span class="helper-text" data-error="Insira um email válido" data-success=""></span>
                         </div>
@@ -57,7 +57,7 @@
                 <div class="row">
                     <div class="col s12 m12">
                         <div class="input-field col s12 m8 l6 offset-m2 offset-l3">
-                            <input id="user" type="text" name="usernick" class="validate">
+                            <input id="user" type="text" name="usernick" class="validate" required>
                             <label for="user"> Nome de Usuário </label> <!--Campo Usuário-->
                             <span class="helper-text" data-error="Insira um nome de usuário válido" data-success=""></span>
                         </div>
@@ -66,15 +66,15 @@
 
                 <div class="row">
                     <div class="col s6 l3 offset-l2">
-                        <div class="input-field col s14 m9 l15 offset-m4 offset-l4">
-                            <input type="text" id="nasc" name="data_nascimento" class="datepicker"> <!--Campo Data de Nascimento-->
+                        <div class="input-field col s14 m9 l15 offset-m4 offset-l4" >
+                            <input type="text" id="nasc" name="data_nascimento" class="datepicker" required> <!--Campo Data de Nascimento-->
                             <label for="nasc"> Nascimento </label>
                         </div>
                     </div>
 
                     <div class="col s6 l3 offset-l2">
-                        <div class="input-field col s10 m8 offset-s2">
-                            <select name="sexo">
+                        <div class="input-field col s10 m8 offset-s2" >
+                            <select name="sexo" required>
                                 <optgroup label="Selecione:">
                                     <option value="homem">Masculino</option>
                                     <option value="mulher">Feminino</option>
@@ -87,8 +87,8 @@
 
                 <div class="row">
                     <div class="col s12 m12">
-                        <div class="input-field col s12 m8 l6 offset-m2 offset-l3">
-                            <input id="passuser" type="password" name="senha" class="validate">
+                        <div class="input-field col s12 m8 l6 offset-m2 offset-l3" >
+                            <input id="passuser" type="password" name="senha" class="validate" required>
                             <label for="passuser"> Senha </label> <!--Campo Senha-->
                         </div>
                     </div>
@@ -97,7 +97,7 @@
                 <div class="row">
                     <div class="col s12 m12">
                         <div class="input-field col s12 m8 l6 offset-m2 offset-l3">
-                            <input id="passuserconf" type="password" name="confsenha" class="validate">
+                            <input id="passuserconf" type="password" name="confsenha" class="validate" required>
                             <label for="passuserconf"> Confirmar Senha </label> <!--Campo Confirmar Senha-->
                         </div>
                     </div>

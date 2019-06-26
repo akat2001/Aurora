@@ -41,6 +41,25 @@ main {
     color: #121855 !important;
 }
 
+/*<------- AURORA FORUM ------->*/
+
+.user_forum {
+  margin-top: 5%;
+}
+
+.btn_forum {
+  margin-top: 5%;
+}
+
+.path_top{
+  margin-top: 5%;
+}
+
+/*<------- FIX PARA MATERIAL ICONS ------->*/
+
+.material-icons, .icon-text {
+  vertical-align: middle;
+}
 
 /*<------- QUERIES DA PÁGINA DE LOGIN ------->*/
 
