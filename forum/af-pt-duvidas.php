@@ -60,17 +60,6 @@
                                         <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE DISCUSSÕES-->
                 
                                     </tr>
-                                
-                                    <tr>
-                                        <td> <a class="" href="af-pt-duvidas-conteudo.php"> &nbsp; Conteúdo 2 </a> </td>
-                                        <td  class="center-align"> <span> 0 <span> </td>  
-                                        <td  class="center-align"> <span> 0 <span> </td>  
-                                    </tr>
-                                    <tr>
-                                        <td> <a class="" href="af-pt-duvidas-conteudo.php"> &nbsp; Conteúdo 3 </a> </td>
-                                        <td  class="center-align"> <span> 0 <span> </td> 
-                                        <td  class="center-align"> <span> 0 <span> </td>  
-                                    </tr>
                                 </tbody>
                             <table>
                         </div>

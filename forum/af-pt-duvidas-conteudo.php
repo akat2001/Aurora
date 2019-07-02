@@ -55,21 +55,10 @@
 
                                 <tbody>
                                     <tr>
-                                        <td> <a class="" href=""> &nbsp; Tópico </a></td> 
+                                        <td> <a class="" href="discussoes/000001/titulo-da-discussao.php"> &nbsp; Título da Discussão </a></td> 
                                         <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS-->
                                         <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE VISUALIZAÇÕES-->
                 
-                                    </tr>
-                                
-                                    <tr>
-                                        <td> <a class="" href=""> &nbsp; Tópico </a> </td>
-                                        <td  class="center-align"> <span> 0 <span> </td>  
-                                        <td  class="center-align"> <span> 0 <span> </td>  
-                                    </tr>
-                                    <tr>
-                                        <td> <a class="" href=""> &nbsp; Tópico </a> </td>
-                                        <td  class="center-align"> <span> 0 <span> </td> 
-                                        <td  class="center-align"> <span> 0 <span> </td>  
                                     </tr>
                                 </tbody>
                             <table>
