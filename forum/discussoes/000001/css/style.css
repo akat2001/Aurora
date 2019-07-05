@@ -13,13 +13,6 @@ nav{
   background-color: #6d4e7a !important;
 }  */
 
-/*GERAL*/
-
-.mt-5 {
-  margin-top: 5%;
-}
-
-
 /*<------- FORMULÁRIOS ------->*/
 
 /* Alterando cores dos inputs */
@@ -45,7 +38,7 @@ main {
 }
 
 .dropdown-content li > a, .dropdown-content li > span {
-    color: #6d4e7a !important;
+    color: #121855 !important;
 }
 
 /*<------- AURORA FORUM ------->*/
@@ -61,10 +54,6 @@ main {
 .path_top{
   margin-top: 5%;
 }
-
-/*<------- PERFIL ------->*/
-
-
 
 /*<------- FIX PARA MATERIAL ICONS ------->*/
 

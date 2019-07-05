@@ -77,10 +77,10 @@
                     <div class="col s6 l3 offset-l2">
                         <div class="input-field col s10 m8 offset-s2" >
                             <select id="sexo" name="sexo" required>
-                                <optgroup label="Selecione:">
-                                    <option value="outro">Prefiro não identificar</option>
+                                <optgroup label="Selecione:">            
                                     <option value="homem">Masculino</option>
                                     <option value="mulher">Feminino</option>
+                                    <option value="outro">Prefiro não identificar</option>
                                 </optgroup>     
                             </select>  
                             <label>Sexo</label>                    <!--Campo Sexo-->              
