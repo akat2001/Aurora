@@ -16,8 +16,8 @@
 	<body class="grey lighten-3">
 
 			<?php	
-				include 'nav_home.html';
-				?>
+				include 'nav_home.php';
+			?>
 	
 			<main>	
 
