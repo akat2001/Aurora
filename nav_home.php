@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html>
     <head>
+        <title> Aurora </title>
         <meta charset="utf-8">
         <!--Importando Ícone da Google Font-->
          <link href="css/icon.css" rel="stylesheet">
@@ -36,18 +38,18 @@
                     </div> 
 
                     <a href="#!user"><img class="circle" src="img/usericon.png"></a>
-                    <a href="#!name"><span class="white-text"> $User_Name  </span></a><br>
-                    <a href="#"><span class="white-text email">$Nome_Completo</span></a>
-                    <a href="#"><span class="white-text">Ranking: $PosicaoRanking º </span></a>
+                    <a href="#!name"><span class="white-text"> <?php echo $_SESSION['User_Name']; ?> </span></a><br>
+                    <a href="#"><span class="white-text email"><?php echo $_SESSION['Nome_Completo']; ?></span></a>
+                    <a href="#"><span class="white-text">Ranking: <?php //$_SESSION['PosicaoRanking']; ?>º </span></a>
                 </div>
             </li>
 
-            <li><a href="../home.php" class="waves-effect"><i class="material-icons">home</i>Início</a></li>
+            <li><a href="home.php" class="waves-effect"><i class="material-icons">home</i>Início</a></li>
             <li><a href="#!" class="waves-effect"><i class="material-icons">collections_bookmark</i>Disciplinas</a></li>
             <li><a href="#!" class="waves-effect"><i class="material-icons">create</i>Exercícios</a></li>
             <li><a href="#!" class="waves-effect"><i class="material-icons">star</i>Favoritos</a></li>
-            <li><a href="forum-index.php" class="waves-effect"><i class="material-icons">question_answer</i>Fórum</a></li>
-            <li><a href="../perfil.php" class="waves-effect"><i class="material-icons">
+            <li><a href="forum/forum-index.php" class="waves-effect"><i class="material-icons">question_answer</i>Fórum</a></li>
+            <li><a href="perfil.php" class="waves-effect"><i class="material-icons">
         account_box</i>Meu Perfil</a></li>
             <li><a href="index.php" class="waves-effect waves-light btn red">Sair</a></li>
         </ul>
