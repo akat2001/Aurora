@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start();
+if(!isset($_SESSION['pessoa']) && !isset($_SESSION['User_Name']) && !isset($_SESSION['Nome_Completo']))
+{
+    header("location: ../login.php");
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -50,7 +55,7 @@
             <li><a href="forum-index.php" class="waves-effect"><i class="material-icons blue-text">question_answer</i>Fórum</a></li>
             <li><a href="../perfil.php" class="waves-effect"><i class="material-icons brown-text">
         account_box</i>Meu Perfil</a></li>
-            <li><a href="../index.php" class="waves-effect waves-light btn red">Sair</a></li>
+            <li><a href="../sair.php" class="waves-effect waves-light btn red">Sair</a></li>
         </ul>
 
         <!--Vinculando JavaScript no final da página para ganho de performance-->

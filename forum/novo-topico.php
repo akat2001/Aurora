@@ -17,7 +17,8 @@
 	<body>
 
 			<?php	
-				include 'nav_home.php';
+                include 'nav_home.php';
+                include_once "../DAL/Class_conexao_DAL.php";
 			?>
 	
 			<main>	
@@ -33,30 +34,45 @@
                             </div>
                         </div>
 
-                        <form name="#" action="#" method="#">
+                        <form name="novo_topico" action="../DAL/Forum/Class_novo_topico_DAL.php" method="POST">
 
                             <div class="row">
                                 <div class="input-field col s12 m6 l6">
-                                    <select id="#" name="#" required> <!--Campo da disciplina correspondente--> 
+                                    <select id="#" name="disciplina" required> <!--Campo da disciplina correspondente--> 
                                         <optgroup label="Selecione:">            
-                                            <option value="">Português</option>
-                                            <option value="">Matemática</option>
+                                        <!-- pega as materias no banco e coloca na caixa de seleção -->
+                                            <?php                                                                             
+                                                $sql = "SELECT * FROM  TB_materias";
+                                                $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
+                                                // executa a query
+                                                $dados = mysqli_query($conexao, $sql);
+                                                // transforma os dados em um array
+                                                $linha = mysqli_fetch_assoc($dados);
+                                                // calcula quantos dados retornaram
+                                                $total = mysqli_num_rows($dados);
+                                                do
+                                                {
+                                            ?>
+                                                <option value="<?php echo $linha["cod_materia"]; ?>"> <?php echo $linha["Nome"]; ?> </option>
+                                            <?php
+                                                }while($linha = mysqli_fetch_assoc($dados));// finaliza o loop que vai mostrar os dados                                             
+                                            ?>
                                         </optgroup>     
                                     </select>  
                                     <label>Disciplina</label>              
                                 </div>
                                 <div class="input-field col s12 m6 l6">
-                                    <select id="#" name="#" required> <!--Campo da Categoria--> 
+                                    <select id="#" name="categoria" required> <!--Campo da Categoria--> 
                                         <optgroup label="Selecione:">            
-                                            <option value="">Dúvidas</option>
-                                            <option value="">Lição de Casa</option>
-                                            <option value="">Mapas Mentais</option>
+                                            <option value="duvida">Dúvidas</option>
+                                            <option value="licao">Lição de Casa</option>
+                                            <option value="mapas">Mapas Mentais</option>
                                         </optgroup>     
                                     </select>  
                                     <label>Categoria</label>              
                                 </div>
                                 <div class="input-field col s12 m6 l6">
-                                    <select id="#" name="#" required> <!--Campo do Conteúdo se Disciplina for PORTUGUÊS, só pode aparecer se a disciplina for selecionada--> 
+                                    <select id="#" name="conteudo" required> <!--Campo do Conteúdo se Disciplina for PORTUGUÊS, só pode aparecer se a disciplina for selecionada--> 
                                         <optgroup label="Selecione:">            
                                             <option value="">Gramática</option>
                                             <option value="">Literatura</option>
@@ -87,7 +103,7 @@
 
                             <div class="row">
                                     <div class="input-field col s12 m12 l12">
-                                        <textarea id="mensagem" class="materialize-textarea" placeholder="Digite sua mensagem aqui...
+                                        <textarea id="mensagem" name="mensagem" class="materialize-textarea" placeholder="Digite sua mensagem aqui...
                                         " rows=10></textarea>
                                     </div>
                                     <!--Conteúdo da Discussão-->

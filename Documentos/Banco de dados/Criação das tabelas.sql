@@ -40,7 +40,6 @@ Nome varchar(50)
 CREATE TABLE TB_Conteudos 
 (
 cod_conteudo int PRIMARY KEY auto_increment,
-pfd varchar(300),
 tema varchar(50),
 materia int,
 FOREIGN KEY(materia) REFERENCES TB_Materias (cod_materia)
@@ -60,12 +59,14 @@ FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user)
 CREATE TABLE TB_Perguntas_forum 
 (
 cod_pergunta int PRIMARY KEY auto_increment,
-tema varchar(100),
+titulo varchar(100),
 pergunta varchar(1000),
-imagem varchar(300),
 usuario int,
-materia int,
-FOREIGN KEY(materia) REFERENCES TB_Materias (cod_materia),
+disciplina int,
+conteudo int,
+categoria varchar(50),
+FOREIGN KEY (conteudo) REFERENCES TB_Conteudos (cod_conteudo),
+FOREIGN KEY(disciplina) REFERENCES TB_Materias (cod_materia),
 FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user)
 );
 
@@ -120,3 +121,12 @@ tema varchar(50),
 questao int,
 FOREIGN KEY(questao) REFERENCES TB_Questoes  (cod_pergunta)
 );
+
+INSERT INTO `db_aurora`.`TB_materias` (`Nome`) VALUES ('Português');
+INSERT INTO `db_aurora`.`TB_materias` (`Nome`) VALUES ('Matemática');
+
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Gramática', '1');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Literatura', '1');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Redação', '1');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Álgebra', '2');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Geometria Plana', '2');

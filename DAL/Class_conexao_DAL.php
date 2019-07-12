@@ -7,8 +7,18 @@
         $user = "root";
         $password = "";
         $database = "DB_Aurora";
+
         //execeuta conexao
         $conexao = mysqli_connect($host, $user, $password, $database);
+        $sql = 'SET NAMES "utf8"';
+        mysqli_query($conexao, $sql);
+        $sql = 'SET character_set_connection=utf8';
+        mysqli_query($conexao, $sql);
+        $sql = 'SET character_set_client=utf8';
+        mysqli_query($conexao, $sql);
+        $sql = 'SET character_set_results=utf8';
+        mysqli_query($conexao, $sql);       
+
         if(mysqli_connect_errno ($conexao))
         {
             //se der erro 
@@ -42,8 +52,7 @@
         $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
         if ( mysqli_query ( $conexao, $query )) 
 		{
-			$resultado = "Registros adicionados com sucesso." ;
-			//header ("location: entrar.php");
+			$resultado = "Registros adicionados com sucesso.";
 		} 
 		else
 		{
