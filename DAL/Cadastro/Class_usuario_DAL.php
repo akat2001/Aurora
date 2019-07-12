@@ -1,6 +1,8 @@
 <?php
 //Incluir a conexão com banco de dados
-include_once 'conexao.php';
+include_once '../Class_conexao_DAL.php';
+
+$conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3
 
 $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
 
@@ -10,5 +12,5 @@ $resultado_user = mysqli_query($conexao, $result_user);
 
 if(($resultado_user) AND ($resultado_user->num_rows != 0 ))
 {
-	echo "user em utilização";
+	echo "User em utilização!";
 }

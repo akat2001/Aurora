@@ -12,6 +12,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <!--Inserindo script de Validação-->
         <script src="BLL/ValidarC.js"></script>
+        <!-- javascript do google -->           
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+        <!-- Verificação de usuario e email já cadastrados -->
+        <script type="text/javascript" src="Validar_Usuario_Email.js"></script>
         
         <title> Cadastro Aurora </title>
 
@@ -129,11 +133,6 @@
             </div>
          
         </div>
-
-        <!-- Verificação de usuario e email já cadastrados -->           
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-        <script type="text/javascript" src="Validar_Usuario.js"></script>
-        <script type="text/javascript" src="Validar_Email.js"></script>
 
         <!--Vinculando JavaScript no final da página para ganho de performance-->
         <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>

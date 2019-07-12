@@ -18,7 +18,7 @@ function ValidC(){
                 Retorno.innerText = "Campo usuário vazio!";
                 return false;
             }
-                        var Sexo = document.getElementById("sexo").value;
+            var Sexo = document.getElementById("sexo").value;
             if(Sexo == ""){
                 var Retorno = document.getElementById("Retorno");
                 Retorno.innerText = "Campo sexo vazio!";
