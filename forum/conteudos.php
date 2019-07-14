@@ -18,7 +18,9 @@
 	<body>
 
 			<?php	
-				include 'nav_home.php';
+                include 'nav_home.php';
+                $tipo = $_GET['tipo'];
+                $disc = $_GET['disc'];
 			?>
 	
 			<main>	
@@ -29,7 +31,7 @@
                         <div class="row">
                             <div class="col s12">
                                 <div class="row path_top">
-                                    <span><i class="small material-icons"><a class="black-text" href="forum-index.php">home</a></i> &nbsp; > <a href="af-categorias-pt.php"> Português </a> > <a href="af-pt-duvidas.php"> Dúvidas </a> </span>
+                                    <span><i class="small material-icons"><a class="black-text" href="forum-index.php">home</a></i> &nbsp; > <a href="categorias.php?disc=<?php echo $disc;?>"> <?php echo $disc; ?> </a> > <a href="conteudos.php?disc=<?php echo $disc;?>&tipo=<?php echo $tipo;?>"> <?php echo $tipo; ?> </a> </a> </span>
                                 </div>
                            
                                 <div class="input-field col s12">
@@ -49,24 +51,36 @@
                                         <!--<th class="center-align"> Post Recente </th> -->
                                     </tr>  
                                 </thead>
-                              
-                                    
-                                
+                                                                  
+                                <?php
+                                    //Incluir a conexão com banco de dados
+                                    include_once '../DAL/Class_conexao_DAL.php';
 
-                                <tbody>
-                                    <tr>
-                                        <td> <a class="" href="af-pt-duvidas-conteudo.php"> &nbsp; Conteúdo 1 </a></td> 
-                                        <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS-->
-                                        <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE DISCUSSÕES-->
-                
-                                    </tr>
-                                </tbody>
+                                    $conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3    
+
+                                        $sql = "SELECT C.cod_conteudo, C.tema FROM TB_conteudos AS C, TB_materias AS D WHERE D.Nome = '$disc' AND C.materia = D.cod_materia";
+                                        // executa a query
+                                        $dados = mysqli_query($conexao, $sql);
+                                        // transforma os dados em um array
+
+                                        while ($linha = mysqli_fetch_assoc($dados) ) 
+                                        {
+                                        echo '<tbody>
+                                            <tr>
+                                            <td> <a class="" href="topicos.php?disc='.$disc.'&tipo='.$tipo.'&cont='.$linha['tema'].'"> &nbsp; '.$linha['tema'].' </a></td> 
+                                            <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS-->
+                                            <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE DISCUSSÕES-->
+                                            </tr>
+                                        </tbody>';
+                                        }                                    
+                                ?>
+                        
                             <table>
                         </div>
 
                         <div class="row center-align">
                             <div class="col s12">
-                                <a href="#" class="btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"> create </i> Novo Tópico</a></li>
+                                <a href="novo-topico.php" class="btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"> create </i> Novo Tópico</a></li>
                             </div>
                         </div>
                     </div>

@@ -1,3 +1,7 @@
+-- se precisar apagar o banco so descomentar a linha debaixo
+-- DROP DATABASE DB_Aurora;
+
+-- cria o banco
 CREATE DATABASE DB_Aurora;
 
 USE DB_Aurora;
@@ -34,7 +38,9 @@ FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user)
 CREATE TABLE TB_Materias 
 (
 cod_materia int PRIMARY KEY auto_increment,
-Nome varchar(50)
+Nome varchar(50),
+imagem varchar(100),
+cor varchar(50)
 );
 
 CREATE TABLE TB_Conteudos 
@@ -121,10 +127,11 @@ tema varchar(50),
 questao int,
 FOREIGN KEY(questao) REFERENCES TB_Questoes  (cod_pergunta)
 );
+-- adiciona as materias, imagem é o icone que aparece na frente e cor e a cor dele
+INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`) VALUES ('Português', 'spellcheck', 'green');
+INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`) VALUES ('Matemática', 'add', 'red');
 
-INSERT INTO `db_aurora`.`TB_materias` (`Nome`) VALUES ('Português');
-INSERT INTO `db_aurora`.`TB_materias` (`Nome`) VALUES ('Matemática');
-
+-- adiciona os conteudos 1 e pt e 2 e mat
 INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Gramática', '1');
 INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Literatura', '1');
 INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Redação', '1');

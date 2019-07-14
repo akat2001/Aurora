@@ -17,7 +17,8 @@
 	<body>
 
 			<?php	
-				include 'nav_home.php';
+                include 'nav_home.php';
+                $disc = $_GET['disc'];
 			?>
 	
 			<main>	
@@ -28,7 +29,7 @@
                         <div class="row">
                             <div class="col s12">
                                 <div class="row path_top">
-                                    <span><i class="small material-icons"><a class="black-text" href="forum-index.php">home</a></i> &nbsp; > <a href="af-categorias-pt.php"> Português </a> </span>
+                                <span><i class="small material-icons"><a class="black-text" href="forum-index.php">home</a></i> &nbsp; > <a href="categorias.php?disc=<?php echo $disc;?>"> <?php echo $disc; ?> </a></a> </span>
                                 </div>
                            
                                 <div class="input-field col s12">
@@ -54,14 +55,14 @@
 
                                 <tbody>
                                     <tr>
-                                        <td> <a class="" href="af-pt-duvidas.php"> &nbsp; Dúvidas </a></td> 
+                                        <td> <a class="" href="conteudos.php?disc=<?php echo $disc; ?>&tipo=Dúvidas"> &nbsp; Dúvidas </a></td> 
                                         <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS dúvidas-->
                                         <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE DISCUSSÕES dúvidas-->
                 
                                     </tr>
                                 
                                     <tr>
-                                        <td> <a class="" href=""> &nbsp; Lição de Casa </a> </td>
+                                        <td> <a class="" href="conteudos.php?disc=<?php echo $disc; ?>&tipo=Lição de Casa"> &nbsp; Lição de Casa </a> </td>
                                         <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS Lição de Casa-->
                                         <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE DISCUSSÕES Lição de Casa-->
                                     </tr>
@@ -76,7 +77,7 @@
 
                         <div class="row center-align">
                             <div class="col s12">
-                                <a href="#" class="btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"> create </i> Novo Tópico</a></li>
+                                <a href="novo-topico.php" class="btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"> create </i> Novo Tópico</a></li>
                             </div>
                         </div>
                     </div>

@@ -17,7 +17,8 @@
 	<body onload=Materialize.toast>
 
 			<?php	
-                include 'nav_home.php';                
+                include 'nav_home.php';          
+                include '../DAL/Class_conexao_DAL.php';      
 			?>
 	
 			<main>	
@@ -49,24 +50,11 @@
                                         <th> Disciplinas </th>
                                     </tr> 
                                 </thead>
-                              
-                                    
+                                                                 
                                 
 
                                 <tbody>
-                                    <tr>
-                                        <td> <i class="green-text material-icons"> spellcheck </i> <a class="" href="af-categorias-pt.php"> Português </a></td>
-                                        <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS PORTUGUÊS-->
-                                        <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE DISCUSSÕES PORTUGUÊS-->
-                                        <!--<td  class="center-align"> <span> $nome_post (link) <span> </td>  POST RECENTE PORTUGUÊS-->
-                                    </tr>
-                                
-                                    <tr>
-                                        <td> <i class="red-text material-icons"> add </i> <a class="" href="forum_disciplina_mat.php"> Matemática </a> </td>
-                                        <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS MATEMÁTICA-->
-                                        <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE DISCUSSÕES MATEMÁTICA-->
-                                        <!--<td  class="center-align"> <span> $nome_post (link) <span> </td>  POST RECENTE MATEMÁTICA-->
-                                    </tr>
+                                <?php include_once "../DAL/forum/Class_mostrar_diciplinas_FI_DAL.php"; ?>                                    
                                 </tbody>
                             <table>
                         
