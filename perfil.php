@@ -10,7 +10,9 @@
         <!--Importando CSS Personalizado-->
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <!--"Mostrando" ao navegador que a página é optimizada para dispostivos mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <!--Importando arquivo JS para algumas funções -->
+        <script src="BLL/Editar.js"></script>
 		
     </head>
 	
@@ -30,24 +32,24 @@
                     </div>
 
                     <div class="row center-align mt-5">
-                        <div class="col s12 m7"> <!-- IMAGEM DO USUÁRIO - pode ser editada de o usuário clicar sobre o link ou no botão e tem de ser recortada para 512x512 px-->
-                            <div class="col s6 offset-s3"><a href="#"><img class="hoverable responsive-img user-img" id="#" src="img/usericon.png"></a></div> <br>
+                        <div class="col s12 m7"> <!-- IMAGEM DO USUÁRIO - pode ser editada se o usuário clicar sobre o link ou no botão e tem de ser recortada para 512x512 px-->
+                            <div class="col s6 offset-s3"><a href="#"><img class="hoverable responsive-img user-img" id="img_perfil" src="img/usericon.png"></a></div> <br>
                               <a href="#" class="hide-on-large-only	btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"></i> Alterar Imagem </a></li><!--Foto de Perfil do usuário-->
                         </div>
                         
                         <div class="input-field col s12 m4 mt-2">
-                            <input id="name" type="text" placeholder="$nomedousuario" name="nome" class="validate"><!--Campo Nome do Usuário-->
+                            <input id="name" type="text" name="nome" class="validate" input name="texto" type="text" size="10" maxlength="10" value ="<?php echo $_SESSION['Nome_Completo']; ?>" disabled><!--Campo Nome do Usuário-->
                             <label for="name"> Nome </label>
                         </div>
 
                         <div class="input-field col s12 m4">
-                            <input id="email" type="email" placeholder="$email" name="email" class="validate"> <!--Campo email-->
+                            <input id="email" type="email" name="email" class="validate" value="<?php echo $_SESSION['Email']; ?>" disabled> <!--Campo email-->
                             <label for="email"> Email </label>
                             <span class="helper-text" data-error="" data-success=""></span>
                         </div>
 
                         <div class="input-field col s12 m4">
-                            <input id="passuser" type="password" placeholder="*******" name="senha" class="validate" required>
+                            <input id="passuser" type="password" name="senha" class="validate" required value="<?php echo $_SESSION['Senha']; ?>" disabled>
                             <label for="passuser"> Senha </label> <!--Campo Senha-->
                         </div>
                     </div>
@@ -55,7 +57,7 @@
                     <div class="row center-align">
                         <div class="col s12 m12">
 
-                            <a href="#" class="btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"> create </i> Editar </a></li>
+                            <button id="btnEditar" class="btn_forum waves-effect waves-light btn orange darken-2" onclick="FunEdit()"> <i class="white-text material-icons"> create </i> Editar </li>
 
                                 <!--Os botões abaixo só aparecem se o usuário clicar no botão "Editar"
 
@@ -65,9 +67,9 @@
                                 -->
 
                             &nbsp;
-                            <a href="#" class="btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"> save </i> Salvar </a></li>
+                            <button id="btnSalvar" class="btn_forum waves-effect waves-light btn orange darken-2" disabled> <i class="white-text material-icons" >  save </i> Salvar </li> 
                             &nbsp; 
-                            <a href="#" class="btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"> </i> Cancelar </a></li>
+                            <button id="btnCancelar" class="btn_forum waves-effect waves-light btn orange darken-2"  disabled onclick ="FunCan()"> <i class="white-text material-icons"> </i> Cancelar </li>
                             
                         </div>
 
