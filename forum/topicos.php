@@ -59,7 +59,7 @@
 
                                     $conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3    
 
-                                        $sql = "SELECT PF.cod_pergunta, PF.titulo FROM TB_conteudos AS C, TB_Perguntas_forum AS PF WHERE C.tema = '$cont' AND C.cod_conteudo = PF.conteudo";                                        // executa a query
+                                        $sql = "SELECT PF.cod_pergunta, PF.titulo FROM TB_conteudos AS C, TB_Perguntas_forum AS PF WHERE C.tema = '$cont' AND C.cod_conteudo = PF.conteudo  AND PF.categoria = '$tipo'";                                        // executa a query
                                         $dados = mysqli_query($conexao, $sql);
                                         // transforma os dados em um array
 

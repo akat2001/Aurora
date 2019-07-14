@@ -47,8 +47,8 @@
                                 <div class="input-field col s12 m6 l6">
                                     <select id="#" name="categoria" required> <!--Campo da Categoria--> 
                                         <optgroup label="Selecione:">            
-                                            <option value="duvida">Dúvidas</option>
-                                            <option value="licao">Lição de Casa</option>
+                                            <option value="Dúvidas">Dúvidas</option>
+                                            <option value="Lição de Casa">Lição de Casa</option>
                                             <option value="mapas">Mapas Mentais</option>
                                         </optgroup>     
                                     </select>  
