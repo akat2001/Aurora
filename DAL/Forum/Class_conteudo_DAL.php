@@ -15,7 +15,7 @@ $id_conteudo = $_REQUEST['id_conteudo'];
     {
 		  $conteudo[] = array(
 			'cod_conteudo'	=> $linha ['cod_conteudo'],
-			'tema' => utf8_encode($linha ['tema']),
+			'tema' => ($linha ['tema']),
 		);
 	  }
   Func_fechaconexao_DAL($conexao);
