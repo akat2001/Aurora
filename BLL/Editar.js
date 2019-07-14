@@ -2,13 +2,17 @@ function FunEdit(){
 
     document.getElementById('btnSalvar').disabled = 0;
     document.getElementById('btnCancelar').disabled = 0;
-    document.getElementById('btnEditar').disabled = 1;
+    var btneditar = document.getElementById('btnEditar');
+    btneditar.classList.add("hide");
+    var btnsalvar = document.getElementById('btnSalvar');
+    btnsalvar.classList.remove("hide");
+    var btncancel = document.getElementById('btnCancelar');
+    btncancel.classList.remove("hide");
 
     document.getElementById('name').disabled = 0;
     document.getElementById('email').disabled = 0;
     document.getElementById('passuser').disabled = 0;
 
-    //alert("fala cuzão");
 }
 
 function FunCan(){
@@ -16,6 +20,13 @@ function FunCan(){
     document.getElementById('btnSalvar').disabled = 1;
     document.getElementById('btnCancelar').disabled = 1;
     document.getElementById('btnEditar').disabled = 0;
+
+    var btneditar = document.getElementById('btnEditar');
+    btneditar.classList.remove("hide");
+    var btnsalvar = document.getElementById('btnSalvar');
+    btnsalvar.classList.add("hide");
+    var btncancel = document.getElementById('btnCancelar');
+    btncancel.classList.add("hide");
 
     document.getElementById('name').disabled = 1;
     document.getElementById('email').disabled = 1;

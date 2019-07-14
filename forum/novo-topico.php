@@ -57,7 +57,7 @@
                                 <div class="input-field col s12 m6 l6">
                                     <select id="id_disciplina" name="disciplina" required> <!--Campo da disciplina correspondente--> 
                                         <optgroup label="Selecione:">            
-                                            <!-- pega as materias no banco e coloca na caixa de seleção -->
+                                            <!-- pega as matérias no banco e coloca na caixa de seleção -->
                                             <?php include "../DAL/Forum/Class_disciplina_DAL.php"; ?>
                                         </optgroup>     
                                     </select>  
@@ -65,12 +65,12 @@
                                 </div>
 
                                 <span class="carregando">Aguarde, carregando...</span>
-                                <!-- mosta os conteudos referentes a disciplina selecionada, ou pelo menos e o que deveria fazer -->
+                                <!-- mostra os conteudos referentes a disciplina selecionada, ou pelo menos e o que deveria fazer -->
                                 <div class="input-field col s12 m6 l6">
                                     <select id="id_conteudo" name="conteudo" required> <!--Campo do Conteúdo se Disciplina for PORTUGUÊS, só pode aparecer se a disciplina for selecionada--> 
                                          
                                     </select>  
-                                    <label>conteudo</label>    
+                                    <label>Conteúdo</label>    
                                 </div>
 
                             </div>
@@ -114,7 +114,7 @@
 					$('#id_conteudo').hide();
 					$('.carregando').show();
 				        $.getJSON('../DAL/forum/Class_conteudo_DAL.php?search=',{id_conteudo: $(this).val(), ajax: 'true'}, function(j){
-						var options = ' <optgroup label="Selecione:">S';	
+						var options = ' <optgroup label="Selecione:">';	
 						for (var i = 0; i < j.length; i++) {
 							options += '<option value="' + j[i].cod_conteudo + '">' + j[i].tema + '</option>';
 						}	

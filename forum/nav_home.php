@@ -1,12 +1,15 @@
-<?php session_start();
+<?php 
+session_start();
 if(!isset($_SESSION['pessoa']) && !isset($_SESSION['User_Name']) && !isset($_SESSION['Nome_Completo']))
 {
     header("location: ../login.php");
 }
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
+        <title> Aurora </title>
         <meta charset="utf-8">
         <!--Importando Ícone da Google Font-->
          <link href="css/icon.css" rel="stylesheet">
@@ -26,7 +29,7 @@ if(!isset($_SESSION['pessoa']) && !isset($_SESSION['User_Name']) && !isset($_SES
             <div class="navbar-fixed">
                 <nav class="white">
                     <div class="nav-wrapper fixed container white">
-                        <a href="#" class="brand-logo center"> <img class="responsive-img" src="img/AuroraLogo1.png"></a>
+                        <a href="../home.php" class="brand-logo center"> <img class="responsive-img" src="img/AuroraLogo1.png"></a>
                         <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons black-text">menu</i></a> 
                         <a href="#!" class="right"><i class="material-icons grey-text">notifications</i></a></li>		  
                     </div>
@@ -48,12 +51,12 @@ if(!isset($_SESSION['pessoa']) && !isset($_SESSION['User_Name']) && !isset($_SES
                 </div>
             </li>
 
-            <li><a href="../home.php" class="waves-effect"><i class="material-icons green-text">home</i>Início</a></li>
-            <li><a href="../disciplinas.php" class="waves-effect"><i class="material-icons purple-text">collections_bookmark</i>Disciplinas</a></li>
-            <li><a href="../exercicios.php" class="waves-effect"><i class="material-icons yellow-text">create</i>Exercícios</a></li>
-            <li><a href="#!" class="disabled"><i class="material-icons red-text">star</i>Favoritos</a></li>
-            <li><a href="forum-index.php" class="waves-effect"><i class="material-icons blue-text">question_answer</i>Fórum</a></li>
-            <li><a href="../perfil.php" class="waves-effect"><i class="material-icons brown-text">
+            <li><a href="../home.php" class="waves-effect"><i class="material-icons black-text">home</i>Início</a></li>
+            <li><a href="../disciplinas.php" class="waves-effect"><i class="material-icons black-text">collections_bookmark</i>Disciplinas</a></li>
+            <li><a href="../exercicios.php" class="waves-effect"><i class="material-icons black-text">create</i>Exercícios</a></li>
+            <li><a href="#!" class="disabled"><i class="material-icons black-text">star</i>Favoritos</a></li>
+            <li><a href="../forum/forum-index.php" class="waves-effect"><i class="material-icons black-text">question_answer</i>Fórum</a></li>
+            <li><a href="../perfil.php" class="waves-effect"><i class="material-icons black-text">
         account_box</i>Meu Perfil</a></li>
             <li><a href="../sair.php" class="waves-effect waves-light btn red">Sair</a></li>
         </ul>

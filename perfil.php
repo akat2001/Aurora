@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +11,6 @@
         <!--"Mostrando" ao navegador que a página é optimizada para dispostivos mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
         <!--Importando arquivo JS para algumas funções -->
-        <script src="BLL/Editar.js"></script>
 		
     </head>
 	
@@ -32,9 +30,9 @@
                     </div>
 
                     <div class="row center-align mt-5">
-                        <div class="col s12 m7"> <!-- IMAGEM DO USUÁRIO - pode ser editada se o usuário clicar sobre o link ou no botão e tem de ser recortada para 512x512 px-->
+                        <div class="col s12 m7"> <!-- IMAGEM DO USUÁRIO - pode ser editada se o usuário clicar sobre a imagem (link) e deverá ser cortada para 512x512 px-->
                             <div class="col s6 offset-s3"><a href="#"><img class="hoverable responsive-img user-img" id="img_perfil" src="img/usericon.png"></a></div> <br>
-                              <a href="#" class="hide-on-large-only	btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"></i> Alterar Imagem </a></li><!--Foto de Perfil do usuário-->
+                             <!-- <a href="#" class="hide-on-large-only	btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"></i> Alterar Imagem </a></li> Foto de Perfil do usuário-->
                         </div>
                         
                         <div class="input-field col s12 m4 mt-2">
@@ -57,7 +55,7 @@
                     <div class="row center-align">
                         <div class="col s12 m12">
 
-                            <button id="btnEditar" class="btn_forum waves-effect waves-light btn orange darken-2" onclick="FunEdit()"> <i class="white-text material-icons"> create </i> Editar </li>
+                            <button id="btnEditar" class="waves-effect waves-light btn orange darken-2" onclick="FunEdit()"> <i class="white-text material-icons"> create </i> Editar </li> &nbsp;
 
                                 <!--Os botões abaixo só aparecem se o usuário clicar no botão "Editar"
 
@@ -66,10 +64,9 @@
 
                                 -->
 
-                            &nbsp;
-                            <button id="btnSalvar" class="btn_forum waves-effect waves-light btn orange darken-2" disabled> <i class="white-text material-icons" >  save </i> Salvar </li> 
-                            &nbsp; 
-                            <button id="btnCancelar" class="btn_forum waves-effect waves-light btn orange darken-2"  disabled onclick ="FunCan()"> <i class="white-text material-icons"> </i> Cancelar </li>
+                            <button id="btnSalvar" class="waves-effect waves-light btn orange darken-2 hide" disabled> <i class="white-text material-icons" >  save </i> Salvar </li> </button>
+
+                            <button id="btnCancelar" class="waves-effect waves-light btn orange darken-2 hide"  disabled onclick ="FunCan()"> <i class="white-text material-icons"> </i> Cancelar </li> </button>
                             
                         </div>
 
@@ -89,6 +86,7 @@
             var $toastContent = $('<span><i class="small material-icons">error_outline</i> &nbsp; Clique na imagem para alterá-la!</span>');
             Materialize.toast($toastContent, 10000);
         </script>
+        <script src="BLL/Editar.js"></script>
 		 
 		
 	
