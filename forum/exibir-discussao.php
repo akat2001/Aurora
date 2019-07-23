@@ -56,7 +56,7 @@
                                         <div class="col s6">
                                             <div class="row mt-5">
                                                 <h5> $User_Name </h5>
-                                                <h6> $Data_da_postagem </h6>
+                                                <h6> $Data_da_postagem  &nbsp; <a class='dropdown-button' href='#' data-activates='dropdown'><i class="material-icons black-text">more_vert</i></a> </h6> <!-- DROPDOWN PARA OPÇÕES DA RESPOSTA -->
                                                 <h6> $tipo </h6> <!--Se é aluno ou tutor-->
                                             </div>
                                         </div>
@@ -85,7 +85,7 @@
                                         <div class="col s8">
                                             <div class="row mt-5">
                                                 <h5> $User_Name </h5>
-                                                <h6> $Data_da_postagem </h6> &nbsp; <a class='dropdown-button' href='#' data-activates='dropdown1'><i class="material-icons black-text">more_vert</i></a>
+                                                <h6> $Data_da_postagem  &nbsp; <a class='dropdown-button' href='#' data-activates='dropdown'><i class="material-icons black-text">more_vert</i></a> </h6> <!-- DROPDOWN PARA OPÇÕES DA RESPOSTA -->
                                                 <h6> $tipo </h6>
                                             </div>
                                         </div>
@@ -123,11 +123,25 @@
 				</section>
             </main>
 
-            <ul id='dropdown1' class='dropdown-content'>
+            <ul id='dropdown' class='dropdown-content'>
                 <li><a href="#!">Editar</a></li> <!--Somente o criador da resposta consegue editar ou um tutor-->
                 <li><a href="#!">Apagar</a></li> <!--Somente o criador da resposta consegue apagar ou um tutor-->
                 <li><a href="#!">Verificar</a></li> <!--Somente um tutor pode verificar-->
             </ul> 
+
+            <script>
+                $('.dropdown-button').dropdown({
+                    inDuration: 300,
+                    outDuration: 225,
+                    constrainWidth: false, // Does not change width of dropdown to that of the activator
+                    gutter: 0, // Spacing from edge
+                    belowOrigin: true, // Displays dropdown below the button
+                    alignment: 'left', // Displays dropdown with edge aligned to the left of button
+                    stopPropagation: false // Stops event propagation
+                    }
+                 );
+        
+            </script>
         
 	
 	</body>
