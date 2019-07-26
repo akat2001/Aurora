@@ -67,7 +67,7 @@
                                         {
                                             echo '<tbody>
                                                 <tr>
-                                                    <td> <a class="" href=""> &nbsp; '.$linha['titulo'].' </a></td> 
+                                                    <td> <a class="" href="exibir-discussao.php?disc='.$linha['cod_pergunta'].'"> &nbsp; '.$linha['titulo'].' </a></td> 
                                                     <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS-->
                                                     <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE VISUALIZAÇÕES-->
                             

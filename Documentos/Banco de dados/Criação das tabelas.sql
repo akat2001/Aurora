@@ -67,6 +67,7 @@ CREATE TABLE TB_Perguntas_forum
 cod_pergunta int PRIMARY KEY auto_increment,
 titulo varchar(100),
 pergunta varchar(1000),
+datap varchar(30),
 usuario int,
 disciplina int,
 conteudo int,
@@ -80,6 +81,8 @@ CREATE TABLE TB_Respostas_forum
 (
 cod_resposta int PRIMARY KEY auto_increment,
 resposta varchar(1000),
+verificada int,
+datap varchar(30),
 usuario int,
 pergunta int,
 FOREIGN KEY(pergunta) REFERENCES TB_Perguntas_forum (cod_pergunta),
