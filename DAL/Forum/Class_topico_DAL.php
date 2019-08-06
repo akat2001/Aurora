@@ -5,6 +5,8 @@
         if ((!empty($objeto)) && (!empty($objeto['disciplina'])) && (!empty($objeto['categoria'])) && (!empty($objeto['conteudo'])) && (!empty($objeto['titulo'])) && (!empty($objeto['mensagem'])) && (!empty($objeto['pessoa'])) )
         {//2
             //tranfere os valores do array para variaveis
+            date_default_timezone_set('America/Sao_Paulo');
+            $data = date('d/m/Y \à\s H:i:s');
             $disciplina = $objeto['disciplina'];
             $categoria = $objeto['categoria'];
             $conteudo = $objeto['conteudo'];
@@ -13,7 +15,7 @@
             $usuario = $objeto['pessoa'];
             
                 //cria a querry inserir os dados da pessoa
-                $sql = "INSERT INTO TB_Perguntas_forum (titulo, pergunta, usuario, disciplina, conteudo, categoria) VALUES ('$titulo', '$mensagem', '$usuario', '$disciplina', '$conteudo', '$categoria')"; 
+                $sql = "INSERT INTO TB_Perguntas_forum (titulo, pergunta, usuario, disciplina, conteudo, categoria, datap) VALUES ('$titulo', '$mensagem', '$usuario', '$disciplina', '$conteudo', '$categoria', '$data')"; 
 
                 //chama função que vai conectar ao banco e executar a query de insert 
                 $resultado = Func_executeinsert_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 40

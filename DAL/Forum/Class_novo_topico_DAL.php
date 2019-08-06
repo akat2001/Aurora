@@ -19,7 +19,7 @@
 
     if($result == "Mensagem postada com sucesso!")
     {
-        //direcionar para algum lugar depois 
+        header("location: ../../forum/forum-index.php");
         echo $result;
     }
     elseif($result == "Campo Vazio!")

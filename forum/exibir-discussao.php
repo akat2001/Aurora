@@ -25,7 +25,7 @@
 
                 $conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3    
 
-                    $sql = "SELECT titulo, pergunta FROM TB_Perguntas_forum WHERE cod_pergunta = '$disc'";                                        // executa a query
+                    $sql = "SELECT PF.titulo, PF.pergunta, PF.datap, U.usernick, P.tipo FROM TB_Perguntas_forum AS PF, TB_Usuario AS U, TB_Pessoa AS P WHERE U.cod_user = PF.usuario && P.cod_pessoa = U.pessoa && PF.cod_pergunta = '$disc' ";                                        // executa a query
                     $dados = mysqli_query($conexao, $sql);
                     // transforma os dados em um array
                     $linha = mysqli_fetch_assoc($dados);
@@ -55,7 +55,7 @@
                     </div>
 
                     <div class="container">
-
+<!-- pergunta -->
                     <div class="row">
                         <div class="col s12">
                             <div class="card">
@@ -84,7 +84,7 @@
                             </div> 
                         </div>
                     </div>
-
+<!-- respostas  -->
                     <?php
                             $sql = "SELECT RF.resposta, RF.verificada, RF.datap, U.usernick, P.tipo, RF.cod_resposta FROM TB_Respostas_forum AS RF, TB_Perguntas_forum AS PF, TB_Usuario AS U, TB_Pessoa AS P WHERE RF.pergunta = PF.cod_pergunta && P.cod_pessoa = U.pessoa && U.cod_user = RF.usuario && PF.cod_pergunta = '$disc'";                                        // executa a query
                             $dados = mysqli_query($conexao, $sql);
