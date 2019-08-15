@@ -14,8 +14,6 @@
         <script src="BLL/ValidarC.js"></script>
         <!-- javascript do google -->           
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-        <!-- Verificação de usuario e email já cadastrados -->
-        <script type="text/javascript" src="Validar_Usuario_Email.js"></script>
         
         <title> Cadastro Aurora </title>
 
@@ -163,6 +161,49 @@
                 selectMonths: true, 
                 selectYears: 80, 
                 max: true,
+            });
+            //validação user
+            $(function(){
+                $("#user").blur(function(){
+                    //Recuperar o valor do campo
+                    var pesquisa = $(this).val();
+                    
+                    //Verificar se há algo digitado
+                    if(pesquisa != ''){
+                        var dados = {
+                            palavra : pesquisa
+                        }
+                        $.post('DAL/Cadastro/Class_usuario_DAL.php', dados, function(retorna)
+                        {
+                            if(retorna != "")
+                            {
+                                alert(retorna);
+                            }			
+                        });
+                    }
+                });
+            });
+            //validação email
+            $(function(){
+                $("#email").blur(function(){
+                    //Recuperar o valor do campo
+                    var pesquisa = $(this).val();
+                    
+                    //Verificar se há algo digitado
+                    if(pesquisa != ''){
+                        var dados = {
+                            palavra : pesquisa
+                        }
+                        $.post('DAL/Cadastro/Class_email_DAL.php', dados, function(retorna)
+                        {				
+                            if(retorna != "")
+                            {
+                                alert(retorna);
+                            }
+                            
+                        });
+                    }
+                });
             });
 
                 
