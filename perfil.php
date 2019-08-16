@@ -35,7 +35,7 @@
                     <form name="Alt" method = "POST" action = "DAL/Perfil/Class_alterarU_DAL.php">
                     <div class="row center-align mt-5">
                         <div class="col s12 m7"> <!-- IMAGEM DO USUÁRIO - pode ser editada se o usuário clicar sobre a imagem (link) e deverá ser cortada para 512x512 px-->
-                            <div class="col s6 offset-s3"><a href="#"><img class="hoverable responsive-img user-img" id="img_perfil" src="img/usericon.png"></a></div> <br>
+                            <div class="col s6 offset-s3"><a href="#"><label for="Uimg"><img class="hoverable responsive-img user-img preview-img" id="img_perfil" src="img/usericon.png"></label><input class="file-chooser" type="file" id="Uimg" name="Uimg" accept="image/png, image/jpeg" hidden disabled></a></div> <br>
                              <!-- <a href="#" class="hide-on-large-only	btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"></i> Alterar Imagem </a></li> Foto de Perfil do usuário-->
                         </div>
                         
@@ -100,9 +100,26 @@
                         </div>
                     </div>
                 </div>
-			</main>
-	
-		 
+            </main>
+
+            <script>
+                const $ = document.querySelector.bind(document);
+                const previewImg = $('.preview-img');
+                const fileChooser = $('.file-chooser');
+
+                fileChooser.onchange = e => {
+                const fileToUpload = e.target.files.item(0);
+                const reader = new FileReader();
+
+                // evento disparado quando o reader terminar de ler 
+                reader.onload = e => previewImg.src = e.target.result;
+
+                // solicita ao reader que leia o arquivo 
+                // transformando-o para DataURL. 
+                // Isso disparará o evento reader.onload.
+                reader.readAsDataURL(fileToUpload);
+                };
+            </script>
 	
 		 <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
          <script type="text/javascript" src="js/materialize.min.js"></script>

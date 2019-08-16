@@ -11,6 +11,7 @@ function FunEdit(){
     document.getElementById('emailant').value = document.getElementById('email').value;
 
     document.getElementById('name').disabled = 0;
+    document.getElementById('Uimg').disabled = 0;
     document.getElementById('email').disabled = 0;
     document.getElementById('passuser').disabled = 0;
 
@@ -30,6 +31,7 @@ function FunCan(){
     btncancel.classList.add("hide");
 
     document.getElementById('name').disabled = 1;
+    document.getElementById('Uimg').disabled = 1;
     document.getElementById('email').disabled = 1;
     document.getElementById('passuser').disabled = 1;
 }
