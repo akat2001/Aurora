@@ -89,36 +89,34 @@
         
 
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-		<script type="text/javascript">google.load("jquery", "1.4.2");</script>
+		<script type="text/javascript">google.load("jquery", "1.12.1");</script>
 		
         <script type="text/javascript" charset="UTF-8">
-            $(function()
-            {   //quando selecionar a disciplina
-                $('#id_disciplina').change(function()
-                {
-                    
-                    if( $(this).val()) 
-                    {   //oculta o campo conteudo
-                        $('#id_conteudo').hide();                   
-                            //chama o arquivo e executa o select que tambem transfere os dados para uma variavel js
-                            $.getJSON('../DAL/forum/Class_conteudo_DAL.php?search=',{id_conteudo: $(this).val(), ajax: 'true'}, function(j)
-                            {   //inicia o for que mostra os conteudos
-                                $('#id_conteudo').material_select();
-                                var options = '<optgroup label="Selecione:">';	
-                                for (var i = 0; i < j.length; i++) 
-                                {
-                                    options += '<option value="' + j[i].cod_conteudo + '">' + j[i].tema + '</option>';
-                                }//mostra os dados na tela	
-                                $('#id_conteudo').html(options).show();                            
-                            });
-                    } 
-                    else 
-                    {   //se nao funcionar nao faz nada
-                        $('#id_conteudo').html('<option value="">– Escolha Conteudo –</option>');
-                    }
-                });
-            });
-        </script>
+        $(function()
+        {   //quando selecionar a disciplina
+            $('#id_disciplina').change(function()
+            {
+                if( $(this).val()) 
+                {   //oculta o campo conteudo
+                    $('#id_conteudo').hide();                   
+                        //chama o arquivo e executa o select que tambem tranfere os dados para uma variavel js
+                        $.getJSON('../DAL/forum/Class_conteudo_DAL.php?search=',{id_conteudo: $(this).val(), ajax: 'true'}, function(j)
+                        {   //inicia o for que mostra os conteudos
+                            var options = ' <optgroup label="Selecione:">';	
+                            for (var i = 0; i < j.length; i++) 
+                            {
+							    options += '<option value="' + j[i].cod_conteudo + '">' + j[i].tema + '</option>';
+						    }//mostra os dados na tela	
+                            $('#id_conteudo').html(options).show();                            
+					    });
+                } 
+                else 
+                {   //se nao funcionar nao faz nada
+					$('#id_conteudo').html('<option value="">– Escolha Conteudo –</option>');
+				}
+			});
+		});
+		</script>
         
         <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>

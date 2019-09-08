@@ -42,7 +42,7 @@
                         </div>
                         
                         <div class="input-field col s12 m4 mt-2">
-                            <input id="name" type="text" name="nome" class="validate" input name="texto" type="text" size="10" maxlength="10" value ="<?php echo $_SESSION['Nome_Completo']; ?>" disabled><!--Campo Nome do Usuário-->
+                            <input id="name" type="text" name="nome" class="validate" input name="texto" type="text" size="10" maxlength="100" value ="<?php echo $_SESSION['Nome_Completo']; ?>" disabled><!--Campo Nome do Usuário-->
                             <label for="name"> Nome </label>
                         </div>
 

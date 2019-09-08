@@ -13,7 +13,9 @@ Nome varchar(100),
 sexo varchar(15),
 Data_de_nascimento varchar(20),
 tipo varchar(32),
-foto varchar(300)
+foto varchar(300),
+nivel int,
+experienia int
 );
 
 CREATE TABLE TB_Usuario
@@ -23,6 +25,8 @@ email varchar(100),
 senha varchar(32),
 usernick varchar(50) unique,
 pessoa int,
+verif int,
+cod_verif varchar(30),
 FOREIGN KEY(pessoa) REFERENCES TB_Pessoa (cod_pessoa)
 );
 
@@ -100,6 +104,7 @@ alternativa_4 varchar(100),
 alternativa_5 varchar(100),
 resposta varchar(100),
 disciplina varchar(50),
+experiencia int,
 materia int,
 FOREIGN KEY(materia) REFERENCES TB_Materias (cod_materia)
 );
