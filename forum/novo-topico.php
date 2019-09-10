@@ -54,10 +54,9 @@
 
                         <!-- mostra os conteudos referentes a disciplina selecionada, ou pelo menos e o que deveria fazer -->
                         <div class="input-field col s12 m6 l6">
-                            <select id="id_conteudo" name="conteudo" required> <!--Campo do Conteúdo se Disciplina for PORTUGUÊS, só pode aparecer se a disciplina for selecionada--> 
+                            <select id="id_conteudo" class="browser-default" name="conteudo" required> <!--Campo do Conteúdo se Disciplina for PORTUGUÊS, só pode aparecer se a disciplina for selecionada--> 
                                             
-                            </select>  
-                            <label>Conteúdo</label>    
+                            </select>   
                         </div>
 
                     </div>

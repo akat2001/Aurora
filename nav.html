@@ -11,6 +11,7 @@
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <!--"Mostrando" ao navegador que a página é optimizada para dispostivos mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+        
     </head>
 
     <body>
@@ -34,6 +35,16 @@
         <!--Vinculando JavaScript no final da página para ganho de performance-->
         <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('.sidenav').sidenav({
+                    inDuration: "300",
+                    outDuration: "300",
+                    preventScrolling: false,
+                });
+            }); 
+        </script>
           
       
     </body>
