@@ -71,7 +71,7 @@
                                 <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS mapas-->
                             </tr>
                             <tr>
-                                <td> <i class="pink-text material-icons"> chat  </i> <a class="" href=""> Chat </a> </td>
+                                <td> <i class="pink-text material-icons"> chat  </i> <a class="" href=""> Off-Topic </a> </td>
                             </tr>
                         </tbody>
                     </table>
