@@ -1,3 +1,5 @@
+<!--Vinculando CSS para correta exibição do modal-->
+<link type="text/css" rel="stylesheet" href="../../css/materialize.min.css"  media="screen,projection"/>
 <?php
     //aquivo chamado no action do formulario de novo topico
     session_start();
@@ -19,8 +21,15 @@
 
     if($result == "Mensagem postada com sucesso!")
     {
-        header("location: ../../forum/forum-index.php");
-        echo $result;
+        echo('<div id="modal1" class="modal">
+        <div class="modal-content">
+         <h4>Postagem criada com sucesso!</h4>
+         <p>Seu post foi criado com sucesso! Basta ir na categoria correspondente que você irá encontrá-lo. </p>
+        </div>
+        <div class="modal-footer">
+            <a href="../../forum/forum-index.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+        </div>
+        </div>');
     }
     elseif($result == "Campo Vazio!")
     {
@@ -28,7 +37,17 @@
     }
     else
     {
-        echo "deu merda por ai";
+        echo "Há algo errado.";
     }
 ?>
+
+<!--Vinculando Scripts para correta exibição do modal-->
+<script type="text/javascript" src="../../js/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="../../js/materialize.min.js"></script>
+<script>
+    $(document).ready(function(){
+    $('#modal1').modal();
+    $('#modal1').modal('open'); 
+  });
+</script>
     

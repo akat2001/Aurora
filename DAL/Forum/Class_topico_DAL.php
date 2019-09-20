@@ -19,7 +19,7 @@
 
                 //chama função que vai conectar ao banco e executar a query de insert 
                 $resultado = Func_executeinsert_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 40
-              echo $resultado;  
+              
                 //testa se foram adicionados
                 if($resultado != "Registros adicionados com sucesso.")
                 {//3

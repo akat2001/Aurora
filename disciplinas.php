@@ -44,7 +44,7 @@
                         <div class="col s12 m6 l6">
                             <div class="card hoverable">
                                 <div class="card-image card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="img/cards/pt/gramatica.png">
+                                    <a href="disciplinas-cont.php"><img class="activator" src="img/cards/pt/gramatica.png"></a>
                                 </div>
                             </div>
                         </div>

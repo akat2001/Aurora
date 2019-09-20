@@ -64,12 +64,7 @@
                                 <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS dicas
                                 <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS dicas-->
                             </tr>
-                            <tr>
-                                <td><i class="blue-text material-icons"> image </i> <a class="" href="">  Mapas Mentais </a> </td>
-                                <!--<td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS mapas
-                                <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS mapas
-                                <td  class="center-align"> <span> 0 <span> </td>  <!--NÚMERO DE COMENTÁRIOS mapas-->
-                            </tr>
+
                             <tr>
                                 <td> <i class="pink-text material-icons"> chat  </i> <a class="" href=""> Off-Topic </a> </td>
                             </tr>
