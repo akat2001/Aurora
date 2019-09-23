@@ -12,6 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
         <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/resizing/resize.js"></script>
         <!--Importando arquivo JS para algumas funções -->
         <script src="BLL/AlterarP.js"></script>
         <!--Importando arquivo de alterar Usuário-->
@@ -34,13 +35,14 @@
                     </div>
                 </div>
                 
-                <form name="Alt" method = "POST" action = "DAL/Perfil/Class_alterarU_DAL.php">
+                <form name="UFoto" method = "POST" action = "DAL/Perfil/Class_inserirUfoto.php" enctype="multipart/form-data">
                     <div class="row center-align">
                         <div class="col s12 m7"> <!-- IMAGEM DO USUÁRIO - pode ser editada se o usuário clicar sobre a imagem (link) e deverá ser cortada para 512x512 px-->
-                            <div class="col s6 offset-s3"><a href="#"><label for="Uimg"><img class="hoverable responsive-img user-img preview-img" id="img_perfil" src="img/usericon.png"></label><input class="file-chooser" onblur="SalvarImg()" type="file" id="Uimg" name="Uimg" accept="image/png, image/jpeg" hidden disabled></a></div> <br>
+                            <div class="col s6 offset-s3"><a href="#"><label for="Uimg"><img class="hoverable responsive-img user-img preview-img" id="img_perfil" src="<?php if(!empty($_SESSION['UserImg'])){echo "uploads/img_Uperf/".$_SESSION['UserImg'];}else{echo "img/usericon.png";}?>"></label><input class="file-chooser" type="file" id="Uimg" name="Uimg" accept="image/png, image/jpeg" hidden></a></div> <br>
                              <!-- <a href="#" class="hide-on-large-only	btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"></i> Alterar Imagem </a></li> Foto de Perfil do usuário-->
                         </div>
-                        
+                </form>
+                        <form name="Alt" method = "POST" action = "DAL/Perfil/Class_alterarU_DAL.php">
                         <div class="input-field col s12 m4">
                             <input id="name" type="text" name="nome" class="validate" input name="texto" type="text" maxlength="100" value ="<?php echo $_SESSION['Nome_Completo']; ?>" disabled><!--Campo Nome do Usuário-->
                             <label for="name"> Nome </label>
@@ -103,7 +105,9 @@
                     </div>
                 </div>
             </div>
+            
         </main>
+
 
         
         <script>
@@ -124,24 +128,6 @@
                 reader.readAsDataURL(fileToUpload);
             };
         </script> 
-
-                        <script language="javascript" type="text/javascript">
-                        function SalvarImg()
-                        {
-                        <?php
-                                $UimgExt = strtolower(substr($_FILES['Uimg']['name'],-4));//Pega o nome da extesão
-                                $UimgNNo = $_SESSION['User_Name'] . $UimgExt; //Nomeia o arquivo
-                                $UimgPasta = "uploads/img_Uperf/"; //Defini o nome da pasta em que o arquivo será salvo
-                                            
-                                move_uploaded_file($_FILES['Uimg']['tmp_name'], $UimgPasta.$UimgNNo);//efetua o upload
-
-                                echo "alert(".$UimgNNo.")";
-
-                                $_SESSION['UimgNNo'] = $UimgNNo; //Amazena o novo nome na sessão
-                        ?>
-                        }
-                        
-                        </script>
 	
 		 
         <script>
@@ -150,6 +136,8 @@
         </script>
 
         <script src="BLL/Editar.js"></script>	
+
+        
     
 	</body>
 </html>

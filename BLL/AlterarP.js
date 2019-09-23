@@ -29,6 +29,7 @@ function FunAlt(){
             //Submita se tudo certo
             else
             {
+                document.UFoto.submit();
                 document.Alt.submit();
             }
         }

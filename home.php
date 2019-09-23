@@ -26,7 +26,7 @@
                     <div class="col s12">
                         <h5> Bem-vindo ao Aurora, <?php echo $_SESSION['Nome_Completo']?>! </h5>
                     <div class="col s12 m5"> <!-- IMAGEM DO USUÁRIO -->
-                        <div class="col s6 offset-s3"><a href="#"><label for="Uimg"><img class="responsive-img user-img preview-img" id="img_perfil" src="img/usericon.png"></label></div> <br>
+                        <div class="col s6 offset-s3"><a href="#"><label for="Uimg"><img class="responsive-img user-img preview-img" id="img_perfil" src="<?php if(!empty($_SESSION['UserImg'])){echo "uploads/img_Uperf/".$_SESSION['UserImg'];}else{echo "img/usericon.png";}?>"></label></div> <br>
                     </div>
                 <div>
 				
