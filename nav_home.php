@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    if(!isset($_SESSION['pessoa']) && !isset($_SESSION['User_Name']) && !isset($_SESSION['Nome_Completo']))
+    if(!isset($_SESSION['pessoa']) &&  !isset($_SESSION['UserImg']) && !isset($_SESSION['User_Name']) && !isset($_SESSION['Nome_Completo']))
     {
         header("location: ../login.php");
     }
