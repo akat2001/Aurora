@@ -52,7 +52,12 @@
 
                 <div class="row center-align">
                     <div class="col s12">
-                        <a href="gerir.php" class="btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"> create </i> ADICIONAR CONTEÚDO </a> <!--Só aparece apra tutores-->
+                 <?php
+                     if ($_SESSION['Categoria'] == "Tutor")
+                    {
+                        echo '<a href="gerir.php" class="btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"> create </i> ADICIONAR CONTEÚDO </a>';
+                     }
+                 ?>
                     </div>
                 </div>
             </div>	
