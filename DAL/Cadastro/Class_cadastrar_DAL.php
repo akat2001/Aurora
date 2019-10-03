@@ -1,5 +1,6 @@
 <!--Vinculando CSS para correta exibição do modal-->
 <link type="text/css" rel="stylesheet" href="../../css/materialize.min.css"  media="screen,projection"/>
+<meta charset="utf-8"/>
 
 <?php
     //arquivo chamado no action do formulario de cadastro

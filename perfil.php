@@ -31,7 +31,7 @@
             <div class="container">
                 <div class="row center-align mt-2">
                     <div class="col s12">
-                        <h5> Meu Perfil </h5>
+                        <h4> Meu Perfil </h4>
                     </div>
                 </div>                
                 <form name="Alt" method = "POST" action = "DAL/Perfil/Class_alterarU_DAL.php" enctype="multipart/form-data">

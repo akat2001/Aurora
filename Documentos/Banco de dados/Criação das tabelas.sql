@@ -138,7 +138,7 @@ FOREIGN KEY(questao) REFERENCES TB_Questoes  (cod_pergunta)
 );
 -- adiciona as materias, imagem é o icone que aparece na frente e cor e a cor dele + tipo
 INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Português', 'spellcheck', 'deep-purple', 'humanas');
-INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Matemática', 'plus_one', 'red', 'exatas');
+INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Matemática', 'plus_one', 'green', 'exatas');
 INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Física', 'wb_incandescent', 'text-accent-3 amber', 'exatas');
 INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Química', 'whatshot', 'deep-orange', 'exatas');
 INSERT INTO `db_aurora`.`TB_materias` (`Nome`, `imagem`, `cor`,`tipo`) VALUES ('Biologia', 'pan_tool', 'green', 'biologicas');
@@ -170,7 +170,7 @@ INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Eletromagnet
 INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Física Geral', '3');
 
 INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Química Geral e Inorgânica', '4');
-INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Química Orgânico', '4');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Química Orgânica', '4');
 INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Físico-Química', '4');
 
 INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Conceitos Inciais', '5');
@@ -179,7 +179,7 @@ INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Citologia', 
 INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Embriologia', '5');
 INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Histologia', '5');
 INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Seres Vivos', '5');
-INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Anatomia Fisiologia', '5');
+INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Anatomia e Fisiologia', '5');
 INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Genética', '5');
 INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Evolução', '5');
 INSERT INTO `db_aurora`.`TB_conteudos` (`tema`, `materia`) VALUES ('Ecologia', '5');

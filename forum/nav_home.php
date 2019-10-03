@@ -20,6 +20,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
         <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico"/>
         <script>
             $(document).ready(function(){
                 $('.sidenav').sidenav({
@@ -48,7 +49,7 @@
                     <div class="background">
                         <img src="img/carrossel_5.png">
                     </div> 
-                    <a href="#!user"><img class="circle" src="<?php if(!empty($_SESSION['UserImg'])){echo "uploads/img_Uperf/".$_SESSION['UserImg'];}else{echo "img/usericon.png";}?>"></a>
+                    <a href="#!user"><img class="circle" src="<?php if(!empty($_SESSION['UserImg'])){echo "../uploads/img_Uperf/".$_SESSION['UserImg'];}else{echo "../img/usericon.png";}?>"></a>
                     <a href="#!name"><span class="white-text"> <?php echo $_SESSION['User_Name']; ?> </span></a><br>
                     <a href="#"><span class="white-text email"><?php echo $_SESSION['Nome_Completo']; ?></span></a>
                     <a href="#"><span class="white-text">Ranking: <?php //$_SESSION['PosicaoRanking']; ?>º </span></a>
@@ -63,7 +64,7 @@
             <?php
                      if ($_SESSION['Categoria'] == "Tutor")
                     {
-                        echo '<li><a href="gerir.php" class="waves-effect"><i class="material-icons black-text"> settings </i>Gerenciar Plataforma</a></li>';
+                        echo '<li><a href="../gerir.php" class="waves-effect"><i class="material-icons black-text"> settings </i>Gerenciar Plataforma</a></li>';
                     }
                  ?>
             <li><a href="../sair.php" class="waves-effect waves-light btn red">Sair</a></li>

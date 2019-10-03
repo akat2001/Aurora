@@ -10,18 +10,22 @@
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <!--"Mostrando" ao navegador que a página é optimizada para dispostivos mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <style>
+       
+        </style>
     </head>
 	
 	<body class="grey lighten-5">
 		<?php	
-            include 'nav_home.php';           
+            include 'nav_home.php';   
+            include_once "DAL/Class_conexao_DAL.php";                
 		?>
 
 		<main>	
 		    <div class="container">
                 <div class="row mt-2">
                     <div class="col s12 m12 center-align"> 
-                        <h5>Gerenciar Plataforma</h5>
+                        <h4>Gerenciar Plataforma</h4>
                     </div> 
                 </div>
                 <div class="row mt-2">
@@ -36,26 +40,25 @@
 
                 <div id="cont" class="row"> <!--Adicionar Conteúdo-->
 
-                    <form name="" action="" method="">
+                    <form name="cad_conteudo" action="Class_cad_conteudo_DAL.php" method="POST">
                         <div class="input-field col s12 m3 l3">
-                            <select id="#" name="#" required> <!--Campo da Disciplina--> 
-                                <optgroup label="Selecione:">      
-                                    <option value="#">Disciplina 1</option>
-                                    <option value="#">Disciplina 2</option>
-                                    <option value="#">Disciplina 3</option>
-                                </optgroup>     
+                            <select id="id_disciplina" name="disciplina" required> <!--Campo da Disciplina--> 
+                                 
+                                <!-- pega as matérias no banco e coloca na caixa de seleção -->
+                                <option value="" disabled selected> Selecione </option>
+                                <?php include "DAL/Forum/Class_disciplina_DAL.php"; ?>
+                              
                             </select>  
                             <label>Disciplina</label>              
                         </div>  
-                        <div class="input-field col s12 m3 l3">
-                            <select id="#" name="#" required> <!--Campo do Conteúdo [busca no banco o conteúdo das disciplinas // usar mesma lógica do novo-topico--> 
-                                <optgroup label="Selecione:">      
-                                    <option value="#">Conteúdo 1</option>
-                                    <option value="#">Conteúdo 2</option>
-                                    <option value="#">Conteúdo 3</option>
-                                </optgroup>     
-                            </select>  
-                            <label>Conteúdo</label>              
+                        <div id="conteudo" class="input-field col s12 m3 l3">
+                            <select name="cont" required> 
+                              
+                                <option value="" disabled selected> Selecione a Disciplina </option>
+                             
+                                
+                            </select>
+                            <label> Conteúdo </label>
                         </div>
                         <div class="input-field col s12 m6 l6">
                             <input id="titulo-topico" type="text" name="titulo-topico" class="validate" required>
@@ -76,27 +79,26 @@
 
                 <div id="quest" class="row"> <!--Adicionar Conteúdo-->
 
-                    <form name="" action="" method="">
+                    <form name="cad_quest" action="" method="">
                         <div class="input-field col s12 m3 l3">
-                            <select id="#" name="#" required> <!--Campo da Disciplina--> 
-                                <optgroup label="Selecione:">            
-                                    <option value="#">Disciplina 1</option>
-                                    <option value="#">Disciplina 2</option>
-                                    <option value="#">Disciplina 3</option>
-                                </optgroup>     
+                            <select id="id_disciplina2" name="disciplina" required> <!--Campo da Disciplina--> 
+                                     
+                                <!-- pega as matérias no banco e coloca na caixa de seleção -->
+                                <option value="" disabled selected> Selecione </option>
+                                <?php include "DAL/Forum/Class_disciplina_DAL.php"; ?>
+                                
                             </select>  
                             <label>Disciplina</label>              
                         </div>  
-                        <div class="input-field col s12 m3 l3">
-                            <select id="#" name="#" required> <!--Campo do Conteúdo [busca no banco o conteúdo das disciplinas // usar mesma lógica do novo-topico--> 
-                                <optgroup label="Selecione:">      
-                                    <option value="#">Conteúdo 1</option>
-                                    <option value="#">Conteúdo 2</option>
-                                    <option value="#">Conteúdo 3</option>
-                                </optgroup>     
-                            </select>  
-                            <label>Conteúdo</label>              
-                        </div>      
+                        <div id="conteudo2" class="input-field col s12 m3 l3">
+                            <select name="cont" required> 
+                              
+                                <option value="" disabled selected> Selecione a Disciplina </option>
+                             
+                                
+                            </select>
+                            <label> Conteúdo </label>
+                        </div>
                         <div class="input-field col s12 m3 l3">
                             <select id="#" name="#" required> <!--Campo da dificuldade--> 
                                 <optgroup label="Selecione:">        
@@ -176,15 +178,90 @@
       
         <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript">google.load("jquery", "1.12.1");</script>
+		
+        <script type="text/javascript" charset="UTF-8">
+
+        $(function()
+        {   //quando selecionar a disciplina
+            $('#id_disciplina').change(function()
+            {
+                $('#conteudo').html("");
+                 //limpa campo conteúdo
+               
+                if( $(this).val()) 
+                {  
+
+                    //chama o arquivo e executa o select que tambem tranfere os dados para uma variavel js
+                    $.getJSON('DAL/forum/Class_conteudo_DAL.php?search=',{id_conteudo: $(this).val(), ajax: 'true'}, function(j)
+                        {   //inicia o for que mostra os conteudos
+                            var options = ' <option value="" disabled selected> Selecione </option>';	
+                            for (var i = 0; i < j.length; i++) 
+                            {
+							    options += '<option value="' + j[i].cod_conteudo + '">' + j[i].tema + '</option>';
+						    }//mostra os dados na tela
+                            $('#conteudo').html(" <select id='id_conteudo' name='conteudo' required> </select> <label>Conteúdo</label> "); 
+                            $('#id_conteudo').append(options); 
+                            $('select').formSelect();
+                                                         
+                                                     
+					    });
+                        ;
+                } 
+                else 
+                {   //se nao funcionar nao faz nada
+					$('#id_conteudo').html('<option value="">– Escolha Conteudo –</option>');
+				}
+			});
+		});
+
+		</script>
+
+        <script type="text/javascript" charset="UTF-8">
+
+            $(function()
+            {   //quando selecionar a disciplina
+                $('#id_disciplina2').change(function()
+                {
+                    $('#conteudo2').html("");
+                    //limpa campo conteúdo
+                
+                    if( $(this).val()) 
+                    {  
+
+                        //chama o arquivo e executa o select que tambem tranfere os dados para uma variavel js
+                        $.getJSON('DAL/forum/Class_conteudo_DAL.php?search=',{id_conteudo: $(this).val(), ajax: 'true'}, function(j)
+                            {   //inicia o for que mostra os conteudos
+                                var options = ' <option value="" disabled selected> Selecione </option>';	
+                                for (var i = 0; i < j.length; i++) 
+                                {
+                                    options += '<option value="' + j[i].cod_conteudo + '">' + j[i].tema + '</option>';
+                                }//mostra os dados na tela
+                                $('#conteudo2').html(" <select id='id_conteudo2' name='conteudo2' required> </select> <label>Conteúdo</label> "); 
+                                $('#id_conteudo2').append(options); 
+                                $('select').formSelect();
+                                                            
+                                                        
+                            });
+                            ;
+                    } 
+                    else 
+                    {   //se nao funcionar nao faz nada
+                        $('#id_conteudo2').html('<option value="">– Escolha Conteudo –</option>');
+                    }
+                });
+            });
+
+        </script>
+
+    
         
         <script>
             M.AutoInit();
-        </script>
-
-        <script>
             M.toast({html: '<span><i class="small material-icons">error_outline</i> &nbsp;Verifique as instruções de postagem!'})
         </script>
-	
+
+        
 	</body>
 	
 </html>

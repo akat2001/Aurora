@@ -17,7 +17,8 @@
 	<body>
 		<?php	
             include 'nav_home.php';          
-            include 'DAL/Class_conexao_DAL.php';      
+            include 'DAL/Class_conexao_DAL.php';
+            $cont = $_GET['cont'];            
 		?>
 	
 		<main>	
@@ -25,7 +26,7 @@
                 <div class="row">
                     <div class="col s12">
                         <h5 class="user_forum"> Olá, <?php echo $_SESSION['User_Name']; ?> </h5>
-                        <h6> Exibindo conteúdos de $nome_conteudo </h6>
+                        <h6> Exibindo conteúdos de <?php echo $cont; ?> </h6>
                     </div>
                 </div>
                       
@@ -52,7 +53,15 @@
 
                 <div class="row center-align">
                     <div class="col s12">
-                        <a href="gerir.php" class="btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"> create </i> ADICIONAR CONTEÚDO </a> <!--Só aparece apra tutores-->
+                    <?php
+                        if ($_SESSION['Categoria'] == "Tutor")
+                        {
+                            echo '<a href="gerir.php" class="btn_forum waves-effect waves-light btn orange darken-2"><i class="white-text material-icons"> create </i> ADICIONAR CONTEÚDO </a>';
+                        }
+                        else{
+                            
+                        }
+                    ?>
                     </div>
                 </div>
             </div>	

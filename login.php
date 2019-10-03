@@ -67,7 +67,7 @@
                     <div class="row">
                         <div class="col s12 m12">
                             <div class="input-field col s12 m12 center-align">
-                                <button class="btn waves-effect waves-light btn-large orange darken-2" type="button" name="action" onclick="ValidL()">ENTRAR</button> &nbsp; &nbsp; <a ref="#"> Esqueci minha senha! </a>
+                                <button class="btn waves-effect waves-light btn-large orange darken-2" type="button" name="action" onclick="ValidL()">ENTRAR</button> &nbsp; &nbsp; <a ref="#" class="disabled grey-text"> Esqueci minha senha! </a>
                             </div>
                         </div>
                     </div>

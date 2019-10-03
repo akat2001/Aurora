@@ -94,21 +94,28 @@
                             <div class="col s12">';
                             if($linha['verificada'] == 0) 
                             {
-                                echo'<div class="card">';
+                                echo'<div class="card"><div class="row mt-2 pl-2">
+                                <div class="col s4 m2">
+                                    <img src="../uploads/img_Uperf/'.$linha['foto'].'" class="responsive-img"> <!--Imagem do Usuário da pergunta-->
+                                </div>
+                                <div class="col s6">
+                                    <div class="row mt-5">
+                                        <h5>'.$linha['usernick'].'</h5>
+                                        <h6>'.$linha['datap'].'&nbsp <h6> <a href="" class="">Editar</a> | <a href="" class="">Verificar</a> ';
                             }
                             else
                             {
-                                echo'<div class="card green lighten-4">';
+                                echo'<div class="card green lighten-4"><div class="row mt-2 pl-2">
+                                <div class="col s4 m2">
+                                    <img src="../uploads/img_Uperf/'.$linha['foto'].'" class="responsive-img"> <!--Imagem do Usuário da pergunta-->
+                                </div>
+                                <div class="col s6">
+                                    <div class="row mt-5">
+                                        <h5>'.$linha['usernick'].'</h5>
+                                        <h6>'.$linha['datap'].'&nbsp <h6>  ';
                             }
                         if(!empty($linha['foto'])){
-                            echo'<div class="row mt-2 pl-2">
-                                    <div class="col s4 m2">
-                                        <img src="../uploads/img_Uperf/'.$linha['foto'].'" class="responsive-img"> <!--Imagem do Usuário da pergunta-->
-                                    </div>
-                                    <div class="col s6">
-                                        <div class="row mt-5">
-                                            <h5>'.$linha['usernick'].'</h5>
-                                            <h6>'.$linha['datap'].'&nbsp <h6> <a href="" class="">Editar</a> | <a href="" class="">Verificar</a> 
+                            echo'
                                             <h6>'.$linha['tipo'].' </h6> <!--Se é aluno ou tutor-->
                                         </div>
                                     </div>

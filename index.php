@@ -2,15 +2,16 @@
 <html>
 
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8/">
         <!--Importando Ícone da Google Font-->
-         <link href="css/icon.css" rel="stylesheet">
+         <link href="css/icon.css" rel="stylesheet"/>
         <!--Importando materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <!--Importando CSS Personalizado-->
-        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <link type="text/css" rel="stylesheet" href="css/style.css"/>
         <!--"Mostrando" ao navegador que a página é optimizada para dispostivos mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
 
         <style> body{ background-color: #eceff1; } </style>
       
@@ -37,6 +38,7 @@
         <script> 
            $('.carousel.carousel-slider').carousel({
                 fullWidth: true,
+                fullHeight: true,
             });
         </script>        
    

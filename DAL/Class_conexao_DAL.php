@@ -64,7 +64,7 @@
         Func_fechaconexao_DAL($conexao);//localizada no arquivo Class_conexao_DAL, linha 56
     }
 
-    //esta funçao executa uma query de insert
+    //esta funçao executa uma query de update
     function Func_executeupdate_DAL($query)
     {
         $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3

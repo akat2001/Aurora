@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['pessoa']) &&  !isset($_SESSION['UserImg']) && !isset($_SESSION['User_Name']) && !isset($_SESSION['Nome_Completo']))
     {
-        header("location: ../login.php");
+        header("location: login.php");
     }
 ?>
 <!DOCTYPE html>
@@ -20,6 +20,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
         <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
+
         <script>
             $(document).ready(function(){
                 $('.sidenav').sidenav({
