@@ -67,7 +67,7 @@
                             <label for="titulo-topico"> Título do Conteúdo </label> <!--Campo do título da discussão-->
                         </div> 
                         <div class="input-field col s12 m12 l12">
-                            <textarea id="conteudo" name="texto" class="materialize-textarea"></textarea>
+                            <textarea id="conteudo" name="texto" class="materialize-textarea" required></textarea>
                             <label> Conteúdo </label>
                             <span class="helper-text">Digite seu conteúdo na forma de HTML. Você pode usar Materialize CSS na postagem. </span>
                         </div>
@@ -124,7 +124,7 @@
                             <label>Alternativa Correta</label>              
                         </div> 
                         <div class="input-field col s12 m12 l12">
-                            <textarea id="enunq" name="enunciado" class="materialize-textarea"></textarea>
+                            <textarea id="enunq" name="enunciado" class="materialize-textarea" required></textarea>
                             <label> Enunciado da Questão </label>
                             <span class="helper-text">Digite seu conteúdo na forma de HTML. Você pode usar Materialize CSS na postagem. </span>
                         </div>
@@ -149,12 +149,12 @@
                             <span class="helper-text">Digite apenas a resposta, não inclua a letra da alternativa. </span>
                         </div>  
                         <div class="input-field col s12 m12 l12">
-                            <input id="alt-e" type="text" name="altE">
+                            <input id="alt-e" type="text" name="altE" required> <!-- Remover Required após validação -->
                             <label for="alt-e"> Alternativa E </label> <!--Campo de alternativa-->
                             <span class="helper-text">Digite apenas a resposta, não inclua a letra da alternativa. </span>
                         </div>    
                         <div class="input-field col s12 m12 l12">
-                            <textarea id="resolq" name="resolucao" class="materialize-textarea"></textarea>
+                            <textarea id="resolq" name="resolucao" class="materialize-textarea" required></textarea>
                             <label> Resolução </label>
                             <span class="helper-text">Digite seu conteúdo na forma de HTML. Você pode usar Materialize CSS na postagem. </span>
                         </div>
