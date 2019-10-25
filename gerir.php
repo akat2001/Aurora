@@ -159,7 +159,7 @@
                         </div>
                         <div class="col s12 m12">
                             <div class="input-field col s12 m12 center-align">
-                                <button class="btn waves-effect waves-light orange darken-2" type="submit" name="action" onclick="">Enviar</button> <!--Botão para Postar--> 
+                                <button class="btn waves-effect waves-light orange darken-2" name="action" onclick="FunQues()">Enviar</button> <!--Botão para Postar--> 
                             </div>
                         </div>
                     </form>
