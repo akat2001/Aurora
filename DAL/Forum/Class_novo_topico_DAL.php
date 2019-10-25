@@ -34,7 +34,7 @@
         </div>
         
         <div class="modal-footer">
-            <a href="../../login.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+            <a href="../../forum/forum-index.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
         </div>');
     }
     elseif($result == "Campo Vazio!")

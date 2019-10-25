@@ -11,7 +11,7 @@
         <title> Aurora </title>
         <meta charset="utf-8">
         <!--Importando Ícone da Google Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="css/icon.css" rel="stylesheet">
         <!--Importando materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <!--Importando CSS Personalizado-->
@@ -52,7 +52,7 @@
                     <a href="#!user"><img class="circle" src="<?php if(!empty($_SESSION['UserImg'])){echo "../uploads/img_Uperf/".$_SESSION['UserImg'];}else{echo "../img/usericon.png";}?>"></a>
                     <a href="#!name"><span class="white-text"> <?php echo $_SESSION['User_Name']; ?> </span></a><br>
                     <a href="#"><span class="white-text email"><?php echo $_SESSION['Nome_Completo']; ?></span></a>
-                    <a href="#"><span class="white-text">Ranking: <?php //$_SESSION['PosicaoRanking']; ?>º </span></a>
+                    <!-- <a href="#"><span class="white-text">Ranking: <?php //$_SESSION['PosicaoRanking']; ?>º </span></a> -->
                 </div>
             </li>
             <li><a href="../home.php" class="waves-effect"><i class="material-icons black-text">home</i>Início</a></li>

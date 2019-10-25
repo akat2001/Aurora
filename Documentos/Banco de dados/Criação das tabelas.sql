@@ -61,7 +61,7 @@ CREATE TABLE TB_Conteudo
 (
 cod_conteudo int PRIMARY KEY auto_increment,
 titulo varchar(100),
-texto varchar(100000),
+texto text,
 estado varchar(15),
 tema int,
 pessoa int,
@@ -84,7 +84,7 @@ CREATE TABLE TB_Perguntas_forum
 (
 cod_pergunta int PRIMARY KEY auto_increment,
 titulo varchar(100),
-pergunta varchar(1000),
+pergunta text,
 datap varchar(30),
 usuario int,
 disciplina int,
@@ -110,15 +110,15 @@ FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user)
 CREATE TABLE TB_Questoes  
 (
 cod_pergunta int PRIMARY KEY auto_increment,
-enunciado varchar(10000),
+enunciado text,
 dificuldade varchar(15),
-alt_a varchar(1000),
-alt_b varchar(1000),
-alt_c varchar(1000),
-alt_d varchar(1000),
-alt_e varchar(1000),
-resposta varchar(1000),
-resolucao varchar(10000),
+alt_a text,
+alt_b text,
+alt_c text,
+alt_d text
+alt_e text,
+resposta text,
+resolucao text,
 tema int,
 pessoa int,
 FOREIGN KEY(tema) REFERENCES TB_Temas (cod_tema),
@@ -128,7 +128,7 @@ FOREIGN KEY(pessoa) REFERENCES TB_Pessoa (cod_pessoa)
 CREATE TABLE TB_Respostas  
 (
 cod_resposta int,
-resposta varchar(100),
+resposta text,
 usuario int,
 pergunta int,
 PRIMARY KEY(cod_resposta, usuario,pergunta) ,

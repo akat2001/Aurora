@@ -2,8 +2,6 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <!--Importando Ícone da Google Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Importando materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <!--Importando CSS Personalizado-->

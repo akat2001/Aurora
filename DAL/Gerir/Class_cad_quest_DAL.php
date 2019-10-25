@@ -55,13 +55,14 @@
                 <div class="row">
                     <img class="responsive-img col s2 offset-s5" src="../../img/AuroraLogo.png"/>
                 </div>
-                <h4>Questão cadastrada com sucesso! </h4>
-            <p> Clique em "Ok" para continuar. </p>
+                <h4>Questão enviada para análise! </h4>
+                <p> Em breve você receberá um email de confirmação da equipe informando se sua questão foi aprovada. </p>
+                <p> Clique em "Ok" para continuar. </p>
             </div>
         </div>
         
         <div class="modal-footer">
-            <a href="../../exercicios.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+            <a href="../../gerir.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
         </div>
             
         ');

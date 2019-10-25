@@ -29,13 +29,14 @@
                 <div class="row">
                     <img class="responsive-img col s2 offset-s5" src="../../img/AuroraLogo.png"/>
                 </div>
-                <h4>Conteúdo cadastrado com sucesso! </h4>
+                <h4>Seu conteúdo foi enviado para análise!</h4>
+            <p> Em breve você receberá um email de confirmação da equipe informando se o seu conteúdo foi aprovado. </p>
             <p> Clique em "Ok" para continuar. </p>
             </div>
         </div>
         
         <div class="modal-footer">
-            <a href="../../disciplinas.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+            <a href="../../gerir.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
         </div>
             
         ');

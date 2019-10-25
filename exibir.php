@@ -17,12 +17,26 @@
 	<body>
 		<?php	
             include 'nav_home.php';          
-            include 'DAL/Class_conexao_DAL.php';      
+            include 'DAL/Class_conexao_DAL.php'; 
+            $cont = $_GET['cont'];      
 		?>
 	
 		<main>	
 			<div class="container">
-               <!--ECHO DO CONTEÚDO-->
+            <?php
+                //Incluir a conexão com banco de dados
+                $conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3    
+                $sql = "SELECT C.titulo, C.texto, U.usernick from tb_conteudo AS C, tb_usuario AS U where U.pessoa = C.pessoa and cod_conteudo = '$cont';";
+                // executa a query
+                $dados = mysqli_query($conexao, $sql);
+                // transforma os dados em um array
+                $linha = mysqli_fetch_assoc($dados);
+
+                echo '<div class="row mb-2">';
+                echo $linha['texto'].' <br> <h6 class="mb-2"> Conteúdo disponibilizado por: '.$linha['usernick']. '</h6>';
+                echo '</div>';
+                                                  
+                ?>
             </div>	
         </main>
 

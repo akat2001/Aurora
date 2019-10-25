@@ -15,6 +15,10 @@ html {
   box-shadow: 0 1px 0 0 #6d4e7a!important
 }
 
+.mb-2 {
+  margin-bottom: 10% !important;
+}
+
 .mt-5 {
   margin-top: 10%!important;
 }

@@ -2,8 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <!--Importando Ícone da Google Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="css/icon.css" rel="stylesheet">
         <!--Importando materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <!--Importando CSS Personalizado-->
@@ -167,7 +166,25 @@
                 </div>
 
                 <div id="inst">
-               
+                    <h5><b> Adição de Conteúdo </b></h5>
+                    <p class="red-text"> É importante que você tenha conhecimento de HTML e Materialize CSS para fazer suas postagens. As intruções do materialize encontram-se no final dessa seção. </p>
+                    <p> Para fazer a adição de conteúdos na plataforma, siga os seguintes passos: </p>
+                    <p> 1º Preencha corretamente os seguintes campos: </p>
+                    <img class="responsive-img" src="img/inst/1.png"/>
+                    <p> 2º Baixe o arquivo modelo e escreva nele o seu arquivo HTML: </p>
+                    <p> LINK LINK LINK LINK </p>
+                    <p> Para escrever, basta usar um editor de textos qualquer ou alguma IDE (recomenda-se o Visual Studio Code). </p>
+                    <p> 3º Abra a página para verificar se está de acordo com o desejado:
+                    <div class="col s12">
+                        <img class="responsive-img" src="img/inst/2.png"/>
+                    </div>
+                    <p> 4º Caso tudo esteja certo, copie o código inteiro e cole no campo de conteúdo. Em seguida, clique em "Enviar": </p>
+                    <img class="responsive-img" src="img/inst/3.png"/>
+                    <p> 5º Após o envio, você receberá o seguinte aviso: </p>
+                    <div class="col s12">
+                        <img class="responsive-img" src="img/inst/4.png"/>
+                    </div>
+                    
                 </div>                                 
                                                
             </div>

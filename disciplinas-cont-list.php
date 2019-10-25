@@ -44,7 +44,7 @@
                         <?php
                             //Incluir a conexão com banco de dados
                             $conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3    
-                            $sql = "SELECT C.cod_conteudo, C.titulo FROM TB_Conteudo AS C, TB_Temas AS T WHERE T.Tema = '$cont' AND C.tema = T.cod_Tema";
+                            $sql = "SELECT C.cod_conteudo, C.titulo FROM TB_Conteudo AS C, TB_Temas AS T WHERE T.Tema = '$cont' AND C.tema = T.cod_Tema and C.estado = 'Aprovado'";
                                 // executa a query
                             $dados = mysqli_query($conexao, $sql);
                                 // transforma os dados em um array
@@ -52,7 +52,7 @@
                             while ($linha = mysqli_fetch_assoc($dados) ) 
                             {
                                 echo '<tr>
-                                        <tr><td> <a class="" href="#conteudo.php?cont='.$linha['cod_conteudo'].'"> '.$linha['titulo'].' </a> </td> </tr>                                            
+                                        <tr><td> <a class="" href="exibir.php?cont='.$linha['cod_conteudo'].'"> '.$linha['titulo'].' </a> </td> </tr>                                            
                                         </tr>';
                             }                                    
                             ?>

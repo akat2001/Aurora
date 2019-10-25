@@ -28,7 +28,7 @@
                                     <div class="card-title">
                                         <span class="card-title"> 
                                             <div class="row">
-                                                <img class="responsive-img col s8 offset-s2 circle user-img preview-img" id="img_perfil" src="<?php if(!empty($_SESSION['UserImg'])){echo "uploads/img_Uperf/".$_SESSION['UserImg'];}else{echo "img/usericon.png";}?>"/>
+                                                <img class="responsive-img col s8 offset-s2 circle user-img preview-img" id="img_perfil" src="<?php echo "uploads/img_Uperf/".$_SESSION['UserImg'];?>"/>
                                             </div>    
                                             <h5><strong> Olá,  <?php echo $_SESSION['User_Name']?> ! </strong></h5>  
                                                 
