@@ -148,7 +148,7 @@
                             <span class="helper-text">Digite apenas a resposta, não inclua a letra da alternativa. </span>
                         </div>  
                         <div class="input-field col s12 m12 l12">
-                            <input id="alt-e" type="text" name="altE" required> <!-- Remover Required após validação -->
+                            <input id="alt-e" type="text" name="altE">
                             <label for="alt-e"> Alternativa E </label> <!--Campo de alternativa-->
                             <span class="helper-text">Digite apenas a resposta, não inclua a letra da alternativa. </span>
                         </div>    

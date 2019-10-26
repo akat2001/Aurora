@@ -63,7 +63,7 @@
             <li><a href="forum/forum-index.php" class="waves-effect"><i class="material-icons black-text">question_answer</i>Fórum</a></li>
             <li><a href="perfil.php" class="waves-effect"><i class="material-icons black-text"> account_box</i>Meu Perfil</a></li>
             <?php
-                 if ($_SESSION['Categoria'] == "Tutor")
+                 if ($_SESSION['Categoria'] == "Tutor" || $_SESSION['Categoria'] == "ADM")
                  {
                  echo '<li><a href="gerir.php" class="waves-effect"><i class="material-icons black-text"> settings </i>Gerenciar Plataforma</a></li>';
                  }

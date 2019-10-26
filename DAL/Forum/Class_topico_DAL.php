@@ -36,4 +36,3 @@
         } 
         return $resultado;
     }//1
-?>
