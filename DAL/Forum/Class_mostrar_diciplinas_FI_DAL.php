@@ -1,5 +1,5 @@
 <?php                                                                             
-    $sql = "SELECT * FROM  TB_materias ORDER BY Nome ASC";
+    $sql = "SELECT * FROM  TB_materias";
     $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
     // executa a query
     $dados = mysqli_query($conexao, $sql);

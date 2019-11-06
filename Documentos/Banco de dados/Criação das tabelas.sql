@@ -130,7 +130,6 @@ INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Gramática', '1'
 INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Literatura', '1');
 INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Interpretação', '1');
 INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Redação', '1');
-INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Literatura', '1');
 
 INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Álgebra e Aritmética', '2');
 INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Trigonometria', '2');

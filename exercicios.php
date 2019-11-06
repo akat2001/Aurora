@@ -63,6 +63,17 @@
                         </div>
                     </form>
                     </div>
+                </div>
+
+                <!-- Lista para exibição de exercícios cadastrados -->
+                <div id="lista">
+                    <div class="collection">
+                        <a href="#!" class="collection-item"><b>Exercício 1</b> &nbsp;<!-- Começo enunciado -->  Nullam non risus quis orci aliquet finibus. Fusce consequat nibh et dui iaculis rhoncus. Aliquam eu sem sem... </a>
+                        <a href="#!" class="collection-item"><b>Exercício 2</b> &nbsp;<!-- Começo enunciado -->  Nullam non risus quis orci aliquet finibus. Fusce consequat nibh et dui iaculis rhoncus. Aliquam eu sem sem... </a> 
+                        <a href="#!" class="collection-item"><b>Exercício 3</b> &nbsp;<!-- Começo enunciado -->  Nullam non risus quis orci aliquet finibus. Fusce consequat nibh et dui iaculis rhoncus. Aliquam eu sem sem... </a> 
+                        <a href="#!" class="collection-item"><b>Exercício 4</b> &nbsp;<!-- Começo enunciado -->  Nullam non risus quis orci aliquet finibus. Fusce consequat nibh et dui iaculis rhoncus. Aliquam eu sem sem... </a>
+                        <a href="#!" class="collection-item"><b>Exercício 5</b> &nbsp;<!-- Começo enunciado -->  Nullam non risus quis orci aliquet finibus. Fusce consequat nibh et dui iaculis rhoncus. Aliquam eu sem sem... </a>
+                    </div>
                 </div> 
 
                 <div id="questao"> <!--Essa div contem a questão e suas respectivas alternativas--> 

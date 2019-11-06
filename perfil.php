@@ -54,7 +54,7 @@
                                             </div>
                                             <div class="col s12 m12">
                                                 <div class="input-field col s12 m8 offset-m2">
-                                                    <input type="text" id="nasc" name="data_nascimento" class="datepicker" value="<?php echo $_SESSION['Nasc'];?>" disabled> <!--Campo Data de Nascimento-->
+                                                    <input type="text" id="id_nasc" name="data_nascimento" class="datepicker" value="<?php echo $_SESSION['Nasc'];?>" disabled> <!--Campo Data de Nascimento-->
                                                     <label for="nasc"> Nascimento </label>
                                                 </div>
                                             </div>

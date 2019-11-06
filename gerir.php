@@ -176,26 +176,28 @@
 
                 <div id="inst">
                     <h5><b> Adição de Conteúdo </b></h5>
-                    <p class="red-text"> É importante que você tenha conhecimento de HTML e Materialize CSS para fazer suas postagens. As intruções do materialize encontram-se no final dessa seção. Se preferir, <a class="red-text" href="#instmaterialize"><u>clique aqui</u></a> para ir diretamente à seção do Materialize CSS. </p>
+                    <p class="red-text"> É importante que você tenha conhecimento de HTML e Materialize CSS para fazer suas postagens tanto de conteúdo quanto de questões. Se preferir, <a class="red-text" href="https://materializecss.com/"><u>clique aqui</u></a> para ir diretamente à documentação do Materialize CSS antes de começar. </p>
                     <p> Para fazer a adição de conteúdos na plataforma, siga os seguintes passos: </p>
-                    <p> 1º Preencha corretamente os seguintes campos: </p>
+                    <p> <b> 1º Preencha corretamente os seguintes campos: </b> </p>
                     <img class="responsive-img" src="img/inst/1.png"/>
-                    <p> 2º Baixe o arquivo modelo e escreva nele o seu código HTML: </p>
+                    <p> <b> 2º Baixe o arquivo modelo e escreva nele o seu código HTML: </b> </p>
                     <p> LINK LINK LINK LINK </p>
                     <p> Para escrever, basta usar um editor de textos qualquer ou alguma IDE (recomenda-se o Visual Studio Code). </p>
-                    <p> 3º Abra a página para verificar se está de acordo com o desejado:
+                    <p> <b> 3º Abra a página para verificar se está de acordo com o desejado: </b> </p>
                     <div class="col s12">
                         <img class="responsive-img" src="img/inst/2.png"/>
                     </div>
-                    <p> 4º Caso tudo esteja certo, copie o código inteiro e cole no campo de conteúdo. Em seguida, clique em "Enviar": </p>
+                    <p> <b> 4º Caso tudo esteja certo, copie o código inteiro e cole no campo de conteúdo. Em seguida, clique em "Enviar":  </b> </p>
                     <img class="responsive-img" src="img/inst/3.png"/>
-                    <p> 5º Após o envio, você receberá o seguinte aviso: </p>
+                    <p> <b> 5º Após o envio, você receberá o seguinte aviso:  </b> </p>
                     <div class="col s12">
                         <img class="responsive-img" src="img/inst/4.png"/>
                     </div>
                     <p> Pronto! Agora basta esperar o email de confirmação dos nossos administradores informando se o seu conteúdo foi aprovado. Caso esteja tudo certo, ele se tornará disponível para todos os alunos acessarem. </p>
                     <p> É importante manter uma <b> cópia de segurança do seu conteúdo</b>, pois caso ele seja recusado será necessário fazer as alterações descritas e enviá-lo para análise novamente!
                     <p> Mais instruções sobre com anexar imagens estão inclusas no arquivo modelo. </p>
+
+                    <h5 class="mt-2"> <b> Adição de Questões </b> </h5>
                 </div>    
 
                 <?php if ($_SESSION['Categoria'] == "ADM") {
