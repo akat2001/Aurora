@@ -225,17 +225,25 @@
                                     <th class=""> Autor </th>
                                     <th class=""> Ação</th>
                                 </tr> 
-                            </thead>
-                            <tbody>
-
-                                <tr> <!-- FAZER SELECT NO BANCO -->
-                                    <td> <a href="exibir.php">$TITULO_DO_CONTEUDO </td>
-                                    <td> $DISCIPLINA </td>
-                                    <td> $TEMA </td>
-                                    <td> $AUTOR </td>
-                                    <td> <button class="btn waves-effect waves-light green darken-2" name="action" onclick=""> V </button> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
-                                </tr>
-                            </tbody>
+                            </thead>                            
+                            <tbody>';
+                                $sql = "SELECT C.cod_conteudo, C.titulo, T.tema, U.usernick, M.Nome FROM tb_conteudo AS C, tb_materias AS M, tb_usuario AS U, tb_temas AS T, tb_pessoa AS P WHERE P.cod_pessoa = U.pessoa AND P.cod_pessoa = C.pessoa AND T.cod_tema = C.tema AND M.cod_materia = T.materia AND estado = 'Em analise'";
+                                $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
+                                // executa a query
+                                $dados = mysqli_query($conexao, $sql);
+                                // transforma os dados em um array
+                                $linha = mysqli_fetch_assoc($dados);
+                                do
+                                {
+                                    echo'<tr> <!-- FAZER SELECT NO BANCO -->
+                                        <td> '.$linha['titulo'].' </td>
+                                        <td> '.$linha['Nome'].'</td>
+                                        <td> '.$linha['tema'].'</td>
+                                        <td> '.$linha['usernick'].' </td>
+                                        <td> <button class="btn waves-effect waves-light green darken-2" name="action" onclick=""> V </button> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
+                                        <tr>';
+                                }while($linha = mysqli_fetch_assoc($dados));                       
+                        echo '</tbody>
                         </table>
                     </div>
                 </div>
@@ -253,16 +261,24 @@
                                     <th class=""> Ação</th>
                                 </tr> 
                             </thead>
-                            <tbody>
-
-                                <tr> <!-- FAZER SELECT NO BANCO -->
-                                    <td> <a href="exibir.php">$COD_QUESTAO </td>
-                                    <td> $DISCIPLINA </td>
-                                    <td> $TEMA </td>
-                                    <td> $AUTOR </td>
-                                    <td> <button class="btn waves-effect waves-light green darken-2" name="action" onclick=""> V </button> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
-                                </tr>
-                            </tbody>
+                            <tbody>';
+                                $sql = "SELECT Q.cod_pergunta, T.tema, U.usernick, M.Nome FROM tb_questoes AS Q, tb_materias AS M, tb_usuario AS U, tb_temas AS T, tb_pessoa AS P WHERE P.cod_pessoa = Q.pessoa AND P.cod_pessoa = Q.pessoa AND T.cod_tema = Q.tema AND M.cod_materia = T.materia AND Q.estado = 'Em analise'";
+                                $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
+                                // executa a query
+                                $dados = mysqli_query($conexao, $sql);
+                                // transforma os dados em um array
+                                $linha = mysqli_fetch_assoc($dados);
+                                do
+                                {
+                                    echo'<tr> <!-- FAZER SELECT NO BANCO -->
+                                        <td> '.$linha['cod_pergunta'].' </td>
+                                        <td> '.$linha['Nome'].'</td>
+                                        <td> '.$linha['tema'].'</td>
+                                        <td> '.$linha['usernick'].' </td>
+                                        <td> <button class="btn waves-effect waves-light green darken-2" name="action" onclick=""> V </button> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
+                                        <tr>';
+                                }while($linha = mysqli_fetch_assoc($dados));                       
+                            echo '</tbody>                               
                         </table>
                     </div>
                 </div> 
@@ -288,15 +304,23 @@
                                     <th class=""> Ação</th>
                                 </tr> 
                             </thead>
-                            <tbody>
-
-                                <tr> <!-- FAZER SELECT NO BANCO -->
-                                    <td> $NOME_SOLICITANTE </td>
-                                    <td> $EMAIL_SOLICITANTE</td>
-                                    <td> $NICK_SOLICITANTE </td>
+                            <tbody>';
+                            $sql = "SELECT P.Nome, U.email, U.usernick FROM tb_pessoa AS P, tb_usuario AS U WHERE U.pessoa = P.cod_pessoa AND P.tipo = 'Solicitado'";
+                            $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
+                            // executa a query
+                            $dados = mysqli_query($conexao, $sql);
+                            // transforma os dados em um array
+                            $linha = mysqli_fetch_assoc($dados);
+                            do
+                            {
+                                echo'<tr> <!-- FAZER SELECT NO BANCO -->
+                                    <td> '.$linha['Nome'].' </td>
+                                    <td> '.$linha['email'].'</td>
+                                    <td> '.$linha['usernick'].' </td>
                                     <td> <button class="btn waves-effect waves-light green darken-2" name="action" onclick=""> V </button> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
-                                </tr>
-                            </tbody>
+                                    <tr>';
+                            }while($linha = mysqli_fetch_assoc($dados));
+                           echo' </tbody>
                         </table>
                     </div>
                 </div>
@@ -312,15 +336,23 @@
                                     <th class=""> Ação</th>
                                 </tr> 
                             </thead>
-                            <tbody>
-
-                                <tr> <!-- FAZER SELECT NO BANCO -->
-                                    <td> $NOME_TUTOR </td>
-                                    <td> $EMAIL_TUTOR</td>
-                                    <td> $NICK_TUTOR </td>
+                            <tbody>';
+                            $sql = "SELECT P.Nome, U.email, U.usernick FROM tb_pessoa AS P, tb_usuario AS U WHERE U.pessoa = P.cod_pessoa AND P.tipo = 'Tutor'";
+                            $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
+                            // executa a query
+                            $dados = mysqli_query($conexao, $sql);
+                            // transforma os dados em um array
+                            $linha = mysqli_fetch_assoc($dados);
+                            do
+                            {
+                                echo'<tr> <!-- FAZER SELECT NO BANCO -->
+                                    <td> '.$linha['Nome'].' </td>
+                                    <td> '.$linha['email'].'</td>
+                                    <td> '.$linha['usernick'].' </td>
                                     <td> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
-                                </tr>
-                            </tbody>
+                                    <tr>';
+                            }while($linha = mysqli_fetch_assoc($dados));                       
+                            echo '</tbody>
                         </table>
                     </div>
                 </div>

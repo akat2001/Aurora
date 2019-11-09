@@ -66,11 +66,7 @@
                  if ($_SESSION['Categoria'] == "Tutor" || $_SESSION['Categoria'] == "ADM")
                  {
                     echo '<li><a href="gerir.php" class="waves-effect"><i class="material-icons black-text"> settings </i>Gerenciar Plataforma</a></li>';
-                 }
-                 else if ($_SESSION['Categoria'] == "ADM")
-                 {
-                    echo '<li><a href="gerir.php" class="waves-effect"><i class="material-icons black-text"> settings </i>Gerenciar Plataforma</a></li>';
-                 }
+                 }                 
             ?>
             
             <li><a href="sair.php" class="waves-effect waves-light btn red">Sair</a></li>
