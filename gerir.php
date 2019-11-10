@@ -222,8 +222,7 @@
                                     <th class=""> Título </th>
                                     <th class=""> Disciplina </th>
                                     <th class=""> Conteúdo </th>
-                                    <th class=""> Autor </th>
-                                    <th class=""> Ação</th>
+                                    <th class=""> Autor </th>                                    
                                 </tr> 
                             </thead>                            
                             <tbody>';
@@ -236,11 +235,10 @@
                                 do
                                 {
                                     echo'<tr> <!-- FAZER SELECT NO BANCO -->
-                                        <td> '.$linha['titulo'].' </td>
+                                        <td> <a class="" href="exibir.php?cont='.$linha['cod_conteudo'].'">'.$linha['titulo'].'</a> </td>
                                         <td> '.$linha['Nome'].'</td>
                                         <td> '.$linha['tema'].'</td>
                                         <td> '.$linha['usernick'].' </td>
-                                        <td> <a class="btn waves-effect waves-light green darken-2" href="#"> V </a> <a class="btn waves-effect waves-light red darken-2" href="#"> X </a> </td>
                                         <tr>';
                                 }while($linha = mysqli_fetch_assoc($dados));                       
                         echo '</tbody>
@@ -270,8 +268,8 @@
                                 $linha = mysqli_fetch_assoc($dados);
                                 do
                                 {
-                                    echo'<tr> <!-- FAZER SELECT NO BANCO -->
-                                        <td> '.$linha['cod_pergunta'].' </td>
+                                    echo'<tr> 
+                                        <td> <a class="" href="exercicios.php?id='.$linha['cod_pergunta'].'">'.$linha['cod_pergunta'].'</a> </td>
                                         <td> '.$linha['Nome'].'</td>
                                         <td> '.$linha['tema'].'</td>
                                         <td> '.$linha['usernick'].' </td>
@@ -305,7 +303,7 @@
                                 </tr> 
                             </thead>
                             <tbody>';
-                            $sql = "SELECT P.Nome, U.email, U.usernick FROM tb_pessoa AS P, tb_usuario AS U WHERE U.pessoa = P.cod_pessoa AND P.tipo = 'Solicitado'";
+                            $sql = "SELECT P.cod_pessoa, P.Nome, U.email, U.usernick FROM tb_pessoa AS P, tb_usuario AS U WHERE U.pessoa = P.cod_pessoa AND P.tipo = 'Solicitado'";
                             $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
                             // executa a query
                             $dados = mysqli_query($conexao, $sql);
@@ -313,11 +311,11 @@
                             $linha = mysqli_fetch_assoc($dados);
                             do
                             {
-                                echo'<tr> <!-- FAZER SELECT NO BANCO -->
+                                echo'<tr> 
                                     <td> '.$linha['Nome'].' </td>
                                     <td> '.$linha['email'].'</td>
                                     <td> '.$linha['usernick'].' </td>
-                                    <td> <a class="btn waves-effect waves-light green darken-2" href="#"> V </a> <a class="btn waves-effect waves-light red darken-2" href="#"> X </a> </td>
+                                    <td> <a class="btn waves-effect waves-light green darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id='.$linha['cod_pessoa'].'&acao=aprovar&tipo=usuario"> V </a> <a class="btn waves-effect waves-light red darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id='.$linha['cod_pessoa'].'&acao=recusar&tipo=usuario"> X </a> </td>
                                     <tr>';
                             }while($linha = mysqli_fetch_assoc($dados));
                            echo' </tbody>
@@ -337,7 +335,7 @@
                                 </tr> 
                             </thead>
                             <tbody>';
-                            $sql = "SELECT P.Nome, U.email, U.usernick FROM tb_pessoa AS P, tb_usuario AS U WHERE U.pessoa = P.cod_pessoa AND P.tipo = 'Tutor'";
+                            $sql = "SELECT P.cod_pessoa, P.Nome, U.email, U.usernick FROM tb_pessoa AS P, tb_usuario AS U WHERE U.pessoa = P.cod_pessoa AND P.tipo = 'Tutor'";
                             $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
                             // executa a query
                             $dados = mysqli_query($conexao, $sql);
@@ -349,7 +347,7 @@
                                     <td> '.$linha['Nome'].' </td>
                                     <td> '.$linha['email'].'</td>
                                     <td> '.$linha['usernick'].' </td>
-                                    <td> <a class="btn waves-effect waves-light red darken-2" href="#"> X </a> </td>
+                                    <td> <a class="btn waves-effect waves-light red darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id='.$linha['cod_pessoa'].'&acao=recusar&tipo=usuario"> X </a> </td>
                                     <tr>';
                             }while($linha = mysqli_fetch_assoc($dados));                       
                             echo '</tbody>

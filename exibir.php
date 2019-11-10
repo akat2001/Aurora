@@ -26,7 +26,7 @@
             <?php
                 //Incluir a conexão com banco de dados
                 $conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3    
-                $sql = "SELECT C.titulo, C.texto, U.usernick from tb_conteudo AS C, tb_usuario AS U where U.pessoa = C.pessoa and cod_conteudo = '$cont';";
+                $sql = "SELECT C.titulo, C.texto, U.usernick, C.estado from tb_conteudo AS C, tb_usuario AS U where U.pessoa = C.pessoa and cod_conteudo = '$cont';";
                 // executa a query
                 $dados = mysqli_query($conexao, $sql);
                 // transforma os dados em um array
@@ -38,6 +38,19 @@
                                                   
                 ?>
             </div>	
+            <?php
+            if($linha['estado'] == 'Em analise')
+            {
+                echo '<div id="aprov">
+                <div class="row center-align">
+                    <h6> Aprovar questão? </h6>
+                    <a class="btn waves-effect waves-light green darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id='.$cont.'&acao=aprovar&tipo=conteudo"> V </a> <a class="btn waves-effect waves-light red darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id='.$cont.'&acao=recusar&tipo=conteudo"> X </a>
+                
+                </div> 
+                </div>';
+            }
+            ?>
+
         </main>
 
 		<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>

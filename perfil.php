@@ -107,12 +107,16 @@
                                                 {
                                                     echo '<span> Você é um ADM! #TeamAurora \o/';
                                                 }
-                                                else if ($_SESSION['Categoria'] == "Tutor") {
+                                                if ($_SESSION['Categoria'] == "Tutor") {
                                                     echo '<span> Você é um Tutor. Obrigado por participar da equipe!';
                                                 }
-                                                else{
+                                                if ($_SESSION['Categoria'] == "Aluno") { 
                                                     echo '<span> Atualmente você é um Aluno. <a href="#modal1" class="modal-trigger"> Clique aqui </a> caso queira ser um Tutor.';
                                                 }
+                                                if ($_SESSION['Categoria'] == "Solicitado") { 
+                                                    echo '<span> Atualmente você é um Aluno. Sua solicitação para tutoria está em analise.';
+                                                }
+
                                             ?>
                                             </div>
                                            
@@ -180,7 +184,7 @@
                     <div class="row center-align">
                         <form action="#" method="#">
                             <div class="col s12 m12">
-                                <button id="#" class="waves-effect waves-light btn orange darken-2"  onclick =""> Eu quero! </button> &nbsp;
+                                <a class="waves-effect waves-light btn orange darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id=<?php echo $_SESSION['pessoa'];?>&acao=tutoria&tipo=usuario"> Eu quero! </a> &nbsp;
                                 <button id="#" class="waves-effect waves-light btn orange darken-2"  onclick =""> Talvez depois. </button>
                             </div>
                         </form>
