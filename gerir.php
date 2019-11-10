@@ -232,15 +232,23 @@
                                 $dados = mysqli_query($conexao, $sql);
                                 // transforma os dados em um array
                                 $linha = mysqli_fetch_assoc($dados);
-                                do
+                                $total = mysqli_num_rows($dados);                           
+                                if($total != 0)
+                                {   
+                                    do
+                                    {
+                                        echo'<tr>
+                                            <td> <a class="" href="exibir.php?cont='.$linha['cod_conteudo'].'">'.$linha['titulo'].'</a> </td>
+                                            <td> '.$linha['Nome'].'</td>
+                                            <td> '.$linha['tema'].'</td>
+                                            <td> '.$linha['usernick'].' </td>
+                                            <tr>';
+                                    }while($linha = mysqli_fetch_assoc($dados));   
+                                }             
+                                else 
                                 {
-                                    echo'<tr> <!-- FAZER SELECT NO BANCO -->
-                                        <td> <a class="" href="exibir.php?cont='.$linha['cod_conteudo'].'">'.$linha['titulo'].'</a> </td>
-                                        <td> '.$linha['Nome'].'</td>
-                                        <td> '.$linha['tema'].'</td>
-                                        <td> '.$linha['usernick'].' </td>
-                                        <tr>';
-                                }while($linha = mysqli_fetch_assoc($dados));                       
+                                    echo' <tr><td colspan = "4" class="center-align"> Nenhuma solicitação pendente <td> <tr>';
+                                }                             
                         echo '</tbody>
                         </table>
                     </div>
@@ -256,26 +264,32 @@
                                     <th class=""> Disciplina </th>
                                     <th class=""> Conteúdo </th>
                                     <th class=""> Enviada por: </th>
-                                    <th class=""> Ação</th>
                                 </tr> 
                             </thead>
                             <tbody>';
-                                $sql = "SELECT Q.cod_pergunta, T.tema, U.usernick, M.Nome FROM tb_questoes AS Q, tb_materias AS M, tb_usuario AS U, tb_temas AS T, tb_pessoa AS P WHERE P.cod_pessoa = Q.pessoa AND P.cod_pessoa = Q.pessoa AND T.cod_tema = Q.tema AND M.cod_materia = T.materia AND Q.estado = 'Em analise'";
+                                $sql = "SELECT Q.cod_pergunta, T.tema, U.usernick, M.Nome FROM tb_questoes AS Q, tb_materias AS M, tb_usuario AS U, tb_temas AS T, tb_pessoa AS P WHERE P.cod_pessoa = U.pessoa AND P.cod_pessoa = Q.pessoa AND T.cod_tema = Q.tema AND M.cod_materia = T.materia AND Q.estado = 'Em analise'";
                                 $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
                                 // executa a query
                                 $dados = mysqli_query($conexao, $sql);
                                 // transforma os dados em um array
                                 $linha = mysqli_fetch_assoc($dados);
-                                do
+                                $total = mysqli_num_rows($dados);                           
+                                if($total != 0)
+                                {   
+                                    do
+                                    {
+                                        echo'<tr> 
+                                            <td> <a class="" href="exibir_exercicio.php?id='.$linha['cod_pergunta'].'">'.$linha['cod_pergunta'].'</a> </td>
+                                            <td> '.$linha['Nome'].'</td>
+                                            <td> '.$linha['tema'].'</td>
+                                            <td> '.$linha['usernick'].' </td>                                        
+                                            <tr>';
+                                    }while($linha = mysqli_fetch_assoc($dados));             
+                                }             
+                                else 
                                 {
-                                    echo'<tr> 
-                                        <td> <a class="" href="exercicios.php?id='.$linha['cod_pergunta'].'">'.$linha['cod_pergunta'].'</a> </td>
-                                        <td> '.$linha['Nome'].'</td>
-                                        <td> '.$linha['tema'].'</td>
-                                        <td> '.$linha['usernick'].' </td>
-                                        <td> <a class="btn waves-effect waves-light green darken-2" href="#"> V </a> <a class="btn waves-effect waves-light red darken-2" href=""> X </a> </td>
-                                        <tr>';
-                                }while($linha = mysqli_fetch_assoc($dados));                       
+                                    echo' <tr><td colspan = "4" class="center-align"> Nenhuma solicitação pendente <td> <tr>';
+                                }                   
                             echo '</tbody>                               
                         </table>
                     </div>
@@ -309,15 +323,24 @@
                             $dados = mysqli_query($conexao, $sql);
                             // transforma os dados em um array
                             $linha = mysqli_fetch_assoc($dados);
-                            do
+                            //conta os dados
+                            $total = mysqli_num_rows($dados);                           
+                            if($total != 0)
+                            {         
+                                do
+                                {
+                                    echo'<tr> 
+                                        <td> '.$linha['Nome'].' </td>
+                                        <td> '.$linha['email'].'</td>
+                                        <td> '.$linha['usernick'].' </td>
+                                        <td> <a class="btn waves-effect waves-light green darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id='.$linha['cod_pessoa'].'&acao=aprovar&tipo=usuario"> V </a> <a class="btn waves-effect waves-light red darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id='.$linha['cod_pessoa'].'&acao=recusar&tipo=usuario"> X </a> </td>
+                                        <tr>';
+                                }while($linha = mysqli_fetch_assoc($dados));
+                            }             
+                            else 
                             {
-                                echo'<tr> 
-                                    <td> '.$linha['Nome'].' </td>
-                                    <td> '.$linha['email'].'</td>
-                                    <td> '.$linha['usernick'].' </td>
-                                    <td> <a class="btn waves-effect waves-light green darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id='.$linha['cod_pessoa'].'&acao=aprovar&tipo=usuario"> V </a> <a class="btn waves-effect waves-light red darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id='.$linha['cod_pessoa'].'&acao=recusar&tipo=usuario"> X </a> </td>
-                                    <tr>';
-                            }while($linha = mysqli_fetch_assoc($dados));
+                                echo' <tr><td colspan = "4" class="center-align"> Nenhuma solicitação pendente <td> <tr>';
+                            }         
                            echo' </tbody>
                         </table>
                     </div>
@@ -341,15 +364,24 @@
                             $dados = mysqli_query($conexao, $sql);
                             // transforma os dados em um array
                             $linha = mysqli_fetch_assoc($dados);
-                            do
+                            //conta os dados
+                            $total = mysqli_num_rows($dados);                           
+                            if($total != 0)
+                            {                           
+                                do
+                                {
+                                    echo'<tr>
+                                        <td> '.$linha['Nome'].' </td>
+                                        <td> '.$linha['email'].'</td>
+                                        <td> '.$linha['usernick'].' </td>
+                                        <td> <a class="btn waves-effect waves-light red darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id='.$linha['cod_pessoa'].'&acao=recusar&tipo=usuario"> X </a> </td>
+                                        <tr>';
+                                }while($linha = mysqli_fetch_assoc($dados)); 
+                            }             
+                            else 
                             {
-                                echo'<tr> <!-- FAZER SELECT NO BANCO -->
-                                    <td> '.$linha['Nome'].' </td>
-                                    <td> '.$linha['email'].'</td>
-                                    <td> '.$linha['usernick'].' </td>
-                                    <td> <a class="btn waves-effect waves-light red darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id='.$linha['cod_pessoa'].'&acao=recusar&tipo=usuario"> X </a> </td>
-                                    <tr>';
-                            }while($linha = mysqli_fetch_assoc($dados));                       
+                                echo' <tr><td colspan = "4" class="center-align"> Nenhuma solicitação pendente <td> <tr>';
+                            }         
                             echo '</tbody>
                         </table>
                     </div>

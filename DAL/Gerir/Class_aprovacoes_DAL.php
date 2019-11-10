@@ -45,7 +45,7 @@
             echo "deu bosta";
         }
     }
-    if($tipo == 'questa' && $acao == 'recusar')
+    if($tipo == 'questao' && $acao == 'recusar')
     {//recusar questao
         $sql = "UPDATE tb_questoes SET estado ='Recusado' WHERE cod_pergunta = '$id'";
         $resultado = Func_executeupdate_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 27

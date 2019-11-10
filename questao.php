@@ -73,17 +73,7 @@
                     </div>
                 </div>
                 ';}?>
-            </div>
-
-            <!-- Essa div só aparece no momento da análise da questão-->
-            <div id="aprov">
-                <div class="row center-align">
-                    <h6> Aprovar questão? </h6>
-                    <a class="btn waves-effect waves-light green darken-2" href="#"> V </a> <a class="btn waves-effect waves-light red darken-2" href="#"> X </a>
-                
-                </div> 
-            </div>
-
+            </div>            
         </main>
 
         <script type="text/javascript">google.load("jquery", "1.12.1");</script>
