@@ -59,7 +59,7 @@
         }
     }
     if($tipo == 'usuario' && $acao == 'aprovar')
-    {//aprovar questao
+    {//aprovar tutor
         $sql = "UPDATE tb_pessoa SET tipo ='Tutor' WHERE cod_pessoa = '$id'";
         $resultado = Func_executeupdate_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 27
         if($resultado == "Registros atualizados com sucesso.")
@@ -72,7 +72,7 @@
         }
     }
     if($tipo == 'usuario' && $acao == 'recusar')
-    {//recusar questao
+    {//recusar tutor
         $sql = "UPDATE tb_pessoa SET tipo = 'Aluno' WHERE cod_pessoa = '$id'";
         $resultado = Func_executeupdate_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 27
         if($resultado == "Registros atualizados com sucesso.")
@@ -85,7 +85,7 @@
         }
     }
     if($tipo == 'usuario' && $acao == 'tutoria')
-    {//recusar questao
+    {//excluir tutor
         $sql = "UPDATE tb_pessoa SET tipo = 'Solicitado' WHERE cod_pessoa = '$id' ";
         $resultado = Func_executeupdate_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 27
         if($resultado == "Registros atualizados com sucesso.")
