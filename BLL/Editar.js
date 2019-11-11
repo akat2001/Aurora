@@ -17,7 +17,6 @@ function FunEdit()
     document.getElementById('Uimg').disabled = 0;
     document.getElementById('email').disabled = 0;
     document.getElementById('passuser').disabled = 0;
-    document.getElementById('nasc').disabled = 0;
     document.getElementsByName('sexo').disabled = 0;
 }//1
 

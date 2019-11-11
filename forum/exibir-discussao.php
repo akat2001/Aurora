@@ -25,7 +25,7 @@
             $conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3    
             //contar as vizualizações do topico
             $disc = $_GET['disc'];
-            if(!empty($_GET['vis']))
+            if(isset($_GET['vis']))
             {
                 $vis = intval($_GET['vis']);               
                 $vis = $vis + 1;    

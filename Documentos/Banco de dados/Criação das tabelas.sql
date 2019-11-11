@@ -97,6 +97,7 @@ alt_d text NOT NULL,
 alt_e text,
 resposta text NOT NULL,
 resolucao text NOT NULL,
+estado varchar(15) NOT NULL,
 tema int,
 pessoa int,
 FOREIGN KEY(tema) REFERENCES TB_Temas (cod_tema),
@@ -110,7 +111,7 @@ resposta text,
 usuario int,
 pergunta int,
 FOREIGN KEY(usuario) REFERENCES TB_Usuario (cod_user),
-FOREIGN KEY(pergunta) REFERENCES TB_Perguntas_forum (cod_pergunta)
+FOREIGN KEY(pergunta) REFERENCES TB_Questoes (cod_pergunta)
 );
 
 -- adiciona as materias, imagem é o icone que aparece na frente e cor e a cor dele + tipo
@@ -130,7 +131,6 @@ INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Gramática', '1'
 INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Literatura', '1');
 INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Interpretação', '1');
 INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Redação', '1');
-INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Literatura', '1');
 
 INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Álgebra e Aritmética', '2');
 INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Trigonometria', '2');

@@ -45,7 +45,7 @@
                         $pessoa = $resultado['cod_pessoa'];   
                         
                         //cria query para inserir dados de login do usuario
-                        $sql = "INSERT INTO TB_usuario (email, senha, pessoa, usernick) VALUES ('$email', '$senha', '$pessoa', '$usernick')";
+                        $sql = "INSERT INTO TB_usuario (email, senha, pessoa, usernick) VALUES ('$email', md5('$senha'), '$pessoa', '$usernick')";
                         
                         //chama função que vai conectar ao banco e executar a query de inserir dados de login do usuario
                         $resultado = Func_executeinsert_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 40

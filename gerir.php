@@ -176,26 +176,28 @@
 
                 <div id="inst">
                     <h5><b> Adição de Conteúdo </b></h5>
-                    <p class="red-text"> É importante que você tenha conhecimento de HTML e Materialize CSS para fazer suas postagens. As intruções do materialize encontram-se no final dessa seção. Se preferir, <a class="red-text" href="#instmaterialize"><u>clique aqui</u></a> para ir diretamente à seção do Materialize CSS. </p>
+                    <p class="red-text"> É importante que você tenha conhecimento de HTML e Materialize CSS para fazer suas postagens tanto de conteúdo quanto de questões. Se preferir, <a class="red-text" href="https://materializecss.com/"><u>clique aqui</u></a> para ir diretamente à documentação do Materialize CSS antes de começar. </p>
                     <p> Para fazer a adição de conteúdos na plataforma, siga os seguintes passos: </p>
-                    <p> 1º Preencha corretamente os seguintes campos: </p>
+                    <p> <b> 1º Preencha corretamente os seguintes campos: </b> </p>
                     <img class="responsive-img" src="img/inst/1.png"/>
-                    <p> 2º Baixe o arquivo modelo e escreva nele o seu código HTML: </p>
+                    <p> <b> 2º Baixe o arquivo modelo e escreva nele o seu código HTML: </b> </p>
                     <p> LINK LINK LINK LINK </p>
                     <p> Para escrever, basta usar um editor de textos qualquer ou alguma IDE (recomenda-se o Visual Studio Code). </p>
-                    <p> 3º Abra a página para verificar se está de acordo com o desejado:
+                    <p> <b> 3º Abra a página para verificar se está de acordo com o desejado: </b> </p>
                     <div class="col s12">
                         <img class="responsive-img" src="img/inst/2.png"/>
                     </div>
-                    <p> 4º Caso tudo esteja certo, copie o código inteiro e cole no campo de conteúdo. Em seguida, clique em "Enviar": </p>
+                    <p> <b> 4º Caso tudo esteja certo, copie o código inteiro e cole no campo de conteúdo. Em seguida, clique em "Enviar":  </b> </p>
                     <img class="responsive-img" src="img/inst/3.png"/>
-                    <p> 5º Após o envio, você receberá o seguinte aviso: </p>
+                    <p> <b> 5º Após o envio, você receberá o seguinte aviso:  </b> </p>
                     <div class="col s12">
                         <img class="responsive-img" src="img/inst/4.png"/>
                     </div>
                     <p> Pronto! Agora basta esperar o email de confirmação dos nossos administradores informando se o seu conteúdo foi aprovado. Caso esteja tudo certo, ele se tornará disponível para todos os alunos acessarem. </p>
                     <p> É importante manter uma <b> cópia de segurança do seu conteúdo</b>, pois caso ele seja recusado será necessário fazer as alterações descritas e enviá-lo para análise novamente!
                     <p> Mais instruções sobre com anexar imagens estão inclusas no arquivo modelo. </p>
+
+                    <h5 class="mt-2"> <b> Adição de Questões </b> </h5>
                 </div>    
 
                 <?php if ($_SESSION['Categoria'] == "ADM") {
@@ -220,20 +222,34 @@
                                     <th class=""> Título </th>
                                     <th class=""> Disciplina </th>
                                     <th class=""> Conteúdo </th>
-                                    <th class=""> Autor </th>
-                                    <th class=""> Ação</th>
+                                    <th class=""> Autor </th>                                    
                                 </tr> 
-                            </thead>
-                            <tbody>
-
-                                <tr> <!-- FAZER SELECT NO BANCO -->
-                                    <td> <a href="exibir.php">$TITULO_DO_CONTEUDO </td>
-                                    <td> $DISCIPLINA </td>
-                                    <td> $TEMA </td>
-                                    <td> $AUTOR </td>
-                                    <td> <button class="btn waves-effect waves-light green darken-2" name="action" onclick=""> V </button> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
-                                </tr>
-                            </tbody>
+                            </thead>                            
+                            <tbody>';
+                                $sql = "SELECT C.cod_conteudo, C.titulo, T.tema, U.usernick, M.Nome FROM tb_conteudo AS C, tb_materias AS M, tb_usuario AS U, tb_temas AS T, tb_pessoa AS P WHERE P.cod_pessoa = U.pessoa AND P.cod_pessoa = C.pessoa AND T.cod_tema = C.tema AND M.cod_materia = T.materia AND estado = 'Em analise'";
+                                $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
+                                // executa a query
+                                $dados = mysqli_query($conexao, $sql);
+                                // transforma os dados em um array
+                                $linha = mysqli_fetch_assoc($dados);
+                                $total = mysqli_num_rows($dados);                           
+                                if($total != 0)
+                                {   
+                                    do
+                                    {
+                                        echo'<tr>
+                                            <td> <a class="" href="exibir.php?cont='.$linha['cod_conteudo'].'">'.$linha['titulo'].'</a> </td>
+                                            <td> '.$linha['Nome'].'</td>
+                                            <td> '.$linha['tema'].'</td>
+                                            <td> '.$linha['usernick'].' </td>
+                                            <tr>';
+                                    }while($linha = mysqli_fetch_assoc($dados));   
+                                }             
+                                else 
+                                {
+                                    echo' <tr><td colspan = "4" class="center-align"> Nenhuma solicitação pendente <td> <tr>';
+                                }                             
+                        echo '</tbody>
                         </table>
                     </div>
                 </div>
@@ -248,19 +264,33 @@
                                     <th class=""> Disciplina </th>
                                     <th class=""> Conteúdo </th>
                                     <th class=""> Enviada por: </th>
-                                    <th class=""> Ação</th>
                                 </tr> 
                             </thead>
-                            <tbody>
-
-                                <tr> <!-- FAZER SELECT NO BANCO -->
-                                    <td> <a href="exibir.php">$COD_QUESTAO </td>
-                                    <td> $DISCIPLINA </td>
-                                    <td> $TEMA </td>
-                                    <td> $AUTOR </td>
-                                    <td> <button class="btn waves-effect waves-light green darken-2" name="action" onclick=""> V </button> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
-                                </tr>
-                            </tbody>
+                            <tbody>';
+                                $sql = "SELECT Q.cod_pergunta, T.tema, U.usernick, M.Nome FROM tb_questoes AS Q, tb_materias AS M, tb_usuario AS U, tb_temas AS T, tb_pessoa AS P WHERE P.cod_pessoa = U.pessoa AND P.cod_pessoa = Q.pessoa AND T.cod_tema = Q.tema AND M.cod_materia = T.materia AND Q.estado = 'Em analise'";
+                                $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
+                                // executa a query
+                                $dados = mysqli_query($conexao, $sql);
+                                // transforma os dados em um array
+                                $linha = mysqli_fetch_assoc($dados);
+                                $total = mysqli_num_rows($dados);                           
+                                if($total != 0)
+                                {   
+                                    do
+                                    {
+                                        echo'<tr> 
+                                            <td> <a class="" href="exibir_exercicio.php?id='.$linha['cod_pergunta'].'">'.$linha['cod_pergunta'].'</a> </td>
+                                            <td> '.$linha['Nome'].'</td>
+                                            <td> '.$linha['tema'].'</td>
+                                            <td> '.$linha['usernick'].' </td>                                        
+                                            <tr>';
+                                    }while($linha = mysqli_fetch_assoc($dados));             
+                                }             
+                                else 
+                                {
+                                    echo' <tr><td colspan = "4" class="center-align"> Nenhuma solicitação pendente <td> <tr>';
+                                }                   
+                            echo '</tbody>                               
                         </table>
                     </div>
                 </div> 
@@ -286,15 +316,32 @@
                                     <th class=""> Ação</th>
                                 </tr> 
                             </thead>
-                            <tbody>
-
-                                <tr> <!-- FAZER SELECT NO BANCO -->
-                                    <td> $NOME_SOLICITANTE </td>
-                                    <td> $EMAIL_SOLICITANTE</td>
-                                    <td> $NICK_SOLICITANTE </td>
-                                    <td> <button class="btn waves-effect waves-light green darken-2" name="action" onclick=""> V </button> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
-                                </tr>
-                            </tbody>
+                            <tbody>';
+                            $sql = "SELECT P.cod_pessoa, P.Nome, U.email, U.usernick FROM tb_pessoa AS P, tb_usuario AS U WHERE U.pessoa = P.cod_pessoa AND P.tipo = 'Solicitado'";
+                            $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
+                            // executa a query
+                            $dados = mysqli_query($conexao, $sql);
+                            // transforma os dados em um array
+                            $linha = mysqli_fetch_assoc($dados);
+                            //conta os dados
+                            $total = mysqli_num_rows($dados);                           
+                            if($total != 0)
+                            {         
+                                do
+                                {
+                                    echo'<tr> 
+                                        <td> '.$linha['Nome'].' </td>
+                                        <td> '.$linha['email'].'</td>
+                                        <td> '.$linha['usernick'].' </td>
+                                        <td> <a class="btn waves-effect waves-light green darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id='.$linha['cod_pessoa'].'&acao=aprovar&tipo=usuario"> V </a> <a class="btn waves-effect waves-light red darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id='.$linha['cod_pessoa'].'&acao=recusar&tipo=usuario"> X </a> </td>
+                                        <tr>';
+                                }while($linha = mysqli_fetch_assoc($dados));
+                            }             
+                            else 
+                            {
+                                echo' <tr><td colspan = "4" class="center-align"> Nenhuma solicitação pendente <td> <tr>';
+                            }         
+                           echo' </tbody>
                         </table>
                     </div>
                 </div>
@@ -310,15 +357,32 @@
                                     <th class=""> Ação</th>
                                 </tr> 
                             </thead>
-                            <tbody>
-
-                                <tr> <!-- FAZER SELECT NO BANCO -->
-                                    <td> $NOME_TUTOR </td>
-                                    <td> $EMAIL_TUTOR</td>
-                                    <td> $NICK_TUTOR </td>
-                                    <td> <button class="btn waves-effect waves-light red darken-2" name="action" onclick=""> X </button> </td>
-                                </tr>
-                            </tbody>
+                            <tbody>';
+                            $sql = "SELECT P.cod_pessoa, P.Nome, U.email, U.usernick FROM tb_pessoa AS P, tb_usuario AS U WHERE U.pessoa = P.cod_pessoa AND P.tipo = 'Tutor'";
+                            $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
+                            // executa a query
+                            $dados = mysqli_query($conexao, $sql);
+                            // transforma os dados em um array
+                            $linha = mysqli_fetch_assoc($dados);
+                            //conta os dados
+                            $total = mysqli_num_rows($dados);                           
+                            if($total != 0)
+                            {                           
+                                do
+                                {
+                                    echo'<tr>
+                                        <td> '.$linha['Nome'].' </td>
+                                        <td> '.$linha['email'].'</td>
+                                        <td> '.$linha['usernick'].' </td>
+                                        <td> <a class="btn waves-effect waves-light red darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id='.$linha['cod_pessoa'].'&acao=recusar&tipo=usuario"> X </a> </td>
+                                        <tr>';
+                                }while($linha = mysqli_fetch_assoc($dados)); 
+                            }             
+                            else 
+                            {
+                                echo' <tr><td colspan = "4" class="center-align"> Nenhuma solicitação pendente <td> <tr>';
+                            }         
+                            echo '</tbody>
                         </table>
                     </div>
                 </div>

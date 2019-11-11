@@ -20,7 +20,7 @@
             $estado = "Em analise";
 
             //cria a querry
-            $sql = "INSERT INTO tb_questoes (enunciado, dificuldade, alt_a, alt_b, alt_c, alt_d, alt_e, resposta, resolucao, tema, pessoa) VALUES ('$enunciado', '$dificuldade', '$alta', '$altb', '$altc', '$altd', '$alte', '$resposta', '$resolucao', '$tema', '$pessoa');            ";
+            $sql = "INSERT INTO tb_questoes (enunciado, dificuldade, alt_a, alt_b, alt_c, alt_d, alt_e, resposta, resolucao, tema, pessoa, estado) VALUES ('$enunciado', '$dificuldade', '$alta', '$altb', '$altc', '$altd', '$alte', '$resposta', '$resolucao', '$tema', '$pessoa', 'Em analise');            ";
             
             //chama função que vai conectar ao banco e executar a query
             $resultado = Func_executeinsert_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 27
