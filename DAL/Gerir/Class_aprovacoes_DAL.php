@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 <!--Vinculando CSS para correta exibição do modal-->
 <link type="text/css" rel="stylesheet" href="../../css/materialize.min.css"  media="screen,projection"/>
 <meta charset="utf-8"/>
 
 <?php	      
     session_start();
-=======
-<?php	      
->>>>>>> 3e96a3bff98b696200ec12376009d2664afbc582
     include '../Class_conexao_DAL.php'; 
     $id = $_GET['id'];      
     $acao = $_GET['acao'];
@@ -20,7 +16,6 @@
         $resultado = Func_executeupdate_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 27
         if($resultado == "Registros atualizados com sucesso.")
         {
-<<<<<<< HEAD
             //tudo deu certo, abre modal alertando
             echo'<div id="modal1" class="modal">                     
             <div class="modal-content">
@@ -56,13 +51,6 @@
               <div class="modal-footer">
                   <a href="../../gerir.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
               </div>';
-=======
-            echo "deu bom";
-        }
-        else 
-        {
-            echo "deu bosta";
->>>>>>> 3e96a3bff98b696200ec12376009d2664afbc582
         }
 
     }
@@ -72,7 +60,6 @@
         $resultado = Func_executeupdate_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 27
         if($resultado == "Registros atualizados com sucesso.")
         {
-<<<<<<< HEAD
              //tudo deu certo, abre modal alertando
              echo'<div id="modal1" class="modal">                     
              <div class="modal-content">
@@ -108,13 +95,6 @@
              <div class="modal-footer">
                  <a href="../../gerir.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
              </div>';
-=======
-            echo "deu bom";
-        }
-        else 
-        {
-            echo "deu bosta";
->>>>>>> 3e96a3bff98b696200ec12376009d2664afbc582
         }
     }
     if($tipo == 'questao' && $acao == 'aprovar')
@@ -123,7 +103,6 @@
         $resultado = Func_executeupdate_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 27
         if($resultado == "Registros atualizados com sucesso.")
         {
-<<<<<<< HEAD
              //tudo deu certo, abre modal alertando
              echo'<div id="modal1" class="modal">                     
              <div class="modal-content">
@@ -159,13 +138,6 @@
               <div class="modal-footer">
                   <a href="../../gerir.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
               </div>';
-=======
-            echo "deu bom";
-        }
-        else 
-        {
-            echo "deu bosta";
->>>>>>> 3e96a3bff98b696200ec12376009d2664afbc582
         }
     }
     if($tipo == 'questao' && $acao == 'recusar')
@@ -174,7 +146,6 @@
         $resultado = Func_executeupdate_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 27
         if($resultado == "Registros atualizados com sucesso.")
         {
-<<<<<<< HEAD
              //tudo deu certo, abre modal alertando
              echo'<div id="modal1" class="modal">                     
              <div class="modal-content">
@@ -210,13 +181,6 @@
              <div class="modal-footer">
                  <a href="../../gerir.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
              </div>';
-=======
-            echo "deu bom";
-        }
-        else 
-        {
-            echo "deu bosta";
->>>>>>> 3e96a3bff98b696200ec12376009d2664afbc582
         }
     }
     if($tipo == 'usuario' && $acao == 'aprovar')
@@ -225,7 +189,6 @@
         $resultado = Func_executeupdate_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 27
         if($resultado == "Registros atualizados com sucesso.")
         {
-<<<<<<< HEAD
              //tudo deu certo, abre modal alertando
              echo'<div id="modal1" class="modal">                     
              <div class="modal-content">
@@ -261,13 +224,6 @@
              <div class="modal-footer">
                  <a href="../../gerir.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
              </div>';
-=======
-            echo "deu bom";
-        }
-        else 
-        {
-            echo "deu bosta";
->>>>>>> 3e96a3bff98b696200ec12376009d2664afbc582
         }
     }
     if($tipo == 'usuario' && $acao == 'recusar')
@@ -276,7 +232,6 @@
         $resultado = Func_executeupdate_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 27
         if($resultado == "Registros atualizados com sucesso.")
         {
-<<<<<<< HEAD
              //tudo deu certo, abre modal alertando
              echo'<div id="modal1" class="modal">                     
              <div class="modal-content">
@@ -312,13 +267,6 @@
              <div class="modal-footer">
                  <a href="../../gerir.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
              </div>';
-=======
-            echo "deu bom";
-        }
-        else 
-        {
-            echo "deu bosta";
->>>>>>> 3e96a3bff98b696200ec12376009d2664afbc582
         }
     }
     if($tipo == 'usuario' && $acao == 'tutoria')
@@ -327,7 +275,6 @@
         $resultado = Func_executeupdate_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 27
         if($resultado == "Registros atualizados com sucesso.")
         {
-<<<<<<< HEAD
             $_SESSION['Categoria'] = "Solicitado";
              //tudo deu certo, abre modal alertando
              echo'<div id="modal1" class="modal">                     
@@ -379,14 +326,3 @@
 </script>
     
     
-=======
-            echo "deu bom";
-            $_SESSION['Categoria'] = "Solicitado";
-        }
-        else 
-        {
-            echo "deu bosta<br>";
-        }
-      
-    }
->>>>>>> 3e96a3bff98b696200ec12376009d2664afbc582

@@ -107,7 +107,6 @@
                                                 {
                                                     echo '<span> Você é um ADM! #TeamAurora \o/';
                                                 }
-<<<<<<< HEAD
                                                 elseif($_SESSION['Categoria'] == "Tutor") {
                                                     echo '<span> Você é um Tutor. Obrigado por participar da equipe!';
                                                 }
@@ -115,15 +114,6 @@
                                                     echo '<span> Atualmente você é um Aluno. <a href="#modal1" class="modal-trigger"> Clique aqui </a> caso queira ser um Tutor.';
                                                 }
                                                 elseif($_SESSION['Categoria'] == "Solicitado") { 
-=======
-                                                if ($_SESSION['Categoria'] == "Tutor") {
-                                                    echo '<span> Você é um Tutor. Obrigado por participar da equipe!';
-                                                }
-                                                if ($_SESSION['Categoria'] == "Aluno") { 
-                                                    echo '<span> Atualmente você é um Aluno. <a href="#modal1" class="modal-trigger"> Clique aqui </a> caso queira ser um Tutor.';
-                                                }
-                                                if ($_SESSION['Categoria'] == "Solicitado") { 
->>>>>>> 3e96a3bff98b696200ec12376009d2664afbc582
                                                     echo '<span> Atualmente você é um Aluno. Sua solicitação para tutoria está em analise.';
                                                 }
 
