@@ -43,7 +43,11 @@
             {
                 echo '<div id="aprov">
                 <div class="row center-align">
+<<<<<<< HEAD
                     <h6> Aprovar conteúdo? </h6>
+=======
+                    <h6> Aprovar questão? </h6>
+>>>>>>> 3e96a3bff98b696200ec12376009d2664afbc582
                     <a class="btn waves-effect waves-light green darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id='.$cont.'&acao=aprovar&tipo=conteudo"> V </a> <a class="btn waves-effect waves-light red darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id='.$cont.'&acao=recusar&tipo=conteudo"> X </a>
                 
                 </div> 
