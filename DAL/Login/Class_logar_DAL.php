@@ -33,6 +33,7 @@
         $_SESSION['User_Name'] = $result['usernick'];
         $_SESSION['Nome_Completo'] = $result['nome'];
         $_SESSION['UserImg'] = $result['foto'];
+        $_SESSION['codU'] = $result['codU'];
         $_SESSION['Email'] = $pessoa['email'];
         $_SESSION['Senha'] = $pessoa['senha'];
         $_SESSION['Nasc'] = $result['nasc'];

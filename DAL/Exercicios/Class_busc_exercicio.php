@@ -8,11 +8,12 @@
     //pega os valores do formulario
     $ContQ = mysqli_real_escape_string($conexao, $_POST['conteudo']);
     $RespQ = mysqli_real_escape_string($conexao, $_POST['respq']);
+    $RespU = mysqli_real_escape_string($conexao, $_SESSION['codU']);
     
     if($RespQ == "s")
     {
     //chama função que vai buscar os dados no banco
-    $sql = "SELECT TBQ.cod_pergunta, TBQ.enunciado, TBQ.dificuldade, TBQ.resolucao, TBQ.alt_a, TBQ.alt_b, TBQ.alt_c, TBQ.alt_d, TBQ.alt_e FROM tb_questoes AS TBQ, tb_respostas AS TBR, tb_temas AS TBC WHERE TBC.tema = '$ContQ' && TBR.resposta = '$RespQ'";
+    $sql = "SELECT TBR.resposta, TBQ.cod_pergunta, TBQ.enunciado, TBQ.dificuldade, TBQ.resolucao, TBQ.alt_a, TBQ.alt_b, TBQ.alt_c, TBQ.alt_d, TBQ.alt_e FROM tb_questoes AS TBQ, tb_respostas AS TBR, tb_temas AS TBC WHERE TBC.tema = '$ContQ' && TBR.usuario = '$RespU'";
     }
     else
     {
@@ -34,6 +35,7 @@
         $questaos[$n]['C'] = $resultado['alt_c'];
         $questaos[$n]['D'] = $resultado['alt_d'];
         $questaos[$n]['E'] = $resultado['alt_e'];
+        if($RespQ == "s"){$questaos[$n]['Resp'] = $resultado['resposta'];}
         $n++;
     }
 
