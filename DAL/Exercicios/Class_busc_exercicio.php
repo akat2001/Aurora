@@ -13,12 +13,12 @@
     if($RespQ == "s")
     {
     //chama função que vai buscar os dados no banco
-    $sql = "SELECT TBR.resposta, TBQ.cod_pergunta, TBQ.enunciado, TBQ.dificuldade, TBQ.resolucao, TBQ.alt_a, TBQ.alt_b, TBQ.alt_c, TBQ.alt_d, TBQ.alt_e FROM tb_questoes AS TBQ, tb_respostas AS TBR, tb_temas AS TBC WHERE TBC.tema = '$ContQ' && TBR.usuario = '$RespU'";
+    $sql = "SELECT TBR.resposta, TBQ.cod_pergunta, TBQ.enunciado, TBQ.dificuldade, TBQ.resolucao, TBQ.alt_a, TBQ.alt_b, TBQ.alt_c, TBQ.alt_d, TBQ.alt_e FROM tb_questoes AS TBQ, tb_respostas AS TBR, tb_temas AS TBC WHERE TBC.tema = '$ContQ' && TBR.usuario = '$RespU' AND TBQ.estado = 'Aprovado'";
     }
     else
     {
       //chama função que vai buscar os dados no banco
-      $sql = "SELECT TBQ.cod_pergunta, TBQ.enunciado, TBQ.dificuldade, TBQ.resolucao, TBQ.alt_a, TBQ.alt_b, TBQ.alt_c, TBQ.alt_d, TBQ.alt_e FROM tb_questoes AS TBQ, tb_temas AS TBC WHERE TBC.cod_tema = '$ContQ'";  
+      $sql = "SELECT TBQ.cod_pergunta, TBQ.enunciado, TBQ.dificuldade, TBQ.resolucao, TBQ.alt_a, TBQ.alt_b, TBQ.alt_c, TBQ.alt_d, TBQ.alt_e FROM tb_questoes AS TBQ, tb_temas AS TBC WHERE TBC.cod_tema = '$ContQ' AND TBQ.estado = 'Aprovado'";  
     }
     $result = mysqli_query($conexao, $sql);
     

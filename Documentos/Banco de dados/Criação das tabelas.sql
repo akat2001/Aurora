@@ -187,4 +187,13 @@ INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Política', '9')
 INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Democracia', '9');
 INSERT INTO `db_aurora`.`TB_temas` (`tema`, `materia`) VALUES ('Cidadania', '9');
 
+INSERT INTO `db_aurora`.`tb_pessoa` (`Nome`, `sexo`, `Data_de_nascimento`, `tipo`, `foto`) VALUES ('Juliane Faustino Macedo Prilip', 'Feminino', '15 / 08 / 2001', 'ADM', 'usericon.png');
+INSERT INTO `db_aurora`.`tb_pessoa` (`Nome`, `sexo`, `Data_de_nascimento`, `tipo`, `foto`) VALUES ('Gustavo Moreira Santos', 'Masculino', '26 / 02 / 2002', 'ADM', 'usericon.png');
+INSERT INTO `db_aurora`.`tb_pessoa` (`Nome`, `sexo`, `Data_de_nascimento`, `tipo`, `foto`) VALUES ('Sidney de Jesus Monteiro Junior', 'Masculino', '12 / 02 / 2002', 'ADM', 'usericon.png');
+INSERT INTO `db_aurora`.`tb_pessoa` (`Nome`, `sexo`, `Data_de_nascimento`, `tipo`, `foto`) VALUES ('Leonardo Zabotto Lessa', 'Masculino', '27 / 11 / 2002', 'ADM', 'usericon.png');
 
+
+INSERT INTO `db_aurora`.`tb_usuario` (`email`, `senha`, `usernick`, `pessoa`) VALUES ('juliaprilip.com', '84b967760b21b2934ab19c57576b4ed5', 'akat2001', '1');
+INSERT INTO `db_aurora`.`tb_usuario` (`email`, `senha`, `usernick`, `pessoa`) VALUES ('gustavo@gmail.com', 'ace7d13cf36415ca9d08316bede67b0f', 'Paranca', '2');
+INSERT INTO `db_aurora`.`tb_usuario` (`email`, `senha`, `usernick`, `pessoa`) VALUES ('sidney@gmail.com', '16ba85daf5b461d351a5d4f9b58b2171', 'Sidsid', '3');
+INSERT INTO `db_aurora`.`tb_usuario` (`email`, `senha`, `usernick`, `pessoa`) VALUES ('zabotto@gmail.com', '467740a7eb9b7766f3166f2d0ab86585', 'Zabotto', '4');

@@ -89,7 +89,7 @@ $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
 $UimgNNo = mysqli_real_escape_string($conexao, $_SESSION['UserImg']);
 
     //cria a querry aleterar os dados da pessoa
-    $sql2 = "UPDATE TB_pessoa AS P, TB_usuario AS U SET P.Nome='$nome', U.senha='$senha',P.foto='$UimgNNo' WHERE U.usernick='$usernick' AND P.cod_pessoa=U.pessoa" ;
+    $sql2 = "UPDATE TB_pessoa AS P, TB_usuario AS U SET P.Nome='$nome', U.senha=MD5('$senha'),P.foto='$UimgNNo' WHERE U.usernick='$usernick' AND P.cod_pessoa=U.pessoa" ;
 
     //fazendo query 2
     $resultado2 = Func_executeupdate_DAL($sql2);//localizada no arquivo ../Class_conexão_DAL, linha 27

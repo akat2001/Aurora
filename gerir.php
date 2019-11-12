@@ -267,7 +267,7 @@
                                 </tr> 
                             </thead>
                             <tbody>';
-                                $sql = "SELECT Q.cod_pergunta, T.tema, U.usernick, M.Nome FROM tb_questoes AS Q, tb_materias AS M, tb_usuario AS U, tb_temas AS T, tb_pessoa AS P WHERE P.cod_pessoa = U.pessoa AND P.cod_pessoa = Q.pessoa AND T.cod_tema = Q.tema AND M.cod_materia = T.materia AND Q.estado = 'Em analise'";
+                                $sql = "SELECT Q.cod_pergunta, T.tema, U.usernick, M.Nome FROM tb_questoes AS Q, tb_materias AS M, tb_usuario AS U, tb_temas AS T, tb_pessoa AS P WHERE P.cod_pessoa = U.pessoa AND P.cod_pessoa = Q.pessoa AND T.cod_tema = Q.tema AND M.cod_materia = T.materia AND Q.estado = 'Em analise' ORDER BY Q.cod_pergunta ASC";
                                 $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
                                 // executa a query
                                 $dados = mysqli_query($conexao, $sql);
@@ -301,6 +301,7 @@
                         <ul id="#" class="tabs grey lighten-5 mt-2">
                             <li class="tab col s3"><a class="active" href="#solic">Solicitações</a></li>
                             <li class="tab col s3"><a href="#tut">Atuais Tutores</a></li>
+                            <li class="tab col s4"><a href="#adm">Atuais Administradores</a></li>
                         </ul>
                     </div>  
                 </div>
@@ -375,6 +376,46 @@
                                         <td> '.$linha['email'].'</td>
                                         <td> '.$linha['usernick'].' </td>
                                         <td> <a class="btn waves-effect waves-light red darken-2" href="DAL/Gerir/Class_aprovacoes_DAL.php?id='.$linha['cod_pessoa'].'&acao=recusar&tipo=usuario"> X </a> </td>
+                                        <tr>';
+                                }while($linha = mysqli_fetch_assoc($dados)); 
+                            }             
+                            else 
+                            {
+                                echo' <tr><td colspan = "4" class="center-align"> Nenhuma solicitação pendente <td> <tr>';
+                            }         
+                            echo '</tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <div id="adm">
+                    <div class="row">
+                        <table class="striped center-align responsive-table">
+                            <thead>
+                                <tr>
+                                    <th class=""> Nome </th>
+                                    <th class=""> Email </th>
+                                    <th class=""> Nome de Usuário </th>                                    
+                                </tr> 
+                            </thead>
+                            <tbody>';
+                            $sql = "SELECT P.cod_pessoa, P.Nome, U.email, U.usernick FROM tb_pessoa AS P, tb_usuario AS U WHERE U.pessoa = P.cod_pessoa AND P.tipo = 'ADM'";
+                            $conexao = Func_connect_DAL();//localizada no arquivo Class_conexao_DAL, linha 3
+                            // executa a query
+                            $dados = mysqli_query($conexao, $sql);
+                            // transforma os dados em um array
+                            $linha = mysqli_fetch_assoc($dados);
+                            //conta os dados
+                            $total = mysqli_num_rows($dados);                           
+                            if($total != 0)
+                            {                           
+                                do
+                                {
+                                    echo'<tr>
+                                        <td> '.$linha['Nome'].' </td>
+                                        <td> '.$linha['email'].'</td>
+                                        <td> '.$linha['usernick'].' </td>
                                         <tr>';
                                 }while($linha = mysqli_fetch_assoc($dados)); 
                             }             
