@@ -13,12 +13,12 @@
     if($RespQ == "s")
     {
     //chama função que vai buscar os dados no banco
-    $sql = "SELECT TBR.resposta, TBQ.cod_pergunta, TBQ.enunciado, TBQ.dificuldade, TBQ.resolucao, TBQ.alt_a, TBQ.alt_b, TBQ.alt_c, TBQ.alt_d, TBQ.alt_e FROM tb_questoes AS TBQ, tb_respostas AS TBR, tb_temas AS TBC WHERE TBC.tema = '$ContQ' && TBR.usuario = '$RespU' AND TBQ.estado = 'Aprovado'";
+    $sql = "SELECT TBR.resposta, TBQ.cod_pergunta, TBQ.enunciado, TBQ.dificuldade, TBQ.resolucao, TBQ.resposta AS correcao, TBQ.alt_a, TBQ.alt_b, TBQ.alt_c, TBQ.alt_d, TBQ.alt_e FROM tb_questoes AS TBQ, tb_respostas AS TBR, tb_temas AS TBC WHERE TBC.cod_tema = '$ContQ' AND TBR.pergunta = TBQ.cod_pergunta AND TBR.usuario = '$RespU' AND TBQ.estado = 'Aprovado'";
     }
     else
     {
       //chama função que vai buscar os dados no banco
-      $sql = "SELECT TBQ.cod_pergunta, TBQ.enunciado, TBQ.dificuldade, TBQ.resolucao, TBQ.alt_a, TBQ.alt_b, TBQ.alt_c, TBQ.alt_d, TBQ.alt_e FROM tb_questoes AS TBQ, tb_temas AS TBC WHERE TBC.cod_tema = '$ContQ' AND TBQ.estado = 'Aprovado'";  
+      $sql = "SELECT TBQ.cod_pergunta, TBQ.enunciado, TBQ.dificuldade, TBQ.resolucao, TBQ.alt_a, TBQ.alt_b, TBQ.alt_c, TBQ.alt_d, TBQ.alt_e FROM tb_questoes AS TBQ, tb_temas AS TBC WHERE TBC.cod_tema = '$ContQ' AND TBQ.estado = 'Aprovado' AND TBR.usuario = 'null'";  
     }
     $result = mysqli_query($conexao, $sql);
     
@@ -30,6 +30,7 @@
         $questaos[$n]['Enunciado'] = $resultado['enunciado'];
         $questaos[$n]['Dificuldade'] = $resultado['dificuldade'];
         $questaos[$n]['Resol'] = $resultado['resolucao'];
+        $questaos[$n]['RespS'] = $resultado['correcao'];
         $questaos[$n]['A'] = $resultado['alt_a'];
         $questaos[$n]['B'] = $resultado['alt_b'];
         $questaos[$n]['C'] = $resultado['alt_c'];
@@ -47,8 +48,8 @@
         //erro na execução, campo vazio ou dados invalidos
         unset($_SESSION['busca']); 
         unset($_SESSION['busca2']);       
-        echo $_SESSION['auxiliar'] = "Busca com erro";       
-        //header("Location: ../../exercicios.php");
+        $_SESSION['auxiliar'] = "Nenhuma questão encontrada";       
+        header("Location: ../../exercicios.php");
     }//2
     else
     { //3  

@@ -1,4 +1,5 @@
-function FiltroV(){
+function FiltroV()
+{
     var ContQ = document.getElementById("conteudo").value;
     var RespQ = document.getElementById("respq").value;
 
@@ -10,7 +11,7 @@ function FiltroV(){
         return false;
     }
     //Testa se respondida ta vazio
-    else if(RespQ == "")
+    else if(RespQ != "Não" || RespQ != "Sim")
     {
         var Retorno = document.getElementById("Retorno");
         Retorno.innerText = "Campo dificuldade vazio!";

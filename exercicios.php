@@ -93,6 +93,21 @@
                                 ?>
                                 </form>
                             </div>
+                            <div class="row center-align">
+                                            <div class="col s12">
+                                                <h6 class="red-text" id="Retorno"> </h6> 
+                                                
+                                                <h6 class="red-text">
+                                                    <?php
+                                                        if (isset($_SESSION['auxiliar']))
+                                                        {
+                                                            echo $_SESSION['auxiliar'];
+                                                            unset ($_SESSION['auxiliar']);							
+                                                        }
+                                                    ?>
+                                                </h6>
+                                            </div>
+                                        </div>
                     </div>
             </div>
 

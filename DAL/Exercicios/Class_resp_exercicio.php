@@ -12,22 +12,20 @@
     $n = $_SESSION["questaoesc"];
 
     //cria a querry
-    $sql = "INSERT INTO TB_resposta (resposta, usuario, pergunta) VALUES ('$Resposta','$Usuario','$Questao')";
+    $sql = "INSERT INTO TB_respostas (resposta, usuario, pergunta) VALUES ('$Resposta','$Usuario','$Questao')";
             
-    //chama função que vai conectar ao banco e executar a query
-    $resultado = Func_executeselect_DAL($sql);//localizada no arquivo ../Class_conexão_DAL, linha 27
-
-    //teste do retorno
-    if(empty($resultado))
+    //chama função que vai conectar ao banco e executar a querys
+    if (mysqli_query( $conexao, $sql )) 
     {//2
-        //erro na execução, campo vazio ou dados invalidos
-        $_SESSION['auxiliar'] = "Busca com erro";       
-        //header("Location: ../../exercicios.php");
+        //tudo deu certo 
+        $_SESSION['RespQ'] = "s";
+        $sql2 = "SELECT TBR.resposta FROM tb_respostas AS TBR WHERE TBC.tema = '$ContQ' && TBR.usuario = '$RespU' AND TBQ.estado = 'Aprovado'";
+        header("Location: ../../questao.php?n=".$n);
     }//2
     else
     { //3  
-        //tudo deu certo 
-        
-        header("Location: ../../questao.php?n=".$n);
+        //erro na execução, campo vazio ou dados invalidos
+        $_SESSION['auxiliar'] = "Busca com erro";       
+        //header("Location: ../../exercicios.php");
     }//3
     Func_fechaconexao_DAL($conexao);//localizada no arquivo Class_conexao_DAL, linha 56

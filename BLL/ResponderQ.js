@@ -1,6 +1,6 @@
 function RespostaQ()
 {
-    var Q = document.getElementById("reposta").value;
+    var Q = document.getElementById("resposta").value;
 
     if(Q=="A"||Q=="B"||Q=="C"||Q=="D"||Q=="E")
     {    
