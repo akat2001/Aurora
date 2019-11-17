@@ -34,7 +34,7 @@
                     <div class="col s12 m12 l12">
                     <form name="exercicios" action="DAL/Exercicios/Class_busc_exercicio.php" method="POST">
                         <div class="input-field col s12 m3 l3">
-                            <select id="id_disciplina" name="#" required> <!--Campo da Disciplina--> 
+                            <select id="id_disciplina" name="disciplina" required> <!--Campo da Disciplina--> 
                                 <option value="" disabled selected> Selecione </option>
                                 <?php include "DAL/Forum/Class_disciplina_DAL.php"; ?>     
                             </select>  

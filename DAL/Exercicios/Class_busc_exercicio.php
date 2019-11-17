@@ -13,12 +13,12 @@
     if($RespQ == "s")
     {
     //chama função que vai buscar os dados no banco
-    $sql = "SELECT TBR.resposta, TBQ.cod_pergunta, TBQ.enunciado, TBQ.dificuldade, TBQ.resolucao, TBQ.resposta AS correcao, TBQ.alt_a, TBQ.alt_b, TBQ.alt_c, TBQ.alt_d, TBQ.alt_e FROM tb_questoes AS TBQ, tb_respostas AS TBR, tb_temas AS TBC WHERE TBC.cod_tema = '$ContQ' AND TBR.pergunta = TBQ.cod_pergunta AND TBR.usuario = '$RespU' AND TBQ.estado = 'Aprovado'";
+    $sql = "SELECT DISTINCT TBR.resposta, TBQ.cod_pergunta, TBQ.enunciado, TBQ.dificuldade, TBQ.resolucao, TBQ.resposta AS correcao, TBQ.alt_a, TBQ.alt_b, TBQ.alt_c, TBQ.alt_d, TBQ.alt_e FROM tb_questoes AS TBQ, tb_respostas AS TBR, tb_temas AS TBC WHERE TBC.cod_tema = '$ContQ' AND TBR.pergunta = TBQ.cod_pergunta AND TBR.usuario = '$RespU' AND TBQ.estado = 'Aprovado'";
     }
     else
     {
       //chama função que vai buscar os dados no banco
-      $sql = "SELECT TBQ.cod_pergunta, TBQ.enunciado, TBQ.dificuldade, TBQ.resolucao, TBQ.alt_a, TBQ.alt_b, TBQ.alt_c, TBQ.alt_d, TBQ.alt_e FROM tb_questoes AS TBQ, tb_temas AS TBC WHERE TBC.cod_tema = '$ContQ' AND TBQ.estado = 'Aprovado' AND TBR.usuario = 'null'";  
+      $sql = "SELECT DISTINCT TBQ.cod_pergunta, TBQ.enunciado, TBQ.dificuldade, TBQ.resolucao, TBQ.resposta AS correcao, TBQ.alt_a, TBQ.alt_b, TBQ.alt_c, TBQ.alt_d, TBQ.alt_e FROM tb_questoes AS TBQ, tb_temas AS TBC WHERE TBC.cod_tema = '$ContQ' AND TBQ.estado = 'Aprovado' AND TBQ.cod_pergunta NOT IN (SELECT pergunta FROM tb_respostas)";
     }
     $result = mysqli_query($conexao, $sql);
     
@@ -40,6 +40,7 @@
         $n++;
     }
 
+    $_SESSION['pags'] = "";
     $_SESSION['pags'] = $questaos;
 
     //teste do retorno
@@ -48,7 +49,7 @@
         //erro na execução, campo vazio ou dados invalidos
         unset($_SESSION['busca']); 
         unset($_SESSION['busca2']);       
-        $_SESSION['auxiliar'] = "Nenhuma questão encontrada";       
+        echo $_SESSION['auxiliar'] = "Nenhuma questão encontrada";       
         header("Location: ../../exercicios.php");
     }//2
     else

@@ -20,6 +20,9 @@
         //tudo deu certo 
         $_SESSION['RespQ'] = "s";
         $sql2 = "SELECT TBR.resposta FROM tb_respostas AS TBR WHERE TBC.tema = '$ContQ' && TBR.usuario = '$RespU' AND TBQ.estado = 'Aprovado'";
+        $result = mysqli_query($conexao, $sql);
+        $resultado = mysqli_fetch_assoc($result);
+        $_SESSION['pags'][$n]['Resp'] = $resultado['resposta'];
         header("Location: ../../questao.php?n=".$n);
     }//2
     else

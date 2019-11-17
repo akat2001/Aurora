@@ -40,7 +40,7 @@ function CorAltB(Alt)
     C.className = "collection-item";
     D.className = "collection-item";
     E.className = "collection-item";
-    document.getElementById("resposta") = "B";
+    document.getElementById("resposta").value = "B";
     document.getElementById("Alt").value = Alt;
 }
 function CorAltC(Alt)
@@ -55,7 +55,7 @@ function CorAltC(Alt)
     A.className = "collection-item";
     D.className = "collection-item";
     E.className = "collection-item";
-    document.getElementById("resposta") = "C";
+    document.getElementById("resposta").value = "C";
     document.getElementById("Alt").value = Alt;
 }
 function CorAltD(Alt)
@@ -70,7 +70,7 @@ function CorAltD(Alt)
     C.className = "collection-item";
     A.className = "collection-item";
     E.className = "collection-item";
-    document.getElementById("resposta") = "D";
+    document.getElementById("resposta").value = "D";
     document.getElementById("Alt").value = Alt;
 }
 function CorAltE(Alt)
@@ -85,6 +85,6 @@ function CorAltE(Alt)
     C.className = "collection-item";
     D.className = "collection-item";
     A.className = "collection-item";
-    document.getElementById("resposta") = "E";
+    document.getElementById("resposta").value = "E";
     document.getElementById("Alt").value = Alt;
 }

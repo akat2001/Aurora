@@ -1,20 +1,18 @@
 function FiltroV()
 {
-    var ContQ = document.getElementById("conteudo").value;
-    var RespQ = document.getElementById("respq").value;
 
     //Testa se conteúdo ta vazio
-    if(ContQ == "")
+    if(document.exercicios.id_disciplina.value=="")
     {
         var Retorno = document.getElementById("Retorno");
-        Retorno.innerText = "Campo conteúdo vazio!";
+        Retorno.innerText = "Campo disciplina vazio!";
         return false;
     }
     //Testa se respondida ta vazio
-    else if(RespQ != "Não" || RespQ != "Sim")
+    else if(document.exercicios.conteudo.value=="")
     {
         var Retorno = document.getElementById("Retorno");
-        Retorno.innerText = "Campo dificuldade vazio!";
+        Retorno.innerText = "Campo conteúdo vazio!";
         return false;
     }
     else

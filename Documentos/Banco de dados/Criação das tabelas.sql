@@ -1,5 +1,5 @@
 -- se precisar apagar o banco so descomentar a linha debaixo
--- DROP DATABASE DB_Aurora;
+DROP DATABASE DB_Aurora;
 
 -- cria o banco
 CREATE DATABASE DB_Aurora;
@@ -106,7 +106,7 @@ FOREIGN KEY(pessoa) REFERENCES TB_Pessoa (cod_pessoa)
 
 CREATE TABLE TB_Respostas  
 (
-cod_resposta int PRIMARY KEY,
+cod_resposta int PRIMARY KEY auto_increment,
 resposta text,
 usuario int,
 pergunta int,
