@@ -166,6 +166,9 @@
                         <div class="col s12">
                         <b> Dificuldade: </b> '. $_SESSION['pags'][$n]['Dificuldade'] .' </span>
                         </div>
+                        <div class="row center-align">
+                        <a href="exercicios.php" class="btn waves-effect waves-light orange darken-2"> Voltar </a>
+                        </div>
                     </div>
                 </div>
                 ';}?>

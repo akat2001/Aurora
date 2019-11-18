@@ -9,7 +9,8 @@
     $Questao = mysqli_real_escape_string($conexao, $_POST['Alt']);
     $Resposta = mysqli_real_escape_string($conexao, $_POST['resposta']);
     $Usuario = mysqli_real_escape_string($conexao, $_SESSION['codU']);
-    $n = $_SESSION["questaoesc"];
+    $n = $_SESSION["questaoesc"]; 
+    $CodQ = $_SESSION['pags'][$n]['CodQ'];
 
     //cria a querry
     $sql = "INSERT INTO TB_respostas (resposta, usuario, pergunta) VALUES ('$Resposta','$Usuario','$Questao')";
@@ -19,16 +20,13 @@
     {//2
         //tudo deu certo 
         $_SESSION['RespQ'] = "s";
-        $sql2 = "SELECT TBR.resposta FROM tb_respostas AS TBR WHERE TBC.tema = '$ContQ' && TBR.usuario = '$RespU' AND TBQ.estado = 'Aprovado'";
-        $result = mysqli_query($conexao, $sql);
-        $resultado = mysqli_fetch_assoc($result);
-        $_SESSION['pags'][$n]['Resp'] = $resultado['resposta'];
+        echo $_SESSION['pags'][$n]['Resp'] = $Resposta;
         header("Location: ../../questao.php?n=".$n);
     }//2
     else
     { //3  
         //erro na execução, campo vazio ou dados invalidos
-        $_SESSION['auxiliar'] = "Busca com erro";       
+        $_SESSION['auxiliar'] = "Resposta com erro";       
         //header("Location: ../../exercicios.php");
     }//3
     Func_fechaconexao_DAL($conexao);//localizada no arquivo Class_conexao_DAL, linha 56
