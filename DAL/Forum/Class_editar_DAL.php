@@ -5,7 +5,9 @@
 
      include_once '../Class_conexao_DAL.php';
      $cod_edit = $_GET['id'];
-
+     
+     $conexao = Func_connect_DAL();//Localizada no arquivo ../Class_conexao_DAL, linha 3
+    
      $edit = mysqli_real_escape_string($conexao, $_POST['perguntaedit']);
 
      $sql = "UPDATE TB_Perguntas_forum SET pergunta = '$edit' WHERE cod_pergunta = '$cod_edit'";
@@ -28,7 +30,7 @@
         </div>
         
         <div class="modal-footer">
-            <a href="../../home.php" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+            <a href="../../Forum/exibir-discussao.php?disc='.$cod_edit.'" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
         </div>';
     }
     else

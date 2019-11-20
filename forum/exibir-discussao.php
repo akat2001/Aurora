@@ -78,7 +78,7 @@
                                     <div class="row mt-5">
                                         <!-- mostrar as informações de quem fez a pergunta -->
                                         <h5><?php echo $linha['usernick']; ?> </h5>
-                                        <h6><?php echo $linha['datap']; ?> &nbsp </h6> <a name="btnEdiSelect" id="btnEditar" onClick="HabEdit()" href="">Editar</a>
+                                        <h6><?php echo $linha['datap']; ?> &nbsp </h6> <button class="btn waves-effect waves-light orange darken-2" name="btnEdiSelect" id="btnEditar" onClick="HabEdit()" href="">Editar</button>
                                         <h6><?php echo $linha['tipo']; ?>  </h6> <!--Se é aluno ou tutor-->
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                 ?>
                 <!-- Área para responder o topico -->
                 <div class="row">
-                    <form class="hide" id="form_criar" method ="POST" action="../DAL/Forum/Class_resposta_DAL.php?disc=<?php echo $disc;?>">
+                    <form class="" id="form_criar" method ="POST" action="../DAL/Forum/Class_resposta_DAL.php?disc=<?php echo $disc;?>">
                         <div class="col s12">
 
                             <textarea id="txt_resp" name="resposta" class="materialize-textarea" placeholder="Digite sua resposta aqui..." rows=20></textarea>
@@ -170,30 +170,20 @@
                         </div>   
                     </form> 
 
-                    <!-- Área para editar pergunta -->
-                    <div class="row">
-                    <form method ="POST" id="form_edit" class="">
+                    <form class="hide" id="form_edit" method ="POST" action="../DAL/Forum/Class_editar_DAL.php?id=<?php echo $disc;?>">
                         <div class="col s12">
-                            
-                            <input id="caixa_pergunta" name="perguntaedit" class="materialize-textarea " placeholder="Edite sua pergunta aqui..." rows=20 value="<?php echo $_SESSION['pergunta']?>"></input>
-                        
+
+                            <input id="caixa_pergunta" name="perguntaedit" class="materialize-textarea " placeholder="Edite sua pergunta aqui..." rows=20 value="<?php echo $_SESSION['pergunta']?>"></input>                                                    
+
                         </div>
 
                         <div class="col s12 m12">
                             <div class="input-field col s12 m12 center-align">
-                                <div class="row center-align">
-                                        <div class="col s12 m12">
-
-                                            <a href="../DAL/Forum/Class_editar_DAL.php" class="" id="btnEdit">Editar</a> 
-
-                                            <a id="btnCancelar" class="waves-effect waves-light btn orange darken-2 " onClick ="CanEdit()"> <i class="white-text material-icons"> </i> Cancelar </li> </a>
-                                        
-                                        </div>
-                                    </div>
+                                <button class="btn waves-effect waves-light orange darken-2" type="submit" name="action" id="btnEnviar">Editar</button> <!--Botão para Postar--> 
+                                <button class="btn waves-effect waves-light orange darken-2" id="btnEditar" onClick="CanEdit()">Cancelar</button>
                             </div>
                         </div>   
-                    </form> 
-                        
+                    </form>                         
                 </div>
 
             </div>
