@@ -116,7 +116,7 @@
                                 <div class="col s6">
                                     <div class="row mt-5">
                                         <h5>'.$linha['usernick'].'</h5>
-                                        <h6>'.$linha['datap'].'&nbsp <h6> <a href="modal-edit.php?idr='.$linha['cod_resposta'].'&texto='.$linha['resposta'].'&idp='.$disc.'" class="modal-trigger">Editar</a> | <a href="../DAL/Forum/Class_verificar_DAL.php?id='.$linha['cod_resposta'].'" class="">Verificar</a> ';
+                                        <h6>'.$linha['datap'].'&nbsp <h6> <a href="modal-edit.php?idr='.$linha['cod_resposta'].'&texto='.$linha['resposta'].'&idp='.$disc.'" class="modal-trigger">Editar</a> | <a href="../DAL/Forum/Class_verificar_DAL.php?id='.$linha['cod_resposta'].'&codp='.$disc.'" class="">Verificar</a> ';
                             }
                             else
                             {

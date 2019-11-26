@@ -5,6 +5,7 @@
 
     include_once '../Class_conexao_DAL.php';
     $cod = $_GET['id'];
+    $codp = $_GET['codp'];
 
     $sql = "UPDATE TB_Respostas_forum SET verificada = '1' WHERE cod_resposta = '$cod'";
 
@@ -24,7 +25,7 @@
         </div>
         
         <div class="modal-footer">
-            <a href="../../Forum/exibir-discussao.php?disc='.$cod.'" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+            <a href="../../Forum/exibir-discussao.php?disc='.$codp.'" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
         </div>';
     }
     else
