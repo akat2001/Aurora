@@ -33,7 +33,7 @@
                 $linha = mysqli_fetch_assoc($dados);
                 //mostra o conteudo a ser estudado
                 echo '<div class="row mb-2">';
-                echo $linha['texto'].' <br> <h6 class="mb-2"> Conteúdo disponibilizado por: '.$linha['usernick']. '</h6>';
+                echo $linha['texto'].' <br> <h5 class="mb-2"> Conteúdo disponibilizado por: '.$linha['usernick']. '</h5>';
                 echo '</div>';
                                                   
                 ?>

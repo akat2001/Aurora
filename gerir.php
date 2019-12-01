@@ -133,7 +133,7 @@
                         </div> 
                         <div class="input-field col s12 m12 l12">
                             <textarea id="enunq" name="enunciado" class="materialize-textarea" required></textarea>
-                            <label> Enunciado da Questão </label>
+                            <label for="enunq"> Enunciado da Questão </label>
                             <span class="helper-text">Digite seu conteúdo na forma de HTML. Você pode usar Materialize CSS na postagem. </span>
                         </div>
                         <div class="input-field col s12 m12 l12">
@@ -181,7 +181,7 @@
                     <p> <b> 1º Preencha corretamente os seguintes campos: </b> </p>
                     <img class="responsive-img" src="img/inst/1.png"/>
                     <p> <b> 2º Baixe o arquivo modelo e escreva nele o seu código HTML: </b> </p>
-                    <p> LINK LINK LINK LINK </p>
+                    <p> <a href="download/modelo_aurora.html" class="btn btn-small orange darken-2" download="modelo_aurora.html">Baixar Arquivo</a> </p>
                     <p> Para escrever, basta usar um editor de textos qualquer ou alguma IDE (recomenda-se o Visual Studio Code). </p>
                     <p> <b> 3º Abra a página para verificar se está de acordo com o desejado: </b> </p>
                     <div class="col s12">
@@ -196,8 +196,24 @@
                     <p> Pronto! Agora basta esperar o email de confirmação dos nossos administradores informando se o seu conteúdo foi aprovado. Caso esteja tudo certo, ele se tornará disponível para todos os alunos acessarem. </p>
                     <p> É importante manter uma <b> cópia de segurança do seu conteúdo</b>, pois caso ele seja recusado será necessário fazer as alterações descritas e enviá-lo para análise novamente!
                     <p> Mais instruções sobre com anexar imagens estão inclusas no arquivo modelo. </p>
+                    <p><b> AVISO: </b> Certifique-se de inserir as referências bibliográficas no final da página conforme o arquivo modelo.</p>
 
                     <h5 class="mt-2"> <b> Adição de Questões </b> </h5>
+                    <p> <b> 1º Selecione a Matéria, juntamente com o Conteúdo, Dificuldade e Alternativa correta. Posteriormente, escreva o enunciado da questão utilizando HTML5 (caso a questão possua imagem, utilize a tag img). </b> </p>
+                    
+                    <img class="responsive-img" src="img/inst/5.png"/>
+                    <p> <b> 2º Insira as alternativas correspondentes. Caso não haja alternativa "E", deixe-a em branco. (Se existir imagem, utilize a tag citada no item 2): </b> </p>
+                    <img class="responsive-img" src="img/inst/6.png"/>
+                    <p> <b> 3º Preencha a resolução utilizando HTML5. Além disso, certifique-se de que tudo está preenchido e clique em "Enviar": </b> </p>
+                    <img class="responsive-img" src="img/inst/7.png"/>
+                    <p> <b> 4º Caso esteja tudo certo será exibida a seguinte mensagem: </b> </p>
+                    <img class="responsive-img" src="img/inst/8.png"/>
+                    <p> Pronto! Agora basta esperar o email de confirmação dos nossos administradores informando se o seu exercício foi aprovado. Caso esteja tudo certo, ele se tornará disponível para todos os alunos acessarem.</p>
+
+                    <p> Novamente, não se esqueça de manter uma <b> cópia de segurança do seu conteúdo </b>, pois caso ele seja recusado será necessário fazer as alterações descritas e enviá-lo para análise novamente! </p>
+
+                    <p><b> AVISO: </b> Caso o exerício não seja de sua autoria, informe sua origem no início do enunciado como na imagem a seguir:</p>
+                    <img class="responsive-img" src="img/inst/9.png"/>
                 </div>    
 
                 <?php if ($_SESSION['Categoria'] == "ADM") {

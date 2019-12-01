@@ -29,7 +29,7 @@
             <div class="container">
                 <div class="row mt-2">
                     <div class="col s12 m12 center-align"> 
-                        <h4>Questão em analise</h4>
+                        <h4>Questão em análise</h4>
                     </div> 
                 </div>
                 <div id="questao"> <!--Essa div contem a questão e suas respectivas alternativas--> 

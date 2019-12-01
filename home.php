@@ -40,8 +40,28 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col s12 m8 hide-on-med-and-up">
+                            <div class="card">
+                                <div class="card-content"> 
+                                
+                                    <div class="card-title mt-2">
+                                        <span class="card-title">                                                         
+                                            <h5> <i class=" yellow-text material-icons"> lightbulb_outline </i> Dica </h5>  
+                                        </span>
+                                    </div>
+
+                                    <div class="card-content">
+                                        <h6> Clique no ícone <i class="material-icons black-text">menu</i>  para começar.</h6>  
+                                    </div>
+
+                                </div>
+                               
+                            </div>
+                        </div>
+
                      
-                        <div class="col s12 m8">
+                        <div class="col s12 m8 hide-on-small-only">
                             <div class="card medium">
                                 <div class="card-content">
                                     <div class="card-title">

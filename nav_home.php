@@ -85,7 +85,7 @@
                 </div>
                 <h4>Contato </h4>
                 <p> Tem alguma dúvida ou precisa de assistência? Envie-nos um email!  </p>
-                <a href="mailto:" class="modal-close"> xxxxx@xxxx.com </a>
+                <a href="mailto:" class="modal-close"> contato_aurora@outlook.com </a>
             </div>
         </div>
     </div>
