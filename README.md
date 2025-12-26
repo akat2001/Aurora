@@ -1,52 +1,50 @@
-Aurora — Plataforma de Reforço Escolar
+# 📚 Aurora — Plataforma de Reforço Escolar
 
-Este repositório contém o projeto Aurora, desenvolvido em 2019 como Trabalho de Conclusão de Curso do Ensino Médio Integrado ao Técnico em Informática.
-A plataforma foi criada com o objetivo de oferecer um ambiente simples e funcional onde alunos pudessem tirar dúvidas, compartilhar conhecimento e interagir por meio de um sistema de fórum.
+> **Projeto de Conclusão de Curso (TCC)** | Técnico em Informática Integrado ao Ensino Médio (2019)
 
-🎯 Objetivo do Projeto
+O **Aurora** é uma plataforma web desenvolvida com o objetivo de democratizar o acesso ao conhecimento escolar. O sistema oferece um ambiente intuitivo onde alunos podem tirar dúvidas, compartilhar materiais e interagir através de fóruns de discussão.
 
-Criar uma solução educacional acessível, intuitiva e eficaz para apoiar estudantes no processo de aprendizagem, permitindo:
+---
 
-Postagem de dúvidas e respostas
+## 🎯 Objetivo
+Criar uma solução educacional acessível para apoiar estudantes no processo de aprendizagem extra-classe, facilitando:
+* **Colaboração:** Postagem de dúvidas e respostas em tempo real.
+* **Organização:** Discussões separadas por tópicos e áreas de conhecimento.
+* **Interação:** Conexão direta entre alunos e professores/monitores.
 
-Discussões em tópicos
+---
 
-Organização de conteúdo por áreas
+## 🛠 Tecnologias Utilizadas
+O projeto foi estruturado com foco em desenvolvimento web robusto:
+* **Backend:** PHP (Lógica de negócio e regras de acesso).
+* **Frontend:** HTML5, CSS3 e JavaScript (Interface responsiva).
+* **Banco de Dados:** MySQL (Modelagem relacional e persistência).
+* **Ferramentas:** Git para versionamento.
 
-Interações entre alunos e professores
+---
 
-🛠 Tecnologias
+## 🧩 Arquitetura do Sistema
+O desenvolvimento seguiu a separação de responsabilidades:
 
-PHP
+### ⚙️ Backend & Regras de Negócio
+* Manipulação segura de dados.
+* Controle de sessão, autenticação de usuários e permissões (Alunos vs. Moderadores).
+* Validações de formulários e lógica interna de postagens.
 
-HTML / CSS
+### 🎨 Frontend
+* Design de interfaces focado na experiência do usuário (UX).
+* Interatividade dinâmica com JavaScript.
 
-JavaScript
+---
 
-Banco de dados relacional
+## 👥 Sobre o Desenvolvimento & Minha Atuação
+Este projeto foi construído em equipe durante o ano letivo de 2019.
 
-🧩 Estrutura
+**Minha contribuição principal:**
+Atuei com foco no **Backend**, sendo responsável pela estruturação da lógica de negócio e integração entre o banco de dados e a interface. Participei ativamente das decisões técnicas sobre a arquitetura de dados e implementação das funcionalidades de segurança e controle de usuários.
 
-O sistema é dividido em:
-
-Backend
-
-Regras de negócio
-
-Manipulação de dados
-
-Controle de usuários e permissões
-
-Validações e lógica interna
-
-Frontend
-
-Interface e interação com o usuário
-
-👥 Sobre o Desenvolvimento
-
-Este projeto foi construído em equipe, com colaboração em diversas etapas.
-Contribuí fortemente no desenvolvimento do backend, incluindo lógica de negócio, estrutura de dados e integração entre os módulos, sempre trabalhando de forma conjunta com o restante do grupo e mantendo alinhamento nas decisões técnicas.
+---
+*Desenvolvido por Juliane Prilip e equipe.*
 
 Mesmo sendo um projeto acadêmico, buscamos seguir boas práticas e organizar o sistema de forma clara e escalável para a época.
 
